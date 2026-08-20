@@ -92,6 +92,17 @@ get_header();
 		</div>
 	</section>
 
+	<section class="about-preview">
+		<div class="container about-preview-inner">
+			<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/about-headshot.png' ); ?>" alt="Jan, founder of RankCraft Web" class="about-headshot" width="150" height="150">
+			<div class="about-text">
+				<h2>Built by someone who does the work himself</h2>
+				<p>RankCraft is run by Jan, a WordPress developer and SEO specialist who manages every project personally, from first audit to final launch. No account managers, no outsourcing. Just direct, hands-on work.</p>
+				<a href="/about" class="link-arrow">More about Jan →</a>
+			</div>
+		</div>
+	</section>
+
 </main>
 
 <?php get_footer(); ?>

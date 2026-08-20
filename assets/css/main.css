@@ -217,6 +217,32 @@ body {
 	margin-top: 48px;
 }
 
+/* About preview */
+.about-preview {
+	padding: 80px 0;
+}
+
+.about-preview-inner {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.about-headshot {
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.about-text h2 {
+	font-size: 28px;
+	margin: 0 0 16px;
+}
+
+.about-text p {
+	color: var(--rc-slate);
+	margin-bottom: 16px;
+}
+
 /* Footer */
 .site-footer {
 	background: var(--rc-navy);
@@ -250,6 +276,11 @@ body {
 	.stat-row {
 		flex-wrap: wrap;
 		gap: 24px;
+	}
+
+	.about-preview-inner {
+		flex-direction: column;
+		text-align: center;
 	}
 
 	.hero-text h1 {
