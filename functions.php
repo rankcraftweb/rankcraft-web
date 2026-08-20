@@ -70,3 +70,4 @@ add_action( 'init', 'rankcraft_register_case_studies' );
  */
 require_once RANKCRAFT_DIR . '/inc/schema-markup.php';
 require_once RANKCRAFT_DIR . '/inc/case-study-meta.php';
+require_once RANKCRAFT_DIR . '/inc/contact-form.php';
