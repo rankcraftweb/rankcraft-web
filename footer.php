@@ -1,22 +1,43 @@
 <footer class="site-footer">
 	<div class="container footer-inner">
-		<div class="footer-brand">
-			<div class="footer-logo"><?php bloginfo( 'name' ); ?></div>
-			<p class="footer-tagline">Web &bull; SEO &bull; Systems</p>
+
+		<div class="footer-columns">
+			<div class="footer-col footer-brand">
+				<div class="footer-logo"><?php bloginfo( 'name' ); ?></div>
+				<p class="footer-tagline">Web &bull; SEO &bull; Systems</p>
+			</div>
+
+			<div class="footer-col">
+				<h4>Services</h4>
+				<ul>
+					<li><a href="/#services">WordPress Development</a></li>
+					<li><a href="/#services">SEO and Local Search</a></li>
+					<li><a href="/#services">Performance Audits</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col">
+				<h4>Company</h4>
+				<ul>
+					<li><a href="/about">About</a></li>
+					<li><a href="/portfolio">Portfolio</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col">
+				<h4>Get Started</h4>
+				<ul>
+					<li><a href="/#free-audit">Free Audit</a></li>
+					<li><a href="/contact">Book a Call</a></li>
+				</ul>
+			</div>
 		</div>
 
-		<nav class="footer-nav">
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'footer',
-				'container'      => false,
-				'menu_class'     => 'footer-menu',
-				'fallback_cb'    => false,
-			) );
-			?>
-		</nav>
+		<div class="footer-bottom">
+			<p class="footer-copyright">&copy; <?php echo esc_html( date( 'Y' ) ); ?> RankCraft Web. All rights reserved.</p>
+		</div>
 
-		<p class="footer-copyright">&copy; <?php echo esc_html( date( 'Y' ) ); ?> RankCraft Web. All rights reserved.</p>
 	</div>
 </footer>
 

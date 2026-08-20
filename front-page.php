@@ -43,7 +43,7 @@ get_header();
 		</div>
 	</section>
 
-	<section class="services">
+	<section class="services" id="services">
 		<div class="container">
 			<h2>What we do</h2>
 			<div class="services-grid">
@@ -100,6 +100,14 @@ get_header();
 				<p>RankCraft is run by Jan, a WordPress developer and SEO specialist who manages every project personally, from first audit to final launch. No account managers, no outsourcing. Just direct, hands-on work.</p>
 				<a href="/about" class="link-arrow">More about Jan →</a>
 			</div>
+		</div>
+	</section>
+
+	<section class="final-cta">
+		<div class="container">
+			<h2>Ready to see where your site stands?</h2>
+			<p>Get a free, no-obligation audit of your website's speed, SEO, and technical health.</p>
+			<a href="#free-audit" class="btn btn-primary">Get your free audit</a>
 		</div>
 	</section>
 

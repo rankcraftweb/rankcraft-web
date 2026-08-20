@@ -243,24 +243,89 @@ body {
 	margin-bottom: 16px;
 }
 
+/* Final CTA */
+.final-cta {
+	background: var(--rc-off-white);
+	padding: 80px 0;
+	text-align: center;
+}
+
+.final-cta h2 {
+	font-size: 32px;
+	margin-bottom: 12px;
+}
+
+.final-cta p {
+	color: var(--rc-slate);
+	margin-bottom: 32px;
+}
+
 /* Footer */
 .site-footer {
 	background: var(--rc-navy);
 	color: var(--rc-off-white);
-	padding: 48px 0;
-	text-align: center;
+	padding: 64px 0 32px;
+}
+
+.footer-columns {
+	display: grid;
+	grid-template-columns: 1.5fr 1fr 1fr 1fr;
+	gap: 32px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid rgba(244,246,249,0.15);
+}
+
+.footer-col h4 {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--rc-green-light);
+	margin: 0 0 16px;
+}
+
+.footer-col ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.footer-col li {
+	margin-bottom: 10px;
+}
+
+.footer-col a {
+	color: var(--rc-off-white);
+	text-decoration: none;
+	font-size: 14px;
+	opacity: 0.85;
+}
+
+.footer-col a:hover {
+	opacity: 1;
+	text-decoration: underline;
+}
+
+.footer-logo {
+	font-size: 20px;
+	font-weight: 700;
 }
 
 .footer-tagline {
 	color: var(--rc-green-light);
 	letter-spacing: 2px;
 	font-size: 13px;
+	margin-top: 8px;
+}
+
+.footer-bottom {
+	padding-top: 24px;
+	text-align: center;
 }
 
 .footer-copyright {
 	color: var(--rc-slate);
 	font-size: 13px;
-	margin-top: 24px;
+	margin: 0;
 }
 
 /* Case study single */
@@ -398,6 +463,10 @@ body {
 
 	.portfolio-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.footer-columns {
+		grid-template-columns: 1fr 1fr;
 	}
 
 	.hero-text h1 {
