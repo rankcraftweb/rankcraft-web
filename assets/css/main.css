@@ -40,10 +40,14 @@ body {
 }
 
 .site-logo {
-	color: var(--rc-off-white);
-	font-weight: 700;
-	font-size: 22px;
-	text-decoration: none;
+	display: block;
+	line-height: 0;
+}
+
+.site-logo-img {
+	height: 36px;
+	width: auto;
+	display: block;
 }
 
 .nav-menu {
@@ -305,9 +309,10 @@ body {
 	text-decoration: underline;
 }
 
-.footer-logo {
-	font-size: 20px;
-	font-weight: 700;
+.footer-logo-img {
+	height: 28px;
+	width: auto;
+	display: block;
 }
 
 .footer-tagline {

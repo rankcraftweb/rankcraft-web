@@ -3,7 +3,7 @@
 
 		<div class="footer-columns">
 			<div class="footer-col footer-brand">
-				<div class="footer-logo"><?php bloginfo( 'name' ); ?></div>
+				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/rankcraft-web-full-dark.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="footer-logo-img">
 				<p class="footer-tagline">Web &bull; SEO &bull; Systems</p>
 			</div>
 
