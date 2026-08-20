@@ -567,9 +567,7 @@ body {
 }
 
 .about-bio-inner {
-	display: grid;
-	grid-template-columns: 1.6fr 1fr;
-	gap: 64px;
+	max-width: 760px;
 }
 
 .about-bio h2 {
@@ -583,32 +581,124 @@ body {
 	margin-bottom: 16px;
 }
 
-.skills-panel {
+.skills {
+	padding: 80px 0;
 	background: var(--rc-off-white);
-	border-radius: 12px;
-	padding: 28px;
 }
 
-.skills-panel h3 {
-	font-size: 16px;
-	margin: 0 0 16px;
+.skills h2 {
+	font-size: 28px;
+	margin-bottom: 24px;
 }
 
 .skills-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
 }
 
 .skills-list li {
-	padding: 8px 0;
-	border-bottom: 1px solid var(--rc-border);
+	background: white;
+	border: 1px solid var(--rc-border);
+	border-radius: 12px;
+	padding: 16px 20px;
 	font-size: 14px;
 	color: var(--rc-navy);
 }
 
-.skills-list li:last-child {
-	border-bottom: none;
+.experience {
+	padding: 80px 0;
+	background: var(--rc-off-white);
+}
+
+.experience h2 {
+	font-size: 28px;
+	margin-bottom: 8px;
+}
+
+.experience-list {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	margin-top: 40px;
+}
+
+.experience-item {
+	background: white;
+	border: 1px solid var(--rc-border);
+	border-radius: 12px;
+	padding: 28px;
+}
+
+.experience-header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+.experience-header h3 {
+	font-size: 18px;
+	margin: 0;
+}
+
+.experience-date {
+	font-size: 13px;
+	color: var(--rc-slate);
+	white-space: nowrap;
+}
+
+.experience-role {
+	color: var(--rc-green);
+	font-size: 14px;
+	font-weight: 500;
+	margin: 4px 0 16px;
+}
+
+.experience-item ul {
+	margin: 0;
+	padding-left: 20px;
+	color: var(--rc-slate);
+}
+
+.experience-item li {
+	margin-bottom: 8px;
+	line-height: 1.6;
+}
+
+.experience-item li:last-child {
+	margin-bottom: 0;
+}
+
+.education {
+	padding: 80px 0;
+}
+
+.education h2 {
+	font-size: 28px;
+	margin-bottom: 24px;
+}
+
+.education-item {
+	background: white;
+	border: 1px solid var(--rc-border);
+	border-radius: 12px;
+	padding: 28px;
+}
+
+.education-item h3 {
+	font-size: 18px;
+	margin: 0 0 4px;
+}
+
+.education-school {
+	color: var(--rc-slate);
+	font-size: 14px;
+	margin: 0;
 }
 
 .certifications {
@@ -730,7 +820,7 @@ body {
 		text-align: center;
 	}
 
-	.about-bio-inner {
+	.skills-list {
 		grid-template-columns: 1fr;
 	}
 

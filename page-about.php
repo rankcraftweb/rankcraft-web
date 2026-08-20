@@ -21,23 +21,93 @@ get_header();
 
 <section class="about-bio">
 	<div class="container about-bio-inner">
-		<div>
-			<h2>How I work</h2>
-			<p>Most agencies hand your project between account managers, designers, and developers before it ever gets built. RankCraft is different: it's just me. When you work with RankCraft, you're talking directly to the person writing the code, running the SEO audit, and fixing what's broken.</p>
-			<p>That means fewer handoffs, faster turnaround, and someone who's personally accountable for the results, not just the deliverable.</p>
-			<p>I got here through hands-on practice rather than a single formal path: hundreds of hours building real front-end projects, hands-on client work managing WordPress sites and SEO, and continuously testing what actually moves rankings versus what's just theory.</p>
-		</div>
+		<h2>How I work</h2>
+		<p>Most agencies hand your project between account managers, designers, and developers before it ever gets built. RankCraft is different: it's just me. When you work with RankCraft, you're talking directly to the person writing the code, running the SEO audit, and fixing what's broken.</p>
+		<p>That means fewer handoffs, faster turnaround, and someone who's personally accountable for the results, not just the deliverable.</p>
+		<p>I got here through hands-on practice rather than a single formal path: hundreds of hours building real front-end projects, hands-on client work managing WordPress sites and SEO, and continuously testing what actually moves rankings versus what's just theory.</p>
+		<p>Before freelancing, I spent years as a technician in industrial and product engineering roles, work that was structured, procedural, and documentation-driven. I bring that same discipline to client sites: clear audits, systematic fixes, and records of what changed and why.</p>
+	</div>
+</section>
 
-		<div class="skills-panel">
-			<h3>Core skills</h3>
-			<ul class="skills-list">
-				<li>Custom WordPress theme and plugin development</li>
-				<li>Technical SEO and schema markup</li>
-				<li>On-page and local SEO strategy</li>
-				<li>Site performance and Core Web Vitals optimization</li>
-				<li>JavaScript and front-end development</li>
-				<li>Git version control</li>
-			</ul>
+<section class="skills">
+	<div class="container">
+		<h2>Core skills</h2>
+		<ul class="skills-list">
+			<li>Custom WordPress theme and plugin development</li>
+			<li>Technical SEO and schema markup</li>
+			<li>On-page and local SEO strategy</li>
+			<li>Site performance and Core Web Vitals optimization</li>
+			<li>JavaScript and front-end development</li>
+			<li>Git version control</li>
+		</ul>
+	</div>
+</section>
+
+<section class="experience">
+	<div class="container">
+		<h2>Experience</h2>
+		<p class="section-intro">From structured technical documentation to freelance web and SEO work.</p>
+
+		<div class="experience-list">
+			<div class="experience-item">
+				<div class="experience-header">
+					<h3>Freelance WordPress Developer &amp; Technical SEO Specialist</h3>
+					<span class="experience-date">Mar 2026 – Present</span>
+				</div>
+				<p class="experience-role">Freelance / Self-employed</p>
+				<ul>
+					<li>Manage and maintain 3 live client WordPress sites, handling hosting, updates, and technical performance</li>
+					<li>Deliver technical SEO audits and WordPress builds for clients in real estate, home services, and local business</li>
+					<li>Building RankCraft, a founder-led platform combining site auditing, technical SEO scoring, and client workflow management</li>
+				</ul>
+			</div>
+
+			<div class="experience-item">
+				<div class="experience-header">
+					<h3>Technician I — Product Engineering</h3>
+					<span class="experience-date">Jun 2022 – Feb 2026</span>
+				</div>
+				<p class="experience-role">Analog Devices General Trias Inc.</p>
+				<ul>
+					<li>Prepared structured technical reports and operational documentation</li>
+					<li>Maintained systematic maintenance logs and diagnostic records</li>
+					<li>Followed standardized engineering procedures and documentation practices</li>
+				</ul>
+			</div>
+
+			<div class="experience-item">
+				<div class="experience-header">
+					<h3>Technician I — Equipment Maintenance</h3>
+					<span class="experience-date">Dec 2021 – Apr 2022</span>
+				</div>
+				<p class="experience-role">Telford Services Philippines Inc.</p>
+				<ul>
+					<li>Maintained detailed equipment maintenance documentation and records</li>
+					<li>Assisted with monitoring machine performance and diagnostics</li>
+				</ul>
+			</div>
+
+			<div class="experience-item">
+				<div class="experience-header">
+					<h3>Technical Assistant</h3>
+					<span class="experience-date">Oct 2013 – Jan 2018</span>
+				</div>
+				<p class="experience-role">LBG Industries Inc.</p>
+				<ul>
+					<li>Maintained project documentation and technical records</li>
+					<li>Assisted in preparing operational and equipment documentation</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="education">
+	<div class="container">
+		<h2>Education</h2>
+		<div class="education-item">
+			<h3>B.S. Industrial Technology, Mechanical Technology</h3>
+			<p class="education-school">Aurora State College of Technology</p>
 		</div>
 	</div>
 </section>
