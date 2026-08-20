@@ -1,0 +1,97 @@
+<?php
+/**
+ * Homepage template.
+ *
+ * @package RankCraft_Web
+ */
+
+get_header();
+?>
+
+<main id="free-audit">
+
+	<section class="hero">
+		<div class="container hero-inner">
+			<div class="hero-text">
+				<h1>Fast, findable, and built to convert.</h1>
+				<p class="hero-subhead">RankCraft builds WordPress websites engineered for speed and search, not just good looks. Get a free audit and see exactly where your site stands.</p>
+				<div class="hero-cta">
+					<a href="#audit-form" class="btn btn-primary">Get your free audit</a>
+					<a href="/portfolio" class="btn btn-secondary">View our work</a>
+				</div>
+			</div>
+			<div class="hero-visual">
+				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/hero-dashboard-mockup.png' ); ?>" alt="Website audit report dashboard showing performance, SEO, and accessibility scores">
+			</div>
+		</div>
+	</section>
+
+	<section class="proof">
+		<div class="container">
+			<p class="section-label">Real results, not promises</p>
+			<h2>From a slow, unranked site to a 100/100 SEO score</h2>
+			<p>Michael Rossi needed a website to serve two real estate markets, New York and Florida. He needed more than a nice design. He needed a site that loaded fast, ranked well, and actually brought in leads.</p>
+
+			<div class="stat-row">
+				<div class="stat"><span class="stat-number">99</span><span class="stat-label">Performance (mobile)</span></div>
+				<div class="stat"><span class="stat-number">100</span><span class="stat-label">SEO</span></div>
+				<div class="stat"><span class="stat-number">100</span><span class="stat-label">Best practices</span></div>
+				<div class="stat"><span class="stat-number">3</span><span class="stat-label">Valid schema items</span></div>
+			</div>
+
+			<a href="/case-studies/rossi-real-estate" class="link-arrow">Read the full case study →</a>
+		</div>
+	</section>
+
+	<section class="services">
+		<div class="container">
+			<h2>What we do</h2>
+			<div class="services-grid">
+				<div class="service-card">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="48" height="48">
+					<h3>WordPress development</h3>
+					<p>Custom-built WordPress sites. No bloated page builders, just clean code built to scale with your business.</p>
+				</div>
+				<div class="service-card">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-seo.png' ); ?>" alt="" width="48" height="48">
+					<h3>SEO and local search</h3>
+					<p>On-page optimization, structured data, and local search strategy that help the right customers find you first.</p>
+				</div>
+				<div class="service-card">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-performance.png' ); ?>" alt="" width="48" height="48">
+					<h3>Performance audits</h3>
+					<p>A full technical audit of your existing site. We'll show you what's slowing you down and how to fix it.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="how-it-works">
+		<div class="container">
+			<h2>Get your free audit in 3 steps</h2>
+			<div class="steps-grid">
+				<div class="step">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-1-submit.png' ); ?>" alt="" width="48" height="48">
+					<h3>Submit your site</h3>
+					<p>Share your website URL. Takes less than a minute.</p>
+				</div>
+				<div class="step">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-2-report.png' ); ?>" alt="" width="48" height="48">
+					<h3>Get your audit report</h3>
+					<p>We'll analyze your speed, SEO, and technical health, then send you a clear, no-jargon report.</p>
+				</div>
+				<div class="step">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-3-call.png' ); ?>" alt="" width="48" height="48">
+					<h3>Book a free call</h3>
+					<p>We'll walk you through the findings and what fixing them could mean for your business.</p>
+				</div>
+			</div>
+			<div id="audit-form" class="audit-form-anchor">
+				<a href="#" class="btn btn-primary">Get your free audit</a>
+			</div>
+		</div>
+	</section>
+
+</main>
+
+<?php get_footer(); ?>
