@@ -57,7 +57,7 @@ function rankcraft_register_case_studies() {
 		'labels'       => $labels,
 		'public'       => true,
 		'has_archive'  => true,
-		'rewrite'      => array( 'slug' => 'case-studies' ),
+		'rewrite'      => array( 'slug' => 'portfolio' ),
 		'menu_icon'    => 'dashicons-chart-line',
 		'supports'     => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
 		'show_in_rest' => true,
@@ -69,3 +69,4 @@ add_action( 'init', 'rankcraft_register_case_studies' );
  * Include additional theme files.
  */
 require_once RANKCRAFT_DIR . '/inc/schema-markup.php';
+require_once RANKCRAFT_DIR . '/inc/case-study-meta.php';

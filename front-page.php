@@ -39,7 +39,7 @@ get_header();
 				<div class="stat"><span class="stat-number">3</span><span class="stat-label">Valid schema items</span></div>
 			</div>
 
-			<a href="/case-studies/rossi-real-estate" class="link-arrow">Read the full case study →</a>
+			<a href="/portfolio/rossi-real-estate" class="link-arrow">Read the full case study →</a>
 		</div>
 	</section>
 
