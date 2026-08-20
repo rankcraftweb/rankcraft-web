@@ -52,24 +52,28 @@ get_header();
 				<span class="cert-issuer">Ahrefs</span>
 				<h3>Ahrefs' Marketing Platform</h3>
 				<span class="cert-date">Issued March 2026</span>
+				<a href="https://ahrefs.com/academy/certificate/7698a4e0522f43c29026c61e921b49eb" target="_blank" rel="noopener" class="cert-verify">Verify →</a>
 			</div>
 
 			<div class="cert-card">
 				<span class="cert-issuer">HubSpot Academy</span>
 				<h3>SEO Certified</h3>
 				<span class="cert-date">Issued March 2026</span>
+				<a href="https://app-na2.hubspot.com/academy/achievements/mwqcd44w/en/1/jan-christopher-buen/seo" target="_blank" rel="noopener" class="cert-verify">Verify →</a>
 			</div>
 
 			<div class="cert-card">
 				<span class="cert-issuer">Semrush Academy</span>
 				<h3>SEO Toolkit Crash Course</h3>
 				<span class="cert-date">Issued 2026</span>
+				<a href="https://static.semrush.com/academy/certificates/01cfb57b77/jan-christopher-buen_25.pdf" target="_blank" rel="noopener" class="cert-verify">Verify →</a>
 			</div>
 
 			<div class="cert-card">
 				<span class="cert-issuer">Semrush Academy</span>
 				<h3>Technical SEO and AI Search Essentials</h3>
 				<span class="cert-date">Issued 2026</span>
+				<a href="https://static.semrush.com/academy/certificates/a730b13fe9/jan-christopher-buen_25.pdf" target="_blank" rel="noopener" class="cert-verify">Verify →</a>
 			</div>
 
 			<div class="cert-card">
