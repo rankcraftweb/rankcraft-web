@@ -14,7 +14,7 @@
 <header class="site-header">
 	<div class="container header-inner">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo">
-			<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/rankcraft-web-full-dark.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo-img">
+			<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/rankcraft-web-no-tagline-dark.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo-img">
 		</a>
 		<nav class="primary-nav">
 			<?php
