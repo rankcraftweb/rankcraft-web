@@ -2,10 +2,11 @@
 
 :root {
 	--rc-navy: #0C2A4A;
-	--rc-green: #1D9E75;
+	--rc-green: #17805F;
 	--rc-green-light: #63C89F;
 	--rc-off-white: #F4F6F9;
-	--rc-slate: #64748B;
+	--rc-slate: #627288;
+	--rc-slate-light: #8392A6;
 	--rc-border: #E2E8F0;
 	--font-main: 'Poppins', sans-serif;
 }
@@ -451,7 +452,7 @@ textarea:focus-visible {
 }
 
 .footer-copyright {
-	color: var(--rc-slate);
+	color: var(--rc-slate-light);
 	font-size: 13px;
 	margin: 0;
 }
@@ -465,7 +466,7 @@ textarea:focus-visible {
 }
 
 .footer-legal a {
-	color: var(--rc-slate);
+	color: var(--rc-slate-light);
 	font-size: 13px;
 	text-decoration: none;
 }
