@@ -215,6 +215,10 @@ textarea:focus-visible {
 	margin: 48px 0;
 }
 
+.stat {
+	text-align: center;
+}
+
 .stat-number {
 	display: block;
 	font-size: 40px;
