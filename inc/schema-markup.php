@@ -31,9 +31,8 @@ class RankCraft_Schema_Markup {
 			),
 			'sameAs'      => array(
 				home_url( '/' ),
-				// Add social/profile URLs here once live:
-				// 'https://www.linkedin.com/in/...',
-				// 'https://github.com/...',
+				'https://www.linkedin.com/in/jan-christopher-buen-24715117a',
+				'https://github.com/rankcraftweb',
 			),
 		);
 	}
