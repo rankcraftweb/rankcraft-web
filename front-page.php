@@ -84,9 +84,9 @@ get_header();
 					<p>We'll analyze your speed, SEO, and technical health, then send you a clear, no-jargon report.</p>
 				</div>
 				<div class="step">
-					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-3-call.png' ); ?>" alt="" width="48" height="48" loading="lazy">
-					<h3>Book a free call</h3>
-					<p>We'll walk you through the findings and what fixing them could mean for your business.</p>
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-3-email.png' ); ?>" alt="" width="48" height="48" loading="lazy">
+					<h3>Get your results by email</h3>
+					<p>We'll send you the findings by email, along with what fixing them could mean for your business. No call needed.</p>
 				</div>
 			</div>
 			<div id="audit-form" class="audit-form-anchor">
@@ -128,7 +128,7 @@ get_header();
 				</details>
 				<details class="faq-item">
 					<summary>How long does a typical project take?</summary>
-					<p>A custom WordPress build usually takes 2 to 4 weeks depending on scope. Audits and SEO fixes move faster, often within a week of the initial call.</p>
+					<p>A custom WordPress build usually takes 2 to 4 weeks depending on scope. Audits and SEO fixes move faster, often within a week of getting started.</p>
 				</details>
 				<details class="faq-item">
 					<summary>Do you offer support after the site launches?</summary>

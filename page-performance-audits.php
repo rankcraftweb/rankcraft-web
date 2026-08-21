@@ -36,7 +36,7 @@ get_header();
 			<li>Full technical SEO audit</li>
 			<li>Accessibility and best-practices check</li>
 			<li>Prioritized, plain-English fix list</li>
-			<li>One-on-one walkthrough call</li>
+			<li>Detailed walkthrough sent by email</li>
 		</ul>
 	</div>
 </section>
@@ -57,8 +57,8 @@ get_header();
 			</div>
 			<div class="step">
 				<span class="step-number">3</span>
-				<h3>Book a free call</h3>
-				<p>I'll walk you through the findings and what fixing them could mean for your business.</p>
+				<h3>Get your results by email</h3>
+				<p>I'll send you the findings by email, along with what fixing them could mean for your business. No call needed.</p>
 			</div>
 		</div>
 	</div>
