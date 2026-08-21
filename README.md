@@ -58,12 +58,24 @@ rankcraft-web/
 │   ├── seo-meta.php                 # Meta description, Open Graph, Twitter Card tags
 │   ├── contact-form.php             # Contact form handler + markup
 │   ├── case-study-meta.php          # Case study custom meta box
+│   ├── leads.php                    # RankCraft Business System: lead capture REST endpoint
 │   └── smtp.php                     # Hostinger SMTP configuration
+├── bin/
+│   └── deploy-case-study.sh         # Create/update case studies on production via WP-CLI over SSH
+├── case-studies/
+│   └── EXAMPLE/                     # Template content.html + meta.env for the script above
 └── assets/
     ├── css/main.css
     ├── js/main.js
     └── images/
 ```
+
+## Deploying content
+
+There's no auto-deploy; changes go to production over SSH. See
+[CLAUDE.md](CLAUDE.md) for the exact commands, including the
+`bin/deploy-case-study.sh` workflow for creating case studies via
+WP-CLI instead of browser-based Gutenberg editing.
 
 ## Roadmap
 
