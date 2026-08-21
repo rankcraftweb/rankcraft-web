@@ -51,16 +51,19 @@ get_header();
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="48" height="48">
 					<h3>WordPress development</h3>
 					<p>Custom-built WordPress sites. No bloated page builders, just clean code built to scale with your business.</p>
+					<a href="/wordpress-development" class="link-arrow">Learn more →</a>
 				</div>
 				<div class="service-card">
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-seo.png' ); ?>" alt="" width="48" height="48">
 					<h3>SEO and local search</h3>
 					<p>On-page optimization, structured data, and local search strategy that help the right customers find you first.</p>
+					<a href="/seo-and-local-search" class="link-arrow">Learn more →</a>
 				</div>
 				<div class="service-card">
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-performance.png' ); ?>" alt="" width="48" height="48">
 					<h3>Performance audits</h3>
 					<p>A full technical audit of your existing site. We'll show you what's slowing you down and how to fix it.</p>
+					<a href="/performance-audits" class="link-arrow">Learn more →</a>
 				</div>
 			</div>
 		</div>

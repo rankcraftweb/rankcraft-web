@@ -10,9 +10,9 @@
 			<div class="footer-col">
 				<h4>Services</h4>
 				<ul>
-					<li><a href="/#services">WordPress Development</a></li>
-					<li><a href="/#services">SEO and Local Search</a></li>
-					<li><a href="/#services">Performance Audits</a></li>
+					<li><a href="/wordpress-development">WordPress Development</a></li>
+					<li><a href="/seo-and-local-search">SEO and Local Search</a></li>
+					<li><a href="/performance-audits">Performance Audits</a></li>
 				</ul>
 			</div>
 
