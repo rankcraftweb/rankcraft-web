@@ -90,7 +90,7 @@ get_header();
 				</div>
 			</div>
 			<div id="audit-form" class="audit-form-anchor">
-				<a href="/contact" class="btn btn-primary">Get your free audit</a>
+				<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 			</div>
 		</div>
 	</section>
