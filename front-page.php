@@ -21,7 +21,7 @@ get_header();
 				</div>
 			</div>
 			<div class="hero-visual">
-				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/hero-dashboard-mockup.png' ); ?>" alt="Website audit report dashboard showing performance, SEO, and accessibility scores">
+				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/hero-dashboard-mockup.png' ); ?>" alt="Website audit report dashboard showing performance, SEO, and accessibility scores" width="1400" height="1000">
 			</div>
 		</div>
 	</section>
@@ -48,19 +48,19 @@ get_header();
 			<h2>What we do</h2>
 			<div class="services-grid">
 				<div class="service-card">
-					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="48" height="48">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>WordPress development</h3>
 					<p>Custom-built WordPress sites. No bloated page builders, just clean code built to scale with your business.</p>
 					<a href="/wordpress-development" class="link-arrow">Learn more →</a>
 				</div>
 				<div class="service-card">
-					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-seo.png' ); ?>" alt="" width="48" height="48">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-seo.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>SEO and local search</h3>
 					<p>On-page optimization, structured data, and local search strategy that help the right customers find you first.</p>
 					<a href="/seo-and-local-search" class="link-arrow">Learn more →</a>
 				</div>
 				<div class="service-card">
-					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-performance.png' ); ?>" alt="" width="48" height="48">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-performance.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>Performance audits</h3>
 					<p>A full technical audit of your existing site. We'll show you what's slowing you down and how to fix it.</p>
 					<a href="/performance-audits" class="link-arrow">Learn more →</a>
@@ -74,17 +74,17 @@ get_header();
 			<h2>Get your free audit in 3 steps</h2>
 			<div class="steps-grid">
 				<div class="step">
-					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-1-submit.png' ); ?>" alt="" width="48" height="48">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-1-submit.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>Submit your site</h3>
 					<p>Share your website URL. Takes less than a minute.</p>
 				</div>
 				<div class="step">
-					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-2-report.png' ); ?>" alt="" width="48" height="48">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-2-report.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>Get your audit report</h3>
 					<p>We'll analyze your speed, SEO, and technical health, then send you a clear, no-jargon report.</p>
 				</div>
 				<div class="step">
-					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-3-call.png' ); ?>" alt="" width="48" height="48">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-3-call.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>Book a free call</h3>
 					<p>We'll walk you through the findings and what fixing them could mean for your business.</p>
 				</div>
@@ -97,7 +97,7 @@ get_header();
 
 	<section class="about-preview">
 		<div class="container about-preview-inner">
-			<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/about-headshot.png' ); ?>" alt="Jan, founder of RankCraft Web" class="about-headshot" width="150" height="150">
+			<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/about-headshot.png' ); ?>" alt="Jan, founder of RankCraft Web" class="about-headshot" width="150" height="150" loading="lazy">
 			<div class="about-text">
 				<h2>Built by someone who does the work himself</h2>
 				<p>RankCraft is run by Jan, a WordPress developer and SEO specialist who manages every project personally, from first audit to final launch. No account managers, no outsourcing. Just direct, hands-on work.</p>

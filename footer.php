@@ -3,12 +3,12 @@
 
 		<div class="footer-columns">
 			<div class="footer-col footer-brand">
-				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/rankcraft-web-no-tagline-dark.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="footer-logo-img">
+				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/rankcraft-web-no-tagline-dark.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="footer-logo-img" width="1800" height="320" loading="lazy">
 				<p class="footer-tagline">Web &bull; SEO &bull; Systems</p>
 			</div>
 
 			<div class="footer-col">
-				<h4>Services</h4>
+				<h2>Services</h2>
 				<ul>
 					<li><a href="/wordpress-development">WordPress Development</a></li>
 					<li><a href="/seo-and-local-search">SEO and Local Search</a></li>
@@ -17,7 +17,7 @@
 			</div>
 
 			<div class="footer-col">
-				<h4>Company</h4>
+				<h2>Company</h2>
 				<ul>
 					<li><a href="/about">About</a></li>
 					<li><a href="/portfolio">Portfolio</a></li>
@@ -26,7 +26,7 @@
 			</div>
 
 			<div class="footer-col">
-				<h4>Get Started</h4>
+				<h2>Get Started</h2>
 				<ul>
 					<li><a href="/#free-audit">Free Audit</a></li>
 					<li><a href="/contact">Contact</a></li>

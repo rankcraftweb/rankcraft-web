@@ -22,4 +22,34 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
 		observer.observe( el );
 	} );
+
+	/**
+	 * Mobile nav toggle.
+	 */
+	const navToggle = document.querySelector( '.nav-toggle' );
+	const navWrap = document.querySelector( '.header-nav-wrap' );
+
+	if ( navToggle && navWrap ) {
+		const closeNav = () => {
+			navWrap.classList.remove( 'is-open' );
+			navToggle.classList.remove( 'is-active' );
+			navToggle.setAttribute( 'aria-expanded', 'false' );
+		};
+
+		navToggle.addEventListener( 'click', () => {
+			const isOpen = navWrap.classList.toggle( 'is-open' );
+			navToggle.classList.toggle( 'is-active', isOpen );
+			navToggle.setAttribute( 'aria-expanded', isOpen ? 'true' : 'false' );
+		} );
+
+		navWrap.querySelectorAll( 'a' ).forEach( ( link ) => {
+			link.addEventListener( 'click', closeNav );
+		} );
+
+		document.addEventListener( 'keydown', ( e ) => {
+			if ( e.key === 'Escape' ) {
+				closeNav();
+			}
+		} );
+	}
 } );
