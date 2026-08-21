@@ -50,7 +50,7 @@ while ( have_posts() ) :
 		?>
 
 		<?php if ( ! empty( $stats ) ) : ?>
-			<div class="container">
+			<div class="container case-study-content">
 				<div class="stat-row case-study-stats">
 					<?php foreach ( $stats as $stat ) : ?>
 						<div class="stat">
