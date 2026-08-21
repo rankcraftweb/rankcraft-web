@@ -721,12 +721,14 @@ body {
 }
 
 .single-post-thumb {
-	margin-top: -32px;
+	margin-top: 40px;
 }
 
 .single-post-thumb img {
 	width: 100%;
-	max-width: 900px;
+	max-width: 760px;
+	height: 320px;
+	object-fit: cover;
 	border-radius: 12px;
 	display: block;
 	margin: 0 auto;
