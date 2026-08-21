@@ -14,7 +14,7 @@ get_header();
 		<h1>Find out exactly what's slowing your site down</h1>
 		<p class="service-hero-lead">A full technical audit of your existing website, speed, SEO, and technical health, with a clear, no-jargon report and a plan to fix it.</p>
 		<div class="hero-cta">
-			<a href="/#free-audit" class="btn btn-primary">Get your free audit</a>
+			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 			<a href="/contact" class="btn btn-secondary">Get in touch</a>
 		</div>
 	</div>
@@ -68,7 +68,7 @@ get_header();
 	<div class="container">
 		<h2>Ready to see where your site stands?</h2>
 		<p>Get a free, no-obligation audit of your website's speed, SEO, and technical health.</p>
-		<a href="/#free-audit" class="btn btn-primary">Get your free audit</a>
+		<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 	</div>
 </section>
 

@@ -67,7 +67,7 @@ while ( have_posts() ) :
 		</div>
 
 		<div class="container case-study-cta">
-			<a href="/#free-audit" class="btn btn-primary">Get your free audit</a>
+			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 			<a href="/portfolio" class="link-arrow">← Back to all case studies</a>
 		</div>
 

@@ -14,7 +14,7 @@ get_header();
 		<h1>Custom WordPress development built to perform</h1>
 		<p class="service-hero-lead">No bloated page builders or generic templates. I build clean, fast WordPress sites coded to fit your business, not the other way around.</p>
 		<div class="hero-cta">
-			<a href="/#free-audit" class="btn btn-primary">Get your free audit</a>
+			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 			<a href="/contact" class="btn btn-secondary">Get in touch</a>
 		</div>
 	</div>

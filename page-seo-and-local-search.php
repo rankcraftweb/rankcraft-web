@@ -14,7 +14,7 @@ get_header();
 		<h1>SEO and local search that brings in the right customers</h1>
 		<p class="service-hero-lead">On-page optimization, technical fixes, and local search strategy so the people searching for what you offer actually find you.</p>
 		<div class="hero-cta">
-			<a href="/#free-audit" class="btn btn-primary">Get your free audit</a>
+			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 			<a href="/contact" class="btn btn-secondary">Get in touch</a>
 		</div>
 	</div>
@@ -70,7 +70,7 @@ get_header();
 	<div class="container">
 		<h2>Want to know where your site stands in search?</h2>
 		<div class="about-cta-buttons">
-			<a href="/#free-audit" class="btn btn-primary">Get your free audit</a>
+			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 			<a href="/contact" class="btn btn-secondary-dark">Get in touch</a>
 		</div>
 	</div>

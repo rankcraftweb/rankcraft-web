@@ -16,7 +16,7 @@ get_header();
 				<h1>Fast, findable, and built to convert.</h1>
 				<p class="hero-subhead">RankCraft builds WordPress websites engineered for speed and search, not just good looks. Get a free audit and see exactly where your site stands.</p>
 				<div class="hero-cta">
-					<a href="#audit-form" class="btn btn-primary">Get your free audit</a>
+					<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 					<a href="/portfolio" class="btn btn-secondary">View our work</a>
 				</div>
 			</div>
@@ -142,7 +142,7 @@ get_header();
 		<div class="container">
 			<h2>Ready to see where your site stands?</h2>
 			<p>Get a free, no-obligation audit of your website's speed, SEO, and technical health.</p>
-			<a href="#free-audit" class="btn btn-primary">Get your free audit</a>
+			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 		</div>
 	</section>
 

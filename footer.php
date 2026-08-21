@@ -28,7 +28,7 @@
 			<div class="footer-col">
 				<h2>Get Started</h2>
 				<ul>
-					<li><a href="/#free-audit">Free Audit</a></li>
+					<li><a href="https://audit.rankcraftweb.com">Free Audit</a></li>
 					<li><a href="/contact">Contact</a></li>
 				</ul>
 			</div>

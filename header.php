@@ -36,7 +36,7 @@
 				) );
 				?>
 			</nav>
-			<a href="/#free-audit" class="btn btn-primary">Get your free audit</a>
+			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 		</div>
 	</div>
 </header>
