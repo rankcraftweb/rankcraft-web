@@ -1,43 +1,64 @@
 # RankCraft Web
 
-Custom-coded WordPress theme powering [rankcraftweb.com](https://rankcraftweb.com) — a WordPress development, SEO, and website audit service.
+Custom-coded WordPress theme powering [rankcraftweb.com](https://rankcraftweb.com) — a WordPress development, SEO, and website audit service. **Live in production**, hosted on Hostinger.
 
 No page builders. No theme bloat. Hand-coded PHP, structured data, and performance built in from the start.
 
 ## Stack
 
-- WordPress (custom theme, no Elementor/Divi)
+- WordPress (custom theme, no Elementor/Divi, no ACF — custom meta boxes instead)
 - PHP 8+
-- Vanilla JS (scroll-reveal animation, no framework dependency)
-- Advanced Custom Fields (planned, for case study content management)
-- Hosted on Hostinger with LiteSpeed Cache
+- Vanilla JS (scroll-reveal animation, mobile nav toggle, no framework dependency)
+- Hosted on Hostinger with LiteSpeed Cache and Wordfence
+- Outgoing mail routed through Hostinger SMTP (see `inc/smtp.php`)
 
 ## Features
 
-- Custom `case_study` post type for portfolio/case study content
-- JSON-LD structured data (`ProfessionalService` schema) injected via `wp_head`, following the same pattern used and validated on a live client project (see `/inc/schema-markup.php`)
-- Lightweight IntersectionObserver-based scroll animations, no external animation library
+- Custom `case_study` post type for portfolio/case study content, with a hand-built meta box (`inc/case-study-meta.php`) for client name, project URL, and stat highlights — no ACF dependency
+- Dedicated service pages: WordPress Development, SEO and Local Search, Performance Audits
+- Blog (posts page + single post template) with featured images
+- About, Contact, Privacy Policy, and Terms of Service pages
+- Lightweight, no-plugin contact form with nonce verification, honeypot spam protection, and email delivery (`inc/contact-form.php`)
+- JSON-LD structured data (`ProfessionalService` schema) injected via `wp_head` (`inc/schema-markup.php`)
+- Hand-coded meta description, Open Graph, and Twitter Card tags per page type, no SEO plugin (`inc/seo-meta.php`)
+- Responsive hamburger mobile navigation, no JS framework
+- WCAG AA-compliant color contrast and visible focus states throughout
+- Lightweight IntersectionObserver-based scroll animations
 - Fully responsive, mobile-first layout
 
 ## Local development
 
 1. Clone this repo into your local WordPress `wp-content/themes/` directory
 2. Activate "RankCraft Web" from the WordPress admin under Appearance → Themes
-3. Set a static homepage in Settings → Reading, using the `front-page.php` template
+3. Set a static homepage in Settings → Reading, using the `front-page.php` template, and assign a posts page for the blog (`home.php`)
 
 ## Folder structure
 
 ```
 rankcraft-web/
-├── style.css              # Theme header (required by WordPress)
-├── functions.php          # Theme setup, enqueue, custom post types
-├── front-page.php         # Homepage template
-├── index.php              # Fallback template
+├── style.css                        # Theme header (required by WordPress)
+├── functions.php                    # Theme setup, enqueue, custom post types
+├── front-page.php                   # Homepage template
+├── home.php                         # Blog index (posts page) template
+├── single.php                       # Single blog post template
+├── index.php                        # Fallback template
 ├── header.php
 ├── footer.php
+├── page-about.php
+├── page-contact.php
+├── page-wordpress-development.php
+├── page-seo-and-local-search.php
+├── page-performance-audits.php
+├── page-privacy-policy.php
+├── page-terms-of-service.php
+├── archive-case_study.php           # Portfolio archive
+├── single-case_study.php            # Single case study template
 ├── inc/
-│   └── schema-markup.php  # JSON-LD structured data
-├── template-parts/
+│   ├── schema-markup.php            # JSON-LD structured data
+│   ├── seo-meta.php                 # Meta description, Open Graph, Twitter Card tags
+│   ├── contact-form.php             # Contact form handler + markup
+│   ├── case-study-meta.php          # Case study custom meta box
+│   └── smtp.php                     # Hostinger SMTP configuration
 └── assets/
     ├── css/main.css
     ├── js/main.js
@@ -46,10 +67,13 @@ rankcraft-web/
 
 ## Roadmap
 
-- [ ] Advanced Custom Fields integration for case study fields
-- [ ] Case study archive and single templates
-- [ ] Contact/audit request form
-- [ ] About page template
+Initial build (case studies, contact form, About page) is complete and deployed. Candidate next steps:
+
+- [ ] Add more portfolio case studies (only one live so far)
+- [ ] Google Analytics / Search Console integration
+- [ ] Grow blog cadence beyond the initial 3 posts
+- [ ] Conversion tracking on the "Get your free audit" CTA
+- [ ] Scheduled Wordfence scans
 
 ## License
 
