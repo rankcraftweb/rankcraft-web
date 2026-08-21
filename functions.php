@@ -73,3 +73,4 @@ require_once RANKCRAFT_DIR . '/inc/schema-markup.php';
 require_once RANKCRAFT_DIR . '/inc/case-study-meta.php';
 require_once RANKCRAFT_DIR . '/inc/contact-form.php';
 require_once RANKCRAFT_DIR . '/inc/smtp.php';
+require_once RANKCRAFT_DIR . '/inc/leads.php';
