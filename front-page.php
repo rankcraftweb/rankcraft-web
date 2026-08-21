@@ -106,6 +106,38 @@ get_header();
 		</div>
 	</section>
 
+	<section class="faq">
+		<div class="container faq-inner">
+			<h2>Frequently asked questions</h2>
+			<div class="faq-list">
+				<details class="faq-item">
+					<summary>Do you build websites, help with SEO, or both?</summary>
+					<p>Both. Most clients come to me for a WordPress build and ongoing technical SEO, since the two are hard to separate: a site that isn't built right technically will never rank as well as it should.</p>
+				</details>
+				<details class="faq-item">
+					<summary>What type of businesses do you work with?</summary>
+					<p>Mostly service-based businesses, real estate, home services, and local businesses that depend on their website to bring in leads, not just look good.</p>
+				</details>
+				<details class="faq-item">
+					<summary>Can you work with my existing website, or does it need a full rebuild?</summary>
+					<p>It depends on what's underneath. Sometimes a technical audit and targeted fixes are enough. Other times a rebuild is genuinely faster and cheaper long-term. I'll tell you honestly which one your site needs.</p>
+				</details>
+				<details class="faq-item">
+					<summary>Will my website be mobile-friendly?</summary>
+					<p>Yes. Every site I build is responsive and tested across devices, and mobile performance is part of every technical SEO audit since Google evaluates the mobile experience first.</p>
+				</details>
+				<details class="faq-item">
+					<summary>How long does a typical project take?</summary>
+					<p>A custom WordPress build usually takes 2 to 4 weeks depending on scope. Audits and SEO fixes move faster, often within a week of the initial call.</p>
+				</details>
+				<details class="faq-item">
+					<summary>Do you offer support after the site launches?</summary>
+					<p>Yes. I offer ongoing maintenance and support after launch, hosting, updates, and changes, so you're never stuck if something needs fixing down the line.</p>
+				</details>
+			</div>
+		</div>
+	</section>
+
 	<section class="final-cta">
 		<div class="container">
 			<h2>Ready to see where your site stands?</h2>
