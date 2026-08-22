@@ -1,0 +1,75 @@
+<!-- wp:paragraph -->
+<p>RankCraft isn't just a service brand, it's also a working example of what I build. This case study covers the ecosystem itself: the website you're reading this on, the free audit tool that generates leads, and the system that tracks them, all designed, built, and deployed by me, solo.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>The challenge</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Most freelance developer portfolios show finished client work, screenshots, links, maybe a paragraph of praise. That proves you can execute a brief. It doesn't prove you can think in systems: identify a business problem, design a solution end to end, and ship it without anyone else's help.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I wanted a portfolio piece that answered a harder question: can this person build their own product, not just implement someone else's?</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>What I built</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3>RankCraft Web</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A custom-coded WordPress theme, no page builder. Hand-built templates for the homepage, About, Contact, and a case study system with a custom post type and meta box for client stats, no ACF dependency. Full pre-launch audit covering SEO, performance, accessibility, and security before it went live.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>RankCraft Audit</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A free website audit tool, the ecosystem's lead magnet. Built with Next.js and deployed on Vercel as its own product on its own subdomain, not just a page bolted onto the main site. It calls Google's PageSpeed Insights API server-side, so the API key never reaches the browser, and returns real performance, accessibility, best practices, and SEO scores for both mobile and desktop.</p>
+<!-- /wp:paragraph -->
+<!-- wp:image {"align":"wide","sizeSlug":"large"} -->
+<figure class="wp-block-image alignwide size-large"><img src="https://rankcraftweb.com/wp-content/uploads/2026/08/screenshot-1787315004837-3.jpg" alt="RankCraft Audit tool showing a completed website audit report with mobile and desktop PageSpeed scores"/><figcaption class="wp-element-caption">RankCraft Audit, running a live report on rankcraftweb.com itself</figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading {"level":3} -->
+<h3>RankCraft Business System</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The connective tissue. When someone runs an audit, their name, email, and scores are captured and sent server-to-server to a custom leads endpoint on RankCraft Web. Each submission becomes a Lead with a status pipeline (New, Contacted, Proposal Sent, Client, Case Study Published) that I can update inline from the WordPress admin, no separate CRM software required.</p>
+<!-- /wp:paragraph -->
+<!-- wp:image {"align":"wide","sizeSlug":"large"} -->
+<figure class="wp-block-image alignwide size-large"><img src="https://rankcraftweb.com/wp-content/uploads/2026/08/screenshot-1787315292051-4.jpg" alt="RankCraft Business System Leads dashboard in WordPress admin showing leads with status pipeline badges"/><figcaption class="wp-element-caption">The Leads dashboard, with inline status tracking</figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2>How it connects</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A visitor lands on RankCraft Web and clicks "Get your free audit." That sends them to RankCraft Audit, a completely separate application on its own subdomain. They submit a URL along with their name and email. The tool runs the audit, shows them their results immediately, and in the background posts their details to RankCraft Web's REST API. That data appears instantly as a new Lead in the WordPress admin, ready to work.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>No manual data entry. No third-party form plugin. No Zapier subscription stitching things together. Just two codebases talking directly to each other.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Tech stack</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>WordPress (custom theme, PHP, no page builder), Next.js, TypeScript, Tailwind CSS, Vercel, Google PageSpeed Insights API, Hostinger, Git and GitHub for both codebases.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Why this matters</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Anyone can point to a client site they built from a brief. Fewer people can point to a working product ecosystem they designed themselves: three separate pieces, three different technical decisions, one connected system, no team, no outsourcing. That's the point of this one.</p>
+<!-- /wp:paragraph -->
