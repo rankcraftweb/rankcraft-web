@@ -10,7 +10,6 @@ get_header();
 while ( have_posts() ) :
 	the_post();
 
-	$client_name = get_post_meta( get_the_ID(), '_rc_client_name', true );
 	$project_url = get_post_meta( get_the_ID(), '_rc_project_url', true );
 	?>
 
@@ -20,12 +19,9 @@ while ( have_posts() ) :
 			<div class="container">
 				<p class="section-label">Case study</p>
 				<h1><?php the_title(); ?></h1>
-				<?php if ( $client_name ) : ?>
+				<?php if ( $project_url ) : ?>
 					<p class="case-study-client">
-						<?php echo esc_html( $client_name ); ?>
-						<?php if ( $project_url ) : ?>
-							&middot; <a href="<?php echo esc_url( $project_url ); ?>" target="_blank" rel="noopener">Visit site ↗</a>
-						<?php endif; ?>
+						<a href="<?php echo esc_url( $project_url ); ?>" target="_blank" rel="noopener">Visit site ↗</a>
 					</p>
 				<?php endif; ?>
 			</div>
