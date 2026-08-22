@@ -17,11 +17,6 @@ get_header();
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<a href="<?php the_permalink(); ?>" class="portfolio-card">
-						<?php if ( has_post_thumbnail() ) : ?>
-							<div class="portfolio-card-image">
-								<?php the_post_thumbnail( 'medium_large' ); ?>
-							</div>
-						<?php endif; ?>
 						<div class="portfolio-card-body">
 							<h2><?php the_title(); ?></h2>
 							<p><?php echo esc_html( get_the_excerpt() ); ?></p>
