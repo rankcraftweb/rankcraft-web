@@ -28,18 +28,33 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	 */
 	const navToggle = document.querySelector( '.nav-toggle' );
 	const navWrap = document.querySelector( '.header-nav-wrap' );
+	const siteHeader = document.querySelector( '.site-header' );
 
 	if ( navToggle && navWrap ) {
 		const closeNav = () => {
 			navWrap.classList.remove( 'is-open' );
 			navToggle.classList.remove( 'is-active' );
 			navToggle.setAttribute( 'aria-expanded', 'false' );
+			document.body.style.overflow = '';
 		};
 
 		navToggle.addEventListener( 'click', () => {
 			const isOpen = navWrap.classList.toggle( 'is-open' );
 			navToggle.classList.toggle( 'is-active', isOpen );
 			navToggle.setAttribute( 'aria-expanded', isOpen ? 'true' : 'false' );
+
+			if ( isOpen ) {
+				// .header-nav-wrap is position:fixed on mobile so it can
+				// reach the bottom of the viewport regardless of how much
+				// content is behind it; its top has to be set here since
+				// "fixed" can't inherit it from the header via CSS alone.
+				if ( siteHeader ) {
+					navWrap.style.top = siteHeader.getBoundingClientRect().bottom + 'px';
+				}
+				document.body.style.overflow = 'hidden';
+			} else {
+				document.body.style.overflow = '';
+			}
 		} );
 
 		navWrap.querySelectorAll( 'a' ).forEach( ( link ) => {
