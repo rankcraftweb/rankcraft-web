@@ -1240,14 +1240,19 @@ textarea:focus-visible {
 		gap: 16px;
 		width: 100%;
 	}
+
+	/* The hero's text column shares row space with hero-visual up to
+	   768px, leaving hero-cta's two buttons with zero breathing room
+	   between ~769-900px, right where the nav has already gone to a
+	   hamburger. Stack it at the same breakpoint so the two switch to
+	   "mobile" together instead of one lagging the other. */
+	.hero-inner {
+		flex-direction: column;
+	}
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-	.hero-inner {
-		flex-direction: column;
-	}
-
 	.hero-cta,
 	.about-cta-buttons,
 	.case-study-cta {
