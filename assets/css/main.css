@@ -440,13 +440,6 @@ textarea:focus-visible {
 	display: block;
 }
 
-.footer-tagline {
-	color: var(--rc-green-light);
-	letter-spacing: 2px;
-	font-size: 13px;
-	margin-top: 8px;
-}
-
 .footer-bottom {
 	padding-top: 24px;
 	display: flex;
@@ -1257,7 +1250,15 @@ textarea:focus-visible {
 	   "WordPress Development" and "SEO and Local Search" to 2 lines
 	   while their neighbors stay on 1, an uneven, cramped-looking mix. */
 	.footer-columns {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
+		text-align: center;
+		gap: 40px;
+	}
+
+	.footer-brand {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 }
 

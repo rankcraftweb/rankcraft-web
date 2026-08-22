@@ -3,8 +3,9 @@
 
 		<div class="footer-columns">
 			<div class="footer-col footer-brand">
-				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/rankcraft-web-no-tagline-dark.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="footer-logo-img" width="1800" height="320" loading="lazy">
-				<p class="footer-tagline">Web &bull; SEO &bull; Systems</p>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/rankcraft-web-no-tagline-dark.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="footer-logo-img" width="1800" height="320" loading="lazy">
+				</a>
 			</div>
 
 			<div class="footer-col">
