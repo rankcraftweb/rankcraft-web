@@ -1248,6 +1248,20 @@ textarea:focus-visible {
 		flex-direction: column;
 	}
 
+	.hero-cta,
+	.about-cta-buttons,
+	.case-study-cta {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.hero-cta .btn,
+	.about-cta-buttons .btn,
+	.case-study-cta .btn,
+	.case-study-cta .link-arrow {
+		text-align: center;
+	}
+
 	.services-grid, .steps-grid {
 		grid-template-columns: 1fr;
 	}
