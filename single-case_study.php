@@ -27,12 +27,6 @@ while ( have_posts() ) :
 			</div>
 		</header>
 
-		<?php if ( has_post_thumbnail() ) : ?>
-			<div class="case-study-featured-image container">
-				<?php the_post_thumbnail( 'large' ); ?>
-			</div>
-		<?php endif; ?>
-
 		<?php
 		// Build the stat row from meta fields, skipping any that are empty.
 		$stats = array();
