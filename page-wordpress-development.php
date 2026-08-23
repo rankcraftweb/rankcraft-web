@@ -12,7 +12,7 @@ get_header();
 	<div class="container">
 		<p class="section-label">Services</p>
 		<h1>Custom WordPress development built to perform</h1>
-		<p class="service-hero-lead">No bloated page builders or generic templates. I build clean, fast WordPress sites coded to fit your business, not the other way around.</p>
+		<p class="service-hero-lead">Hand-coded or built with tools like Elementor depending on what the project needs, always optimized for speed and search. I build clean, fast WordPress sites tailored to your business.</p>
 		<div class="hero-cta">
 			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 			<a href="/contact" class="btn btn-secondary">Get in touch</a>
@@ -23,7 +23,7 @@ get_header();
 <section class="service-overview">
 	<div class="container service-overview-inner">
 		<h2>Websites built to convert, not just look nice</h2>
-		<p>A good-looking site that loads slowly or doesn't rank won't grow your business. I build every site from clean, hand-written code, no page builder bloat, so it loads fast, ranks well, and holds up as your business grows.</p>
+		<p>A good-looking site that loads slowly or doesn't rank won't grow your business. I build every site the way it needs to be built, hand-coded or with tools like Elementor, always optimized so it loads fast, ranks well, and holds up as your business grows.</p>
 		<p>That means a custom theme built around your content and goals, not a generic template stretched to fit. Every build includes structured data, accessible markup, and a foundation that's easy to maintain.</p>
 		<p>And because I handle every project personally, you're never waiting on a queue of other clients or explaining your business to a new account manager.</p>
 	</div>

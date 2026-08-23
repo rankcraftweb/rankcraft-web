@@ -41,6 +41,26 @@ function rankcraft_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'rankcraft_enqueue_assets' );
 
 /**
+ * Redirect legacy URLs that are still indexed but no longer resolve
+ * to a page (replaced by /wordpress-development/, /performance-audits/,
+ * and /portfolio/).
+ */
+function rankcraft_legacy_redirects() {
+	$path = untrailingslashit( parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ) );
+
+	$redirects = array(
+		'/services' => home_url( '/#services' ),
+		'/projects' => home_url( '/portfolio/' ),
+	);
+
+	if ( isset( $redirects[ $path ] ) ) {
+		wp_safe_redirect( $redirects[ $path ], 301 );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'rankcraft_legacy_redirects' );
+
+/**
  * Register "Case Studies" custom post type.
  * Used for portfolio items like the Rossi Real Estate project.
  */
