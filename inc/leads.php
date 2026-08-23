@@ -45,21 +45,50 @@ function rankcraft_register_leads_post_type() {
 		'supports'            => array( 'title' ),
 		// Leads carry names, emails, and audited URLs — admin-only, not
 		// the default "anyone with edit_posts" post capabilities.
+		//
+		// IMPORTANT: don't set the 'capabilities' array's VALUES to a
+		// custom string here (e.g. mapping 'edit_posts' => 'manage_options'
+		// or even a made-up name like 'manage_rc_leads'). WordPress
+		// registers any such custom primitive capability name into its
+		// global $post_type_meta_caps alias table, which hijacks every
+		// unrelated map_meta_cap() call using that exact string sitewide
+		// (this broke the Settings/Wordfence/LiteSpeed Cache admin menus
+		// for every administrator when 'manage_options' was reused here).
+		// Let 'capability_type' auto-generate safe, namespaced capability
+		// names instead (edit_rc_leads, publish_rc_leads, etc.), then
+		// grant those directly to the administrator role below.
 		'capability_type'     => array( 'rc_lead', 'rc_leads' ),
 		'map_meta_cap'        => true,
-		'capabilities'        => array(
-			'edit_post'          => 'manage_options',
-			'read_post'          => 'manage_options',
-			'delete_post'        => 'manage_options',
-			'edit_posts'         => 'manage_options',
-			'edit_others_posts'  => 'manage_options',
-			'publish_posts'      => 'manage_options',
-			'read_private_posts' => 'manage_options',
-			'delete_posts'       => 'manage_options',
-		),
 	) );
 }
 add_action( 'init', 'rankcraft_register_leads_post_type' );
+
+/**
+ * Grant the rc_lead post type's auto-generated capabilities to
+ * administrators only. Runs on every 'init' but the has_cap() guard
+ * makes it a no-op after the first run.
+ */
+function rankcraft_grant_lead_capabilities() {
+	$role = get_role( 'administrator' );
+
+	if ( ! $role || $role->has_cap( 'edit_rc_leads' ) ) {
+		return;
+	}
+
+	foreach ( array(
+		'edit_rc_lead',
+		'read_rc_lead',
+		'delete_rc_lead',
+		'edit_rc_leads',
+		'edit_others_rc_leads',
+		'publish_rc_leads',
+		'read_private_rc_leads',
+		'delete_rc_leads',
+	) as $cap ) {
+		$role->add_cap( $cap );
+	}
+}
+add_action( 'init', 'rankcraft_grant_lead_capabilities', 20 );
 
 /**
  * The lead status pipeline: value => label/color, in pipeline order.
