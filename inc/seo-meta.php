@@ -88,7 +88,7 @@ class RankCraft_SEO_Meta {
 			}
 		}
 
-		return RANKCRAFT_URI . '/assets/images/hero-dashboard-mockup.png';
+		return wp_get_attachment_image_url( 371, 'full' );
 	}
 
 	private static function get_og_type() {

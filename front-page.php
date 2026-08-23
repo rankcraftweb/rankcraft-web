@@ -21,7 +21,11 @@ get_header();
 				</div>
 			</div>
 			<div class="hero-visual">
-				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/hero-dashboard-mockup.png' ); ?>" alt="Website audit report dashboard showing performance, SEO, and accessibility scores" width="1400" height="1000">
+				<?php
+				echo wp_get_attachment_image( 371, 'full', false, array(
+					'alt' => 'Website audit report dashboard showing performance, SEO, and accessibility scores',
+				) );
+				?>
 			</div>
 		</div>
 	</section>
