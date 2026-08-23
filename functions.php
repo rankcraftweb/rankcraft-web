@@ -86,6 +86,20 @@ function rankcraft_register_case_studies() {
 add_action( 'init', 'rankcraft_register_case_studies' );
 
 /**
+ * The case_study archive lives at /portfolio/ and the nav calls it
+ * "Portfolio", but the CPT's admin label ("Case Studies") is what
+ * WordPress uses for the <title> tag by default. Override just the
+ * document title so it matches both phrasings people search for.
+ */
+function rankcraft_case_study_archive_title( $title_parts ) {
+	if ( is_post_type_archive( 'case_study' ) ) {
+		$title_parts['title'] = 'Portfolio & Case Studies';
+	}
+	return $title_parts;
+}
+add_filter( 'document_title_parts', 'rankcraft_case_study_archive_title' );
+
+/**
  * Include additional theme files.
  */
 require_once RANKCRAFT_DIR . '/inc/seo-meta.php';

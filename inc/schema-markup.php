@@ -18,6 +18,8 @@ class RankCraft_Schema_Markup {
 		add_action( 'wp_head', array( __CLASS__, 'output_schema' ), 5 );
 		add_action( 'wp_head', array( __CLASS__, 'output_faq_schema' ), 5 );
 		add_action( 'wp_head', array( __CLASS__, 'output_blog_posting_schema' ), 5 );
+		add_action( 'wp_head', array( __CLASS__, 'output_service_schema' ), 5 );
+		add_action( 'wp_head', array( __CLASS__, 'output_case_study_schema' ), 5 );
 	}
 
 	private static function get_schema_data() {
@@ -30,6 +32,22 @@ class RankCraft_Schema_Markup {
 			'description' => 'WordPress development, SEO, and website audits for small businesses.',
 			'areaServed'  => array(
 				array( '@type' => 'Country', 'name' => 'United States' ),
+			),
+			'knowsAbout'  => array(
+				'Real estate websites',
+				'Contractor and home services websites',
+				'Property management websites',
+				'WordPress development',
+				'Technical SEO',
+			),
+			'founder'     => array(
+				'@type'  => 'Person',
+				'name'   => 'Jan',
+				'url'    => home_url( '/about/' ),
+				'sameAs' => array(
+					'https://www.linkedin.com/in/jan-christopher-buen-24715117a',
+					'https://github.com/rankcraftweb',
+				),
 			),
 			'sameAs'      => array(
 				home_url( '/' ),
@@ -143,6 +161,103 @@ class RankCraft_Schema_Markup {
 
 		if ( $image ) {
 			$schema['image'] = $image[0];
+		}
+
+		echo '<script type="application/ld+json">' . "\n";
+		echo wp_json_encode( $schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES );
+		echo "\n" . '</script>' . "\n";
+	}
+
+	/**
+	 * Service schema for the three service pages.
+	 */
+	private static function get_service_pages() {
+		return array(
+			'wordpress-development' => 'Custom WordPress Development',
+			'seo-and-local-search'  => 'SEO and Local Search',
+			'performance-audits'    => 'Performance Audits',
+		);
+	}
+
+	public static function output_service_schema() {
+		if ( ! is_page() ) {
+			return;
+		}
+
+		$slug     = get_post_field( 'post_name', get_the_ID() );
+		$services = self::get_service_pages();
+
+		if ( ! isset( $services[ $slug ] ) ) {
+			return;
+		}
+
+		$schema = array(
+			'@context'    => 'https://schema.org',
+			'@type'       => 'Service',
+			'name'        => $services[ $slug ],
+			'url'         => get_permalink(),
+			'description' => get_the_excerpt() ? wp_strip_all_tags( get_the_excerpt() ) : '',
+			'provider'    => array(
+				'@type' => 'ProfessionalService',
+				'@id'   => home_url( '/#organization' ),
+				'name'  => 'RankCraft Web',
+			),
+			'areaServed'  => array(
+				array( '@type' => 'Country', 'name' => 'United States' ),
+			),
+		);
+
+		echo '<script type="application/ld+json">' . "\n";
+		echo wp_json_encode( $schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES );
+		echo "\n" . '</script>' . "\n";
+	}
+
+	/**
+	 * CreativeWork schema for case studies, carrying the client name and
+	 * headline stats through to search engines.
+	 */
+	public static function output_case_study_schema() {
+		if ( ! is_singular( 'case_study' ) ) {
+			return;
+		}
+
+		$post_id     = get_the_ID();
+		$client_name = get_post_meta( $post_id, '_rc_client_name', true );
+		$project_url = get_post_meta( $post_id, '_rc_project_url', true );
+
+		$stats = array();
+		for ( $i = 1; $i <= 4; $i++ ) {
+			$number = get_post_meta( $post_id, '_rc_stat_' . $i . '_number', true );
+			$label  = get_post_meta( $post_id, '_rc_stat_' . $i . '_label', true );
+			if ( $number && $label ) {
+				$stats[] = $number . ' ' . $label;
+			}
+		}
+
+		$schema = array(
+			'@context' => 'https://schema.org',
+			'@type'    => 'CreativeWork',
+			'name'     => get_the_title( $post_id ),
+			'url'      => get_permalink( $post_id ),
+			'creator'  => array(
+				'@type' => 'Organization',
+				'name'  => 'RankCraft Web',
+			),
+		);
+
+		if ( $client_name ) {
+			$schema['about'] = $client_name;
+		}
+
+		if ( $project_url ) {
+			$schema['mentions'] = array(
+				'@type' => 'WebSite',
+				'url'   => $project_url,
+			);
+		}
+
+		if ( $stats ) {
+			$schema['keywords'] = implode( ', ', $stats );
 		}
 
 		echo '<script type="application/ld+json">' . "\n";
