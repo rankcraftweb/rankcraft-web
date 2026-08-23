@@ -305,16 +305,34 @@ function rankcraft_lead_status_filter_query( $query ) {
 add_action( 'pre_get_posts', 'rankcraft_lead_status_filter_query' );
 
 /**
- * Public REST endpoint the audit tool posts new leads to.
+ * Public REST endpoint the audit tool posts new leads to. Locked down
+ * with a shared secret (see RANKCRAFT_LEADS_SECRET in wp-config.php)
+ * since this is a server-to-server call from rankcraft-audit, not a
+ * browser request — there's no legitimate anonymous caller.
  */
 function rankcraft_register_leads_rest_route() {
 	register_rest_route( 'rankcraft/v1', '/leads', array(
 		'methods'             => 'POST',
 		'callback'            => 'rankcraft_handle_leads_submission',
-		'permission_callback' => '__return_true',
+		'permission_callback' => 'rankcraft_leads_permission_check',
 	) );
 }
 add_action( 'rest_api_init', 'rankcraft_register_leads_rest_route' );
+
+/**
+ * Require a shared secret header matching RANKCRAFT_LEADS_SECRET. If
+ * that constant isn't defined (e.g. local dev without wp-config set up),
+ * fail closed rather than silently reopening the endpoint.
+ */
+function rankcraft_leads_permission_check( WP_REST_Request $request ) {
+	if ( ! defined( 'RANKCRAFT_LEADS_SECRET' ) || '' === RANKCRAFT_LEADS_SECRET ) {
+		return false;
+	}
+
+	$provided = $request->get_header( 'x_rankcraft_secret' );
+
+	return is_string( $provided ) && hash_equals( RANKCRAFT_LEADS_SECRET, $provided );
+}
 
 /**
  * Pull a 0-100 integer score out of a scores sub-object, defaulting to 0
@@ -352,6 +370,30 @@ function rankcraft_leads_rate_limited() {
 
 	set_transient( $key, $count + 1, HOUR_IN_SECONDS );
 	return false;
+}
+
+/**
+ * Email both sides of a new lead: a copy of their own results to the
+ * visitor, and a heads-up to the team inbox so a new lead doesn't sit
+ * unseen until someone happens to open wp-admin.
+ */
+function rankcraft_send_lead_notifications( $name, $email, $url, $mobile, $desktop ) {
+	$site_name = get_bloginfo( 'name' );
+
+	$scores_block = sprintf(
+		"Mobile:  Performance %d, Accessibility %d, Best Practices %d, SEO %d\nDesktop: Performance %d, Accessibility %d, Best Practices %d, SEO %d",
+		$mobile['performance'], $mobile['accessibility'], $mobile['best_practices'], $mobile['seo'],
+		$desktop['performance'], $desktop['accessibility'], $desktop['best_practices'], $desktop['seo']
+	);
+
+	$lead_subject = 'Your website audit results for ' . $url;
+	$lead_body    = "Hi {$name},\n\nHere's a copy of your audit results for {$url}:\n\n{$scores_block}\n\nWant help fixing what's holding your site back? Just reply to this email.\n\n{$site_name}";
+	wp_mail( $email, $lead_subject, $lead_body );
+
+	$team_to      = get_option( 'admin_email' );
+	$team_subject = 'New audit lead: ' . $name;
+	$team_body    = "New lead from the audit tool.\n\nName: {$name}\nEmail: {$email}\nAudited URL: {$url}\n\n{$scores_block}\n\nView in wp-admin: " . admin_url( 'edit.php?post_type=rc_lead' );
+	wp_mail( $team_to, $team_subject, $team_body, array( 'Reply-To: ' . $name . ' <' . $email . '>' ) );
 }
 
 function rankcraft_handle_leads_submission( WP_REST_Request $request ) {
@@ -411,6 +453,8 @@ function rankcraft_handle_leads_submission( WP_REST_Request $request ) {
 	foreach ( $desktop as $meta_key => $value ) {
 		update_post_meta( $post_id, '_rc_desktop_' . $meta_key, $value );
 	}
+
+	rankcraft_send_lead_notifications( $name, $email, $url, $mobile, $desktop );
 
 	return new WP_REST_Response( array(
 		'success' => true,

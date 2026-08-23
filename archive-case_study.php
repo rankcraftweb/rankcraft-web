@@ -10,7 +10,7 @@ get_header();
 
 <section class="portfolio-archive">
 	<div class="container">
-		<h1>Our work</h1>
+		<h1>My work</h1>
 		<p class="section-intro">Real projects, real results. Here's what we've built for clients.</p>
 
 		<div class="portfolio-grid">

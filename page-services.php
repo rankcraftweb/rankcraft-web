@@ -22,7 +22,7 @@ get_header();
 
 <section class="services">
 	<div class="container">
-		<h2>What we do</h2>
+		<h2>What I do</h2>
 		<div class="services-grid">
 			<div class="service-card">
 				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="48" height="48" loading="lazy">
@@ -39,7 +39,7 @@ get_header();
 			<div class="service-card">
 				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-performance.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 				<h3>Performance audits</h3>
-				<p>A full technical audit of your existing site. We'll show you what's slowing you down and how to fix it.</p>
+				<p>A full technical audit of your existing site. I'll show you what's slowing you down and how to fix it.</p>
 				<a href="/performance-audits" class="link-arrow">Learn more →</a>
 			</div>
 		</div>

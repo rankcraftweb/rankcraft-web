@@ -1279,6 +1279,25 @@ textarea:focus-visible {
 		flex-direction: column;
 		align-items: center;
 	}
+
+	/* Same 769-900px squeeze as above: these grids stayed 3-column
+	   past the point the nav/hero/footer already went mobile,
+	   producing a half-migrated layout in that band. */
+	.services-grid, .steps-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.skills-list {
+		grid-template-columns: 1fr;
+	}
+
+	.cert-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.blog-grid {
+		grid-template-columns: 1fr;
+	}
 }
 
 /* Responsive */
@@ -1295,10 +1314,6 @@ textarea:focus-visible {
 	.case-study-cta .btn,
 	.case-study-cta .link-arrow {
 		text-align: center;
-	}
-
-	.services-grid, .steps-grid {
-		grid-template-columns: 1fr;
 	}
 
 	.stat-row {
@@ -1329,18 +1344,6 @@ textarea:focus-visible {
 	.about-hero-inner {
 		flex-direction: column;
 		text-align: center;
-	}
-
-	.skills-list {
-		grid-template-columns: 1fr;
-	}
-
-	.cert-grid {
-		grid-template-columns: 1fr;
-	}
-
-	.blog-grid {
-		grid-template-columns: 1fr;
 	}
 
 	.hero-text h1 {

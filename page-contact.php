@@ -21,7 +21,7 @@ while ( have_posts() ) :
 
 			<div class="contact-form-wrap">
 				<?php if ( isset( $_GET['contact'] ) && $_GET['contact'] === 'success' ) : ?>
-					<div class="form-notice form-notice-success">Thanks, your message has been sent. We'll get back to you within one business day.</div>
+					<div class="form-notice form-notice-success">Thanks, your message has been sent. I'll get back to you within one business day.</div>
 				<?php elseif ( isset( $_GET['contact'] ) && $_GET['contact'] === 'error' ) : ?>
 					<div class="form-notice form-notice-error">Something went wrong. Double check your details and try again, or email us directly.</div>
 				<?php endif; ?>

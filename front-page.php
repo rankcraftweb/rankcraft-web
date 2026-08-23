@@ -17,7 +17,7 @@ get_header();
 				<p class="hero-subhead">RankCraft builds WordPress websites engineered for speed and search, not just good looks. Get a free audit and see exactly where your site stands.</p>
 				<div class="hero-cta">
 					<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
-					<a href="/portfolio" class="btn btn-secondary">View our work</a>
+					<a href="/portfolio" class="btn btn-secondary">See my work</a>
 				</div>
 			</div>
 			<div class="hero-visual">
@@ -61,7 +61,7 @@ get_header();
 
 	<section class="services" id="services">
 		<div class="container">
-			<h2>What we do</h2>
+			<h2>What I do</h2>
 			<div class="services-grid">
 				<div class="service-card">
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="48" height="48" loading="lazy">
@@ -78,7 +78,7 @@ get_header();
 				<div class="service-card">
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-performance.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>Performance audits</h3>
-					<p>A full technical audit of your existing site. We'll show you what's slowing you down and how to fix it.</p>
+					<p>A full technical audit of your existing site. I'll show you what's slowing you down and how to fix it.</p>
 					<a href="/performance-audits" class="link-arrow">Learn more →</a>
 				</div>
 			</div>
@@ -97,12 +97,12 @@ get_header();
 				<div class="step">
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-2-report.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>Get your audit report</h3>
-					<p>We'll analyze your speed, SEO, and technical health, then send you a clear, no-jargon report.</p>
+					<p>I'll analyze your speed, SEO, and technical health, then send you a clear, no-jargon report.</p>
 				</div>
 				<div class="step">
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/step-icon-3-email.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>Get your results by email</h3>
-					<p>We'll send you the findings by email, along with what fixing them could mean for your business. No call needed.</p>
+					<p>I'll send you the findings by email, along with what fixing them could mean for your business. No call needed.</p>
 				</div>
 			</div>
 			<div id="audit-form" class="audit-form-anchor">

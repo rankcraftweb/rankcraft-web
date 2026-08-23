@@ -50,7 +50,7 @@ get_header();
 			<div class="step">
 				<span class="step-number">1</span>
 				<h3>Discovery &amp; planning</h3>
-				<p>We start with a quick email exchange to understand your business, goals, and what your current site is missing.</p>
+				<p>I start with a quick email exchange to understand your business, goals, and what your current site is missing.</p>
 			</div>
 			<div class="step">
 				<span class="step-number">2</span>

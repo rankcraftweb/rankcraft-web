@@ -57,6 +57,27 @@ class RankCraft_SEO_Meta {
 	}
 
 	/**
+	 * Google truncates meta descriptions around 155-160 characters.
+	 * Cut cleanly at a word boundary instead of mid-sentence.
+	 */
+	private static function truncate_description( $text, $limit = 155 ) {
+		$text = trim( $text );
+
+		if ( mb_strlen( $text ) <= $limit ) {
+			return $text;
+		}
+
+		$truncated  = mb_substr( $text, 0, $limit - 1 );
+		$last_space = mb_strrpos( $truncated, ' ' );
+
+		if ( false !== $last_space ) {
+			$truncated = mb_substr( $truncated, 0, $last_space );
+		}
+
+		return rtrim( $truncated, " .,;:-" ) . '…';
+	}
+
+	/**
 	 * Pick an image to represent the current page in social shares.
 	 */
 	private static function get_image_url() {
@@ -80,7 +101,7 @@ class RankCraft_SEO_Meta {
 	}
 
 	public static function output_meta_tags() {
-		$description = self::get_description();
+		$description = self::truncate_description( self::get_description() );
 		$title       = wp_get_document_title();
 		$image       = self::get_image_url();
 		$url         = self::get_current_url();
