@@ -593,10 +593,16 @@ textarea:focus-visible {
 	box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
+.portfolio-card-image {
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+}
+
 .portfolio-card-image img {
 	width: 100%;
-	height: auto;
+	height: 100%;
 	display: block;
+	object-fit: cover;
 }
 
 .portfolio-card-body {
