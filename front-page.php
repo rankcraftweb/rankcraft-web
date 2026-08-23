@@ -29,17 +29,33 @@ get_header();
 	<section class="proof">
 		<div class="container">
 			<p class="section-label">Real results, not promises</p>
-			<h2>From a slow, unranked site to a 100/100 SEO score</h2>
-			<p>Michael Rossi needed a website to serve two real estate markets, New York and Florida. He needed more than a nice design. He needed a site that loaded fast, ranked well, and actually brought in leads.</p>
-
-			<div class="stat-row">
-				<div class="stat"><span class="stat-number">99</span><span class="stat-label">Performance (mobile)</span></div>
-				<div class="stat"><span class="stat-number">100</span><span class="stat-label">SEO</span></div>
-				<div class="stat"><span class="stat-number">100</span><span class="stat-label">Best practices</span></div>
-				<div class="stat"><span class="stat-number">3</span><span class="stat-label">Valid schema items</span></div>
+			<h2>Real client sites, real numbers</h2>
+			<div class="services-grid proof-grid">
+				<div class="service-card">
+					<h3>Rossi Real Estate</h3>
+					<div class="stat-row">
+						<div class="stat"><span class="stat-number">99</span><span class="stat-label">Performance (mobile)</span></div>
+						<div class="stat"><span class="stat-number">100</span><span class="stat-label">SEO</span></div>
+					</div>
+					<a href="/portfolio/rossi-real-estate" class="link-arrow">Read the case study →</a>
+				</div>
+				<div class="service-card">
+					<h3>Ironclad Sites</h3>
+					<div class="stat-row">
+						<div class="stat"><span class="stat-number">97</span><span class="stat-label">Performance (mobile)</span></div>
+						<div class="stat"><span class="stat-number">100</span><span class="stat-label">SEO</span></div>
+					</div>
+					<a href="/portfolio/ironclad-sites-case-study" class="link-arrow">Read the case study →</a>
+				</div>
+				<div class="service-card">
+					<h3>The RankCraft Ecosystem</h3>
+					<div class="stat-row">
+						<div class="stat"><span class="stat-number">3</span><span class="stat-label">Connected products</span></div>
+						<div class="stat"><span class="stat-number">100%</span><span class="stat-label">Automated, audit to lead</span></div>
+					</div>
+					<a href="/portfolio/the-rankcraft-ecosystem" class="link-arrow">Read the case study →</a>
+				</div>
 			</div>
-
-			<a href="/portfolio/rossi-real-estate" class="link-arrow">Read the full case study →</a>
 		</div>
 	</section>
 

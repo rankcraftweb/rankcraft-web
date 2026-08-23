@@ -194,6 +194,20 @@ textarea:focus-visible {
 	text-align: center;
 }
 
+.proof-grid {
+	margin-top: 48px;
+}
+
+.proof-grid .service-card {
+	text-align: center;
+}
+
+.proof-grid .stat-row {
+	justify-content: center;
+	gap: 32px;
+	margin: 20px 0;
+}
+
 .section-label {
 	color: var(--rc-green);
 	font-weight: 500;
