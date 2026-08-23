@@ -13,7 +13,7 @@ get_header();
 	<section class="hero">
 		<div class="container hero-inner">
 			<div class="hero-text">
-				<h1>Fast, findable, and built to convert.</h1>
+				<h1>Custom WordPress development and technical SEO, built to convert.</h1>
 				<p class="hero-subhead">RankCraft builds WordPress websites engineered for speed and search, not just good looks. Get a free audit and see exactly where your site stands.</p>
 				<div class="hero-cta">
 					<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
