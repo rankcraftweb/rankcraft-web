@@ -329,8 +329,31 @@ function rankcraft_register_leads_rest_route() {
 		'callback'            => 'rankcraft_handle_leads_submission',
 		'permission_callback' => 'rankcraft_leads_permission_check',
 	) );
+
+	// A separate, dead-simple endpoint the audit tool can call when its
+	// own POST to /leads fails, so a broken lead doesn't just vanish
+	// into Vercel's function logs unseen. Same shared secret, no CPT
+	// dependency, just an email.
+	register_rest_route( 'rankcraft/v1', '/alert', array(
+		'methods'             => 'POST',
+		'callback'            => 'rankcraft_handle_alert_submission',
+		'permission_callback' => 'rankcraft_leads_permission_check',
+	) );
 }
 add_action( 'rest_api_init', 'rankcraft_register_leads_rest_route' );
+
+function rankcraft_handle_alert_submission( WP_REST_Request $request ) {
+	$params  = $request->get_json_params();
+	$message = isset( $params['message'] ) ? sanitize_textarea_field( $params['message'] ) : 'No details provided.';
+
+	wp_mail(
+		get_option( 'admin_email' ),
+		'RankCraft Audit: a lead capture failed',
+		"The audit tool tried to send a lead to rankcraftweb.com and it failed.\n\n{$message}\n\nCheck Vercel's function logs for the full error."
+	);
+
+	return new WP_REST_Response( array( 'success' => true ), 200 );
+}
 
 /**
  * Require a shared secret header matching RANKCRAFT_LEADS_SECRET. If
