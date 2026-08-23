@@ -23,8 +23,8 @@ get_header();
 <section class="service-overview">
 	<div class="container service-overview-inner">
 		<h2>Websites built to convert, not just look nice</h2>
-		<p>A good-looking site that loads slowly or doesn't rank won't grow your business. I build every site the way it needs to be built, hand-coded or with tools like Elementor, always optimized so it loads fast, ranks well, and holds up as your business grows.</p>
-		<p>That means a custom theme built around your content and goals, not a generic template stretched to fit. Every build includes structured data, accessible markup, and a foundation that's easy to maintain.</p>
+		<p>A good-looking site that loads slowly or doesn't rank won't grow your business. I build every site the way it needs to be built, hand-coded or with tools like Elementor, always optimized so it loads fast, ranks well, and holds up as your business grows. Not sure which approach fits your project? <a href="/elementor-vs-custom-wordpress-theme-which-one-actually-fits-your-business/">Here's how I decide</a>, using <a href="/portfolio/ironclad-sites-case-study">Ironclad Sites</a> as an example.</p>
+		<p>That means a custom theme built around your content and goals, not a generic template stretched to fit. Every build includes structured data, accessible markup, and a foundation that's easy to maintain, the same groundwork that makes <a href="/seo-and-local-search">SEO and local search</a> work effective from day one.</p>
 		<p>And because I handle every project personally, you're never waiting on a queue of other clients or explaining your business to a new account manager.</p>
 	</div>
 </section>

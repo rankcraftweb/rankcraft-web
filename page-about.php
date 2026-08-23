@@ -33,12 +33,12 @@ get_header();
 	<div class="container">
 		<h2>Core skills</h2>
 		<ul class="skills-list">
-			<li>Custom WordPress theme and plugin development</li>
+			<li><a href="/wordpress-development">Custom WordPress theme and plugin development</a></li>
 			<li>Full-stack development with Next.js, React, and TypeScript</li>
 			<li>REST API design and third-party API integration</li>
-			<li>Technical SEO and schema markup</li>
-			<li>On-page and local SEO strategy</li>
-			<li>Site performance and Core Web Vitals optimization</li>
+			<li><a href="/seo-and-local-search">Technical SEO and schema markup</a></li>
+			<li><a href="/seo-and-local-search">On-page and local SEO strategy</a></li>
+			<li><a href="/performance-audits">Site performance and Core Web Vitals optimization</a></li>
 			<li>Deployment and hosting (Vercel, Hostinger, SSH, WP-CLI)</li>
 			<li>Git version control</li>
 		</ul>

@@ -23,9 +23,9 @@ get_header();
 <section class="service-overview">
 	<div class="container service-overview-inner">
 		<h2>Ranking is about fundamentals, not tricks</h2>
-		<p>Most sites that don't rank aren't missing some secret tactic, they're missing the fundamentals: clean technical SEO, structured data search engines can actually read, and content that matches what people are searching for.</p>
-		<p>I focus on the fixes that move the needle for real businesses: local service providers, real estate, and home services companies that need to show up when someone nearby is ready to buy.</p>
-		<p>That includes technical SEO, on-page optimization, and local search signals like schema markup and Google Business Profile, tracked and reported on every month so you can see what's actually working.</p>
+		<p>Most sites that don't rank aren't missing some secret tactic, they're missing the fundamentals: clean technical SEO, structured data search engines can actually read, and content that matches what people are searching for. See <a href="/technical-seo-fixes-that-move-rankings/">5 technical SEO fixes that actually move rankings</a> for the specific checks I run.</p>
+		<p>I focus on the fixes that move the needle for real businesses: local service providers, real estate, and home services companies that need to show up when someone nearby is ready to buy. That's the same approach behind <a href="/portfolio/rossi-real-estate">Rossi Real Estate's</a> custom structured data upgrade.</p>
+		<p>That includes technical SEO, on-page optimization, and local search signals like schema markup and Google Business Profile, tracked and reported on every month so you can see what's actually working. If your site also needs a rebuild rather than just fixes, that's what <a href="/wordpress-development">custom WordPress development</a> is for.</p>
 	</div>
 </section>
 

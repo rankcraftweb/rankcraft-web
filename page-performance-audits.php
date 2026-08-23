@@ -23,8 +23,8 @@ get_header();
 <section class="service-overview">
 	<div class="container service-overview-inner">
 		<h2>Know what's broken before you fix it</h2>
-		<p>Before redesigning or rebuilding anything, it's worth knowing exactly what's actually holding your site back. A slow load time, missing schema, or a broken mobile layout can quietly cost you customers without you ever knowing why.</p>
-		<p>My audits go beyond an automated score. I dig into the real technical health of your site, speed, SEO, accessibility, and best practices, and translate the findings into a prioritized, plain-English list of what to fix and why it matters.</p>
+		<p>Before redesigning or rebuilding anything, it's worth knowing exactly what's actually holding your site back. A slow load time, missing schema, or a broken mobile layout can quietly cost you customers without you ever knowing why. If a rebuild does turn out to be the right call, that's what <a href="/wordpress-development">custom WordPress development</a> is for.</p>
+		<p>My audits go beyond an automated score. I dig into the real technical health of your site, speed, SEO, accessibility, and best practices, and translate the findings into a prioritized, plain-English list of what to fix and why it matters. Curious what that actually looks like? See <a href="/technical-seo-fixes-that-move-rankings/">5 technical SEO fixes that actually move rankings</a> and <a href="/why-your-wordpress-site-feels-slow/">why WordPress sites feel slow</a> for the specific issues I check every time, or see the results on <a href="/portfolio/rossi-real-estate">Rossi Real Estate's site</a>, audited and fixed from the ground up.</p>
 	</div>
 </section>
 
