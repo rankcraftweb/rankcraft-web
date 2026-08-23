@@ -45,8 +45,33 @@ function rankcraft_handle_contact_form() {
 
 	$sent = wp_mail( $to, $subject, $body, $headers );
 
+	rankcraft_record_contact_form_lead( $name, $email, $message );
+
 	wp_safe_redirect( add_query_arg( 'contact', $sent ? 'success' : 'error', wp_get_referer() ) );
 	exit;
+}
+
+/**
+ * Contact-form submissions used to be invisible to the rc_lead pipeline
+ * that the audit tool feeds — anyone who filled this form instead had
+ * no record in the same status pipeline. Route them into the same CPT,
+ * tagged by source, so there's one place to track every lead.
+ */
+function rankcraft_record_contact_form_lead( $name, $email, $message ) {
+	$post_id = wp_insert_post( array(
+		'post_type'   => 'rc_lead',
+		'post_title'  => $name,
+		'post_status' => 'publish',
+	), true );
+
+	if ( is_wp_error( $post_id ) ) {
+		return;
+	}
+
+	update_post_meta( $post_id, '_rc_email', $email );
+	update_post_meta( $post_id, '_rc_lead_status', 'new' );
+	update_post_meta( $post_id, '_rc_lead_source', 'contact_form' );
+	update_post_meta( $post_id, '_rc_message', $message );
 }
 add_action( 'template_redirect', 'rankcraft_handle_contact_form' );
 

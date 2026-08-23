@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php if ( ! is_user_logged_in() ) : ?>
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S1816MHVM3"></script>
+	<script async src="<?php echo esc_url( 'https://www.googletagmanager.com/gtag/js?id=' . RANKCRAFT_GA4_ID ); ?>"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
-	  gtag('config', 'G-S1816MHVM3');
+	  gtag('config', '<?php echo esc_js( RANKCRAFT_GA4_ID ); ?>');
 	</script>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php endif; ?>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/favicon-32.png' ); ?>">

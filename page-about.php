@@ -176,8 +176,8 @@ get_header();
 	<div class="container">
 		<h2>Want to work together?</h2>
 		<div class="about-cta-buttons">
-			<a href="/contact" class="btn btn-primary">Get in touch</a>
-			<a href="/portfolio" class="btn btn-secondary-dark">See my work</a>
+			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
+			<a href="/contact" class="btn btn-secondary-dark">Get in touch</a>
 		</div>
 	</div>
 </section>

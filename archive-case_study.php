@@ -11,7 +11,7 @@ get_header();
 <section class="portfolio-archive">
 	<div class="container">
 		<h1>My work</h1>
-		<p class="section-intro">Real projects, real results. Here's what we've built for clients.</p>
+		<p class="section-intro">Real projects, real results. Here's what I've built for clients.</p>
 
 		<div class="portfolio-grid">
 			<?php if ( have_posts() ) : ?>
@@ -27,6 +27,15 @@ get_header();
 			<?php else : ?>
 				<p><?php esc_html_e( 'Case studies coming soon.', 'rankcraft-web' ); ?></p>
 			<?php endif; ?>
+		</div>
+
+		<div class="blog-pagination">
+			<?php
+			echo paginate_links( array(
+				'prev_text' => '← Previous',
+				'next_text' => 'Next →',
+			) );
+			?>
 		</div>
 	</div>
 </section>

@@ -17,6 +17,7 @@ get_header();
 			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 			<a href="/contact" class="btn btn-secondary">Get in touch</a>
 		</div>
+		<p class="hero-cta-note">Free audit = an instant automated report. Get in touch = talk it through with me directly.</p>
 	</div>
 </section>
 

@@ -41,9 +41,22 @@ function rankcraft_register_leads_post_type() {
 		'has_archive'         => false,
 		'rewrite'             => false,
 		'query_var'           => false,
-		'capability_type'     => 'post',
 		'menu_icon'           => 'dashicons-groups',
 		'supports'            => array( 'title' ),
+		// Leads carry names, emails, and audited URLs — admin-only, not
+		// the default "anyone with edit_posts" post capabilities.
+		'capability_type'     => array( 'rc_lead', 'rc_leads' ),
+		'map_meta_cap'        => true,
+		'capabilities'        => array(
+			'edit_post'          => 'manage_options',
+			'read_post'          => 'manage_options',
+			'delete_post'        => 'manage_options',
+			'edit_posts'         => 'manage_options',
+			'edit_others_posts'  => 'manage_options',
+			'publish_posts'      => 'manage_options',
+			'read_private_posts' => 'manage_options',
+			'delete_posts'       => 'manage_options',
+		),
 	) );
 }
 add_action( 'init', 'rankcraft_register_leads_post_type' );
@@ -446,6 +459,7 @@ function rankcraft_handle_leads_submission( WP_REST_Request $request ) {
 	update_post_meta( $post_id, '_rc_email', $email );
 	update_post_meta( $post_id, '_rc_audited_url', $url );
 	update_post_meta( $post_id, '_rc_lead_status', 'new' );
+	update_post_meta( $post_id, '_rc_lead_source', 'audit_tool' );
 
 	foreach ( $mobile as $meta_key => $value ) {
 		update_post_meta( $post_id, '_rc_mobile_' . $meta_key, $value );

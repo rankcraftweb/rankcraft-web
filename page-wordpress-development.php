@@ -10,6 +10,7 @@ get_header();
 
 <section class="service-hero">
 	<div class="container">
+		<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="56" height="56" class="service-hero-icon">
 		<p class="section-label">Services</p>
 		<h1>Custom WordPress development built to perform</h1>
 		<p class="service-hero-lead">Hand-coded or built with tools like Elementor depending on what the project needs, always optimized for speed and search. I build clean, fast WordPress sites tailored to your business.</p>
@@ -70,8 +71,8 @@ get_header();
 	<div class="container">
 		<h2>Ready to build a site that works as hard as you do?</h2>
 		<div class="about-cta-buttons">
-			<a href="/contact" class="btn btn-primary">Get in touch</a>
-			<a href="/portfolio" class="btn btn-secondary-dark">See my work</a>
+			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
+			<a href="/contact" class="btn btn-secondary-dark">Get in touch</a>
 		</div>
 	</div>
 </section>
