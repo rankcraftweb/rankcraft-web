@@ -368,6 +368,16 @@ function rankcraft_register_leads_rest_route() {
 		'callback'            => 'rankcraft_handle_alert_submission',
 		'permission_callback' => 'rankcraft_leads_permission_check',
 	) );
+
+	// Public, unauthenticated on purpose - the token itself is the
+	// access control, same as any "unlisted" share link. Never returns
+	// the lead's name/email, only the audit results, so a forwarded
+	// link can't leak anyone's contact info.
+	register_rest_route( 'rankcraft/v1', '/report/(?P<token>[a-zA-Z0-9]+)', array(
+		'methods'             => 'GET',
+		'callback'            => 'rankcraft_handle_report_request',
+		'permission_callback' => '__return_true',
+	) );
 }
 add_action( 'rest_api_init', 'rankcraft_register_leads_rest_route' );
 
@@ -438,11 +448,94 @@ function rankcraft_leads_rate_limited() {
 }
 
 /**
+ * Separate, more generous rate limit for reading a report - legitimate
+ * visitors reload or share the link, unlike the write endpoint above.
+ * Mainly here to blunt token-guessing/enumeration attempts.
+ */
+function rankcraft_report_rate_limited() {
+	$ip  = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : 'unknown';
+	$key = 'rc_report_rl_' . md5( $ip );
+
+	$count = (int) get_transient( $key );
+	if ( $count >= 30 ) {
+		return true;
+	}
+
+	set_transient( $key, $count + 1, HOUR_IN_SECONDS );
+	return false;
+}
+
+/**
+ * How long a shareable report link stays live before it 404s. Not a
+ * hard privacy requirement here (the report has no PII in it), just
+ * good practice not to keep an access path open forever.
+ */
+const RANKCRAFT_REPORT_TTL = 90 * DAY_IN_SECONDS;
+
+function rankcraft_handle_report_request( WP_REST_Request $request ) {
+	if ( rankcraft_report_rate_limited() ) {
+		return new WP_REST_Response( array(
+			'success' => false,
+			'message' => 'Too many requests. Please try again later.',
+		), 429 );
+	}
+
+	$token = sanitize_text_field( $request->get_param( 'token' ) );
+
+	$posts = get_posts( array(
+		'post_type'      => 'rc_lead',
+		'post_status'    => 'publish',
+		'meta_key'       => '_rc_report_token',
+		'meta_value'     => $token,
+		'posts_per_page' => 1,
+		'fields'         => 'ids',
+	) );
+
+	if ( empty( $posts ) ) {
+		return new WP_REST_Response( array(
+			'success' => false,
+			'message' => 'Report not found.',
+		), 404 );
+	}
+
+	$post_id    = $posts[0];
+	$created_at = (int) get_post_meta( $post_id, '_rc_report_created_at', true );
+
+	if ( ! $created_at || ( time() - $created_at ) > RANKCRAFT_REPORT_TTL ) {
+		return new WP_REST_Response( array(
+			'success' => false,
+			'message' => 'This report has expired.',
+		), 410 );
+	}
+
+	// Deliberately excludes _rc_email and the post title (the lead's
+	// name) - this endpoint is public, so only the audit results
+	// themselves are safe to return.
+	return new WP_REST_Response( array(
+		'success'   => true,
+		'url'       => get_post_meta( $post_id, '_rc_audited_url', true ),
+		'mobile'    => array(
+			'performance'   => (int) get_post_meta( $post_id, '_rc_mobile_performance', true ),
+			'accessibility' => (int) get_post_meta( $post_id, '_rc_mobile_accessibility', true ),
+			'bestPractices' => (int) get_post_meta( $post_id, '_rc_mobile_best_practices', true ),
+			'seo'           => (int) get_post_meta( $post_id, '_rc_mobile_seo', true ),
+		),
+		'desktop'   => array(
+			'performance'   => (int) get_post_meta( $post_id, '_rc_desktop_performance', true ),
+			'accessibility' => (int) get_post_meta( $post_id, '_rc_desktop_accessibility', true ),
+			'bestPractices' => (int) get_post_meta( $post_id, '_rc_desktop_best_practices', true ),
+			'seo'           => (int) get_post_meta( $post_id, '_rc_desktop_seo', true ),
+		),
+		'fetchedAt' => gmdate( 'c', $created_at ),
+	), 200 );
+}
+
+/**
  * Email both sides of a new lead: a copy of their own results to the
  * visitor, and a heads-up to the team inbox so a new lead doesn't sit
  * unseen until someone happens to open wp-admin.
  */
-function rankcraft_send_lead_notifications( $name, $email, $url, $mobile, $desktop ) {
+function rankcraft_send_lead_notifications( $name, $email, $url, $mobile, $desktop, $report_url = '' ) {
 	$site_name = get_bloginfo( 'name' );
 
 	$scores_block = sprintf(
@@ -451,8 +544,9 @@ function rankcraft_send_lead_notifications( $name, $email, $url, $mobile, $deskt
 		$desktop['performance'], $desktop['accessibility'], $desktop['best_practices'], $desktop['seo']
 	);
 
+	$report_line  = $report_url ? "\n\nView this report anytime: {$report_url}" : '';
 	$lead_subject = 'Your website audit results for ' . $url;
-	$lead_body    = "Hi {$name},\n\nHere's a copy of your audit results for {$url}:\n\n{$scores_block}\n\nWant help fixing what's holding your site back? Just reply to this email.\n\n{$site_name}";
+	$lead_body    = "Hi {$name},\n\nHere's a copy of your audit results for {$url}:\n\n{$scores_block}{$report_line}\n\nWant help fixing what's holding your site back? Just reply to this email.\n\n{$site_name}";
 	wp_mail( $email, $lead_subject, $lead_body );
 
 	$team_to      = get_option( 'admin_email' );
@@ -520,10 +614,18 @@ function rankcraft_handle_leads_submission( WP_REST_Request $request ) {
 		update_post_meta( $post_id, '_rc_desktop_' . $meta_key, $value );
 	}
 
-	rankcraft_send_lead_notifications( $name, $email, $url, $mobile, $desktop );
+	// Cryptographically random, unguessable - this token is the only
+	// access control on the public report endpoint.
+	$token = bin2hex( random_bytes( 16 ) );
+	update_post_meta( $post_id, '_rc_report_token', $token );
+	update_post_meta( $post_id, '_rc_report_created_at', time() );
+	$report_url = 'https://audit.rankcraftweb.com/report/' . $token;
+
+	rankcraft_send_lead_notifications( $name, $email, $url, $mobile, $desktop, $report_url );
 
 	return new WP_REST_Response( array(
-		'success' => true,
-		'id'      => $post_id,
+		'success'    => true,
+		'id'         => $post_id,
+		'reportUrl'  => $report_url,
 	), 201 );
 }
