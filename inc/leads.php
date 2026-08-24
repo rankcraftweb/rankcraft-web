@@ -347,6 +347,66 @@ function rankcraft_lead_status_filter_query( $query ) {
 add_action( 'pre_get_posts', 'rankcraft_lead_status_filter_query' );
 
 /**
+ * Small "at a glance" dashboard widget over data that's already being
+ * captured (status pipeline + audit scores) but never rolled up
+ * anywhere. No new tracking, just a read of what's already there.
+ */
+function rankcraft_register_leads_dashboard_widget() {
+	if ( ! current_user_can( 'edit_rc_leads' ) ) {
+		return;
+	}
+
+	wp_add_dashboard_widget(
+		'rankcraft_leads_overview',
+		__( 'Leads Overview', 'rankcraft-web' ),
+		'rankcraft_render_leads_dashboard_widget'
+	);
+}
+add_action( 'wp_dashboard_setup', 'rankcraft_register_leads_dashboard_widget' );
+
+function rankcraft_render_leads_dashboard_widget() {
+	$statuses = rankcraft_lead_statuses();
+	$sources  = array(
+		'audit_tool'   => __( 'Audit tool', 'rankcraft-web' ),
+		'contact_form' => __( 'Contact form', 'rankcraft-web' ),
+	);
+
+	echo '<p><strong>' . esc_html__( 'By status', 'rankcraft-web' ) . '</strong></p><ul style="margin-bottom:16px;">';
+	foreach ( $statuses as $value => $meta ) {
+		$count = new WP_Query( array(
+			'post_type'      => 'rc_lead',
+			'post_status'    => 'publish',
+			'meta_key'       => '_rc_lead_status',
+			'meta_value'     => $value,
+			'posts_per_page' => 1,
+			'fields'         => 'ids',
+		) );
+		printf( '<li>%s: <strong>%d</strong></li>', esc_html( $meta['label'] ), (int) $count->found_posts );
+	}
+	echo '</ul>';
+
+	echo '<p><strong>' . esc_html__( 'By source', 'rankcraft-web' ) . '</strong></p><ul>';
+	foreach ( $sources as $value => $label ) {
+		$count = new WP_Query( array(
+			'post_type'      => 'rc_lead',
+			'post_status'    => 'publish',
+			'meta_key'       => '_rc_lead_source',
+			'meta_value'     => $value,
+			'posts_per_page' => 1,
+			'fields'         => 'ids',
+		) );
+		printf( '<li>%s: <strong>%d</strong></li>', esc_html( $label ), (int) $count->found_posts );
+	}
+	echo '</ul>';
+
+	printf(
+		'<p style="margin-top:12px;"><a href="%s">%s</a></p>',
+		esc_url( admin_url( 'edit.php?post_type=rc_lead' ) ),
+		esc_html__( 'View all leads →', 'rankcraft-web' )
+	);
+}
+
+/**
  * Public REST endpoint the audit tool posts new leads to. Locked down
  * with a shared secret (see RANKCRAFT_LEADS_SECRET in wp-config.php)
  * since this is a server-to-server call from rankcraft-audit, not a

@@ -24,8 +24,8 @@ get_header();
 		<h2>How I work</h2>
 		<p>Most agencies hand your project between account managers, designers, and developers before it ever gets built. RankCraft is different: it's just me. When you work with RankCraft, you're talking directly to the person writing the code, running the SEO audit, and fixing what's broken.</p>
 		<p>That means fewer handoffs, faster turnaround, and someone who's personally accountable for the results, not just the deliverable.</p>
-		<p>I got here through hands-on practice rather than a single formal path: hundreds of hours building real front-end projects, hands-on client work managing WordPress sites and SEO, and continuously testing what actually moves rankings versus what's just theory.</p>
 		<p>Before freelancing, I spent years as a technician in industrial and product engineering roles, work that was structured, procedural, and documentation-driven. I bring that same discipline to client sites: clear audits, systematic fixes, and records of what changed and why.</p>
+		<p>I got here through hands-on practice rather than a single formal path: hundreds of hours building real front-end projects, hands-on client work managing WordPress sites and SEO, and continuously testing what actually moves rankings versus what's just theory.</p>
 	</div>
 </section>
 

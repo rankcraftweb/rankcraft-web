@@ -47,6 +47,16 @@ get_header();
 	</div>
 </section>
 
+<section class="service-overview">
+	<div class="container service-overview-inner">
+		<h2>Which one do you actually need?</h2>
+		<p><strong>Building a new site, or replacing one that's holding you back?</strong> Start with <a href="/wordpress-development">WordPress development</a>.</p>
+		<p><strong>Have a site already, but it's not showing up in search or ranking where it should?</strong> That's <a href="/seo-and-local-search">SEO and local search</a>.</p>
+		<p><strong>Not sure what's actually wrong, just that something feels off?</strong> A <a href="/performance-audits">performance audit</a> tells you exactly what to fix before you commit to anything bigger.</p>
+		<p>Most projects end up touching more than one of these; the audit is usually the fastest way to find out where to start.</p>
+	</div>
+</section>
+
 <section class="about-cta">
 	<div class="container">
 		<h2>Not sure which one you need?</h2>

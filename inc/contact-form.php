@@ -34,7 +34,20 @@ function rankcraft_handle_contact_form() {
 	$message = isset( $_POST['rc_message'] ) ? sanitize_textarea_field( $_POST['rc_message'] ) : '';
 
 	if ( empty( $name ) || empty( $message ) || ! is_email( $email ) ) {
-		wp_safe_redirect( add_query_arg( 'contact', 'error', wp_get_referer() ) );
+		// A failed submit used to bounce back to a fully blank form.
+		// Stash what was typed under a one-time token so the form can
+		// refill itself instead of making the visitor retype everything.
+		$retry_token = wp_generate_password( 20, false );
+		set_transient( 'rc_contact_retry_' . $retry_token, array(
+			'name'    => $name,
+			'email'   => $email,
+			'message' => $message,
+		), 5 * MINUTE_IN_SECONDS );
+
+		wp_safe_redirect( add_query_arg( array(
+			'contact'  => 'error',
+			'rc_retry' => $retry_token,
+		), wp_get_referer() ) );
 		exit;
 	}
 
@@ -79,6 +92,17 @@ add_action( 'template_redirect', 'rankcraft_handle_contact_form' );
  * Render the contact form markup. Call with rankcraft_contact_form() in templates.
  */
 function rankcraft_contact_form() {
+	$sticky = array( 'name' => '', 'email' => '', 'message' => '' );
+
+	if ( isset( $_GET['rc_retry'] ) ) {
+		$retry_token = sanitize_text_field( wp_unslash( $_GET['rc_retry'] ) );
+		$stashed     = get_transient( 'rc_contact_retry_' . $retry_token );
+
+		if ( is_array( $stashed ) ) {
+			$sticky = wp_parse_args( $stashed, $sticky );
+			delete_transient( 'rc_contact_retry_' . $retry_token ); // one-time use
+		}
+	}
 	?>
 	<form method="post" class="contact-form" action="">
 		<?php wp_nonce_field( 'rankcraft_contact_submit', 'rankcraft_contact_nonce' ); ?>
@@ -91,17 +115,17 @@ function rankcraft_contact_form() {
 
 		<div class="form-row">
 			<label for="rc_name">Name</label>
-			<input type="text" name="rc_name" id="rc_name" required>
+			<input type="text" name="rc_name" id="rc_name" value="<?php echo esc_attr( $sticky['name'] ); ?>" required>
 		</div>
 
 		<div class="form-row">
 			<label for="rc_email">Email</label>
-			<input type="email" name="rc_email" id="rc_email" required>
+			<input type="email" name="rc_email" id="rc_email" value="<?php echo esc_attr( $sticky['email'] ); ?>" required>
 		</div>
 
 		<div class="form-row">
 			<label for="rc_message">Message</label>
-			<textarea name="rc_message" id="rc_message" rows="5" required></textarea>
+			<textarea name="rc_message" id="rc_message" rows="5" required><?php echo esc_textarea( $sticky['message'] ); ?></textarea>
 		</div>
 
 		<button type="submit" class="btn btn-primary">Send message</button>

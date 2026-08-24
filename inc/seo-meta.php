@@ -100,11 +100,27 @@ class RankCraft_SEO_Meta {
 		return home_url( add_query_arg( array(), $wp->request ) );
 	}
 
+	/**
+	 * WordPress core's rel_canonical() doesn't output a tag for the
+	 * blog listing (page_for_posts) or the case_study archive on this
+	 * site, so add an explicit one for just those two rather than
+	 * relying on core here.
+	 */
+	private static function output_canonical() {
+		if ( ! is_home() && ! is_post_type_archive( 'case_study' ) ) {
+			return;
+		}
+
+		printf( '<link rel="canonical" href="%s">' . "\n", esc_url( self::get_current_url() ) );
+	}
+
 	public static function output_meta_tags() {
 		$description = self::truncate_description( self::get_description() );
 		$title       = wp_get_document_title();
 		$image       = self::get_image_url();
 		$url         = self::get_current_url();
+
+		self::output_canonical();
 
 		echo "\n<!-- Meta description & Open Graph (RankCraft) -->\n";
 		printf( '<meta name="description" content="%s">' . "\n", esc_attr( $description ) );

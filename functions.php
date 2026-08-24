@@ -42,6 +42,17 @@ function rankcraft_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'rankcraft_enqueue_assets' );
 
 /**
+ * Basic hardening headers. HSTS is defense-in-depth (HTTP already
+ * redirects to HTTPS), and hiding the PHP version stops it from being
+ * handed out for free in every response.
+ */
+function rankcraft_security_headers() {
+	header( 'Strict-Transport-Security: max-age=31536000; includeSubDomains' );
+	header_remove( 'X-Powered-By' );
+}
+add_action( 'send_headers', 'rankcraft_security_headers' );
+
+/**
  * Redirect legacy URLs that are still indexed but no longer resolve
  * to a page (replaced by /performance-audits/ and /portfolio/).
  * /services/ used to redirect here too, but now has a real page.

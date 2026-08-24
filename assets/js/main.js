@@ -4,24 +4,29 @@
  */
 
 document.addEventListener( 'DOMContentLoaded', function () {
-	const revealEls = document.querySelectorAll( '.service-card, .step, .stat' );
+	// Feature-detect first: if IntersectionObserver isn't available,
+	// skip the opacity/transform setup entirely rather than leaving
+	// content permanently invisible with no way to reveal it.
+	if ( 'IntersectionObserver' in window ) {
+		const revealEls = document.querySelectorAll( '.service-card, .step, .stat' );
 
-	const observer = new IntersectionObserver( ( entries ) => {
-		entries.forEach( ( entry ) => {
-			if ( entry.isIntersecting ) {
-				entry.target.style.opacity = '1';
-				entry.target.style.transform = 'translateY(0)';
-				observer.unobserve( entry.target );
-			}
+		const observer = new IntersectionObserver( ( entries ) => {
+			entries.forEach( ( entry ) => {
+				if ( entry.isIntersecting ) {
+					entry.target.style.opacity = '1';
+					entry.target.style.transform = 'translateY(0)';
+					observer.unobserve( entry.target );
+				}
+			} );
+		}, { threshold: 0.15 } );
+
+		revealEls.forEach( ( el ) => {
+			el.style.opacity = '0';
+			el.style.transform = 'translateY(16px)';
+			el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+			observer.observe( el );
 		} );
-	}, { threshold: 0.15 } );
-
-	revealEls.forEach( ( el ) => {
-		el.style.opacity = '0';
-		el.style.transform = 'translateY(16px)';
-		el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-		observer.observe( el );
-	} );
+	}
 
 	/**
 	 * Mobile nav toggle.
@@ -31,11 +36,29 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	const siteHeader = document.querySelector( '.site-header' );
 
 	if ( navToggle && navWrap ) {
+		// Keyboard focus and screen readers shouldn't be able to reach
+		// content behind the open mobile nav overlay. Everything at the
+		// body's top level except the header (which holds the toggle and
+		// the nav itself) gets marked inert while the nav is open.
+		const setBackgroundInert = ( isInert ) => {
+			Array.from( document.body.children ).forEach( ( child ) => {
+				if ( child === siteHeader ) {
+					return;
+				}
+				if ( isInert ) {
+					child.setAttribute( 'inert', '' );
+				} else {
+					child.removeAttribute( 'inert' );
+				}
+			} );
+		};
+
 		const closeNav = () => {
 			navWrap.classList.remove( 'is-open' );
 			navToggle.classList.remove( 'is-active' );
 			navToggle.setAttribute( 'aria-expanded', 'false' );
 			document.body.style.overflow = '';
+			setBackgroundInert( false );
 		};
 
 		navToggle.addEventListener( 'click', () => {
@@ -52,8 +75,10 @@ document.addEventListener( 'DOMContentLoaded', function () {
 					navWrap.style.top = siteHeader.getBoundingClientRect().bottom + 'px';
 				}
 				document.body.style.overflow = 'hidden';
+				setBackgroundInert( true );
 			} else {
 				document.body.style.overflow = '';
+				setBackgroundInert( false );
 			}
 		} );
 
