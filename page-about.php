@@ -23,7 +23,7 @@ get_header();
 	<div class="container about-bio-inner">
 		<h2>How I work</h2>
 		<p>Most agencies hand your project between account managers, designers, and developers before it ever gets built. RankCraft is different: it's just me. When you work with RankCraft, you're talking directly to the person writing the code, running the SEO audit, and fixing what's broken.</p>
-		<p>That means fewer handoffs, faster turnaround, and someone who's personally accountable for the results, not just the deliverable.</p>
+		<p>That means fewer handoffs, faster turnaround, and someone who's personally accountable for the results, not just the deliverable. You can see that in the <a href="/portfolio">portfolio</a> — real client sites, with the numbers to back them up.</p>
 		<p>Before freelancing, I spent years as a technician in industrial and product engineering roles, work that was structured, procedural, and documentation-driven. I bring that same discipline to client sites: clear audits, systematic fixes, and records of what changed and why.</p>
 		<p>I got here through hands-on practice rather than a single formal path: hundreds of hours building real front-end projects, hands-on client work managing WordPress sites and SEO, and continuously testing what actually moves rankings versus what's just theory.</p>
 	</div>
@@ -60,7 +60,7 @@ get_header();
 				<ul>
 					<li>Manage and maintain 3 live client WordPress sites, handling hosting, updates, and technical performance</li>
 					<li>Deliver technical SEO audits and WordPress builds for clients in real estate, home services, and local business</li>
-					<li>Building RankCraft, a founder-led platform combining site auditing, technical SEO scoring, and client workflow management</li>
+					<li>Building <a href="/portfolio/the-rankcraft-ecosystem">RankCraft, a founder-led platform</a> combining site auditing, technical SEO scoring, and client workflow management</li>
 				</ul>
 			</div>
 
