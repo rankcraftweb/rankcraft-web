@@ -283,6 +283,8 @@ textarea:focus-visible {
 	border-radius: 12px;
 	padding: 32px;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .service-card img, .step img {
@@ -290,9 +292,13 @@ textarea:focus-visible {
 	border-radius: 12px;
 }
 
+/* margin-top: auto pins the link to the bottom of the card, so cards
+   with shorter descriptions still line up their button with the rest
+   of the row instead of floating higher. */
 .service-card .link-arrow {
 	display: block;
-	margin-top: 12px;
+	margin-top: auto;
+	padding-top: 12px;
 }
 
 /* How it works */
