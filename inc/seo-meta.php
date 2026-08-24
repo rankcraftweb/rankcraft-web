@@ -88,7 +88,10 @@ class RankCraft_SEO_Meta {
 			}
 		}
 
-		return wp_get_attachment_image_url( 371, 'full' );
+		// A dedicated fallback card, not the homepage hero mockup, so a
+		// page without its own image doesn't share previews that look
+		// like they're for the homepage specifically.
+		return wp_get_attachment_image_url( 377, 'full' );
 	}
 
 	private static function get_og_type() {
