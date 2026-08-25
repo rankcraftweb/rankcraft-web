@@ -48,8 +48,6 @@ get_header();
 <section class="experience">
 	<div class="container">
 		<h2>Experience</h2>
-		<p class="section-intro">From structured technical documentation to freelance web and SEO work.</p>
-
 		<div class="experience-list">
 			<div class="experience-item">
 				<div class="experience-header">
@@ -76,54 +74,6 @@ get_header();
 					<li>Provide ongoing hosting and management of both clients' live production sites, including updates, uptime monitoring, and technical support</li>
 					<li>Implemented structured data (schema.org) for real-estate and service-business clients, validated through Google's Rich Results Test with zero errors</li>
 					<li>Integrated third-party services including IDX Broker for real-estate MLS listings, and built a custom WordPress plugin for schema markup where off-the-shelf plugins fell short</li>
-				</ul>
-			</div>
-
-			<div class="experience-item">
-				<div class="experience-header">
-					<h3>Technician I — Product Engineering</h3>
-					<span class="experience-date">Jun 2022 – Feb 2026</span>
-				</div>
-				<p class="experience-role">Analog Devices General Trias Inc.</p>
-				<ul>
-					<li>Set up, calibrated, and repaired automated test equipment and hardware, tracing yield and QA failures to circuit-level faults</li>
-					<li>Recorded test results and reported findings to engineering teams through structured tracking systems</li>
-				</ul>
-			</div>
-
-			<div class="experience-item">
-				<div class="experience-header">
-					<h3>Technician I — Equipment Maintenance</h3>
-					<span class="experience-date">Dec 2021 – Apr 2022</span>
-				</div>
-				<p class="experience-role">Telford Services Philippines Inc.</p>
-				<ul>
-					<li>Set up, converted, and calibrated automated test handlers and sub-assemblies, diagnosing and repairing hardware faults</li>
-					<li>Ran tests and logged data for engineers, and performed predictive maintenance to prevent downtime</li>
-				</ul>
-			</div>
-
-			<div class="experience-item">
-				<div class="experience-header">
-					<h3>In-Process Quality Assurance (IPQA) Inspector</h3>
-					<span class="experience-date">Feb 2018 – Jul 2020</span>
-				</div>
-				<p class="experience-role">Onsemi Philippines Inc.</p>
-				<ul>
-					<li>Inspected and tested production lots against sampling specifications, deciding whether to accept or reject non-conforming output</li>
-					<li>Audited floor operations for SOP and calibration compliance, and helped resolve process or quality deviations</li>
-				</ul>
-			</div>
-
-			<div class="experience-item">
-				<div class="experience-header">
-					<h3>Technical Assistant</h3>
-					<span class="experience-date">Oct 2013 – Jan 2018</span>
-				</div>
-				<p class="experience-role">LBG Industries Inc.</p>
-				<ul>
-					<li>Tested and evaluated raw materials and production samples against quality guidelines, logging results and flagging deviations</li>
-					<li>Maintained testing instruments and the lab workspace, and helped keep supplies stocked</li>
 				</ul>
 			</div>
 		</div>
