@@ -53,6 +53,17 @@ get_header();
 		<div class="experience-list">
 			<div class="experience-item">
 				<div class="experience-header">
+					<h3>Founder, RankCraft</h3>
+					<span class="experience-date">Mar 2026 – Present</span>
+				</div>
+				<p class="experience-role">Self-employed</p>
+				<ul>
+					<li>Building <a href="/portfolio/the-rankcraft-ecosystem">RankCraft, a founder-led platform</a> combining site auditing, technical SEO scoring, and client workflow management</li>
+				</ul>
+			</div>
+
+			<div class="experience-item">
+				<div class="experience-header">
 					<h3>Freelance WordPress Developer &amp; Technical SEO Specialist</h3>
 					<span class="experience-date">Mar 2026 – Present</span>
 				</div>
@@ -60,7 +71,6 @@ get_header();
 				<ul>
 					<li>Manage and maintain 3 live client WordPress sites, handling hosting, updates, and technical performance</li>
 					<li>Deliver technical SEO audits and WordPress builds for clients in real estate, home services, and local business</li>
-					<li>Building <a href="/portfolio/the-rankcraft-ecosystem">RankCraft, a founder-led platform</a> combining site auditing, technical SEO scoring, and client workflow management</li>
 				</ul>
 			</div>
 
