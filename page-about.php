@@ -128,8 +128,11 @@ get_header();
 				</div>
 				<p class="experience-role">LBG Industries Inc.</p>
 				<ul>
-					<li>Maintained project documentation and technical records</li>
-					<li>Assisted in preparing operational and equipment documentation</li>
+					<li>Inspect, test, and evaluate scrap materials and production samples to ensure they meet quality guidelines</li>
+					<li>Assist in setting up equipment and running routine physical or chemical tests on raw materials and output</li>
+					<li>Log test results accurately into sheets or digital systems and report deviations to senior staff</li>
+					<li>Clean and maintain testing instruments, tools, and the general workspace to ensure a safe environment</li>
+					<li>Monitor laboratory and testing supplies and assist in requesting replenishment items when stock is low</li>
 				</ul>
 			</div>
 		</div>
