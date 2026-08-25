@@ -6,9 +6,12 @@
 document.addEventListener( 'DOMContentLoaded', function () {
 	// Feature-detect first: if IntersectionObserver isn't available,
 	// skip the opacity/transform setup entirely rather than leaving
-	// content permanently invisible with no way to reveal it.
-	if ( 'IntersectionObserver' in window ) {
-		const revealEls = document.querySelectorAll( '.service-card, .step, .stat' );
+	// content permanently invisible with no way to reveal it. Same for
+	// visitors who've asked their OS/browser for reduced motion.
+	const prefersReducedMotion = window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
+
+	if ( 'IntersectionObserver' in window && ! prefersReducedMotion ) {
+		const revealEls = document.querySelectorAll( '.service-card, .step, .stat, .experience-item' );
 
 		const observer = new IntersectionObserver( ( entries ) => {
 			entries.forEach( ( entry ) => {

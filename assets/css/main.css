@@ -1078,17 +1078,45 @@ textarea:focus-visible {
 }
 
 .experience-list {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
 	margin-top: 40px;
+	padding-left: 32px;
+}
+
+/* The vertical timeline line, drawn once behind every item. It sits
+   in the padding-left gutter so it never overlaps the item cards. */
+.experience-list::before {
+	content: '';
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 9px;
+	width: 2px;
+	background: var(--rc-border);
 }
 
 .experience-item {
+	position: relative;
 	background: white;
 	border: 1px solid var(--rc-border);
 	border-radius: 12px;
 	padding: 28px;
+}
+
+/* The dot marking each item on the timeline. */
+.experience-item::before {
+	content: '';
+	position: absolute;
+	top: 26px;
+	left: -29px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: var(--rc-green);
+	border: 3px solid var(--rc-off-white);
 }
 
 .experience-header {
@@ -1374,5 +1402,17 @@ textarea:focus-visible {
 
 	.hero-text h1 {
 		font-size: 32px;
+	}
+
+	.experience-list {
+		padding-left: 24px;
+	}
+
+	.experience-list::before {
+		left: 5px;
+	}
+
+	.experience-item::before {
+		left: -21px;
 	}
 }
