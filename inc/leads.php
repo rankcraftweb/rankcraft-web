@@ -347,6 +347,128 @@ function rankcraft_lead_status_filter_query( $query ) {
 add_action( 'pre_get_posts', 'rankcraft_lead_status_filter_query' );
 
 /**
+ * The edit screen only supports a title (leads aren't posts), so
+ * without this the details wp-admin already stores per lead - email,
+ * audited URL, scores, source - are only visible back on the list
+ * table. Add a meta box with all of it, plus a notes field for
+ * follow-up context, so opening a lead is actually useful.
+ */
+function rankcraft_register_lead_meta_box() {
+	add_meta_box(
+		'rc_lead_details',
+		__( 'Lead Details', 'rankcraft-web' ),
+		'rankcraft_render_lead_meta_box',
+		'rc_lead',
+		'normal',
+		'high'
+	);
+}
+add_action( 'add_meta_boxes', 'rankcraft_register_lead_meta_box' );
+
+function rankcraft_render_lead_meta_box( $post ) {
+	wp_nonce_field( 'rankcraft_save_lead_meta', 'rankcraft_lead_meta_nonce' );
+
+	$sources = array(
+		'audit_tool'   => __( 'Audit tool', 'rankcraft-web' ),
+		'contact_form' => __( 'Contact form', 'rankcraft-web' ),
+	);
+
+	$email      = get_post_meta( $post->ID, '_rc_email', true );
+	$url        = get_post_meta( $post->ID, '_rc_audited_url', true );
+	$source_key = get_post_meta( $post->ID, '_rc_lead_source', true );
+	$source     = isset( $sources[ $source_key ] ) ? $sources[ $source_key ] : $source_key;
+	$message    = get_post_meta( $post->ID, '_rc_message', true );
+	$notes      = get_post_meta( $post->ID, '_rc_notes', true );
+
+	$mobile = array(
+		'Performance'    => get_post_meta( $post->ID, '_rc_mobile_performance', true ),
+		'Accessibility'  => get_post_meta( $post->ID, '_rc_mobile_accessibility', true ),
+		'Best Practices' => get_post_meta( $post->ID, '_rc_mobile_best_practices', true ),
+		'SEO'            => get_post_meta( $post->ID, '_rc_mobile_seo', true ),
+	);
+	$desktop = array(
+		'Performance'    => get_post_meta( $post->ID, '_rc_desktop_performance', true ),
+		'Accessibility'  => get_post_meta( $post->ID, '_rc_desktop_accessibility', true ),
+		'Best Practices' => get_post_meta( $post->ID, '_rc_desktop_best_practices', true ),
+		'SEO'            => get_post_meta( $post->ID, '_rc_desktop_seo', true ),
+	);
+	?>
+	<table class="form-table">
+		<tr>
+			<th><?php esc_html_e( 'Email', 'rankcraft-web' ); ?></th>
+			<td><?php echo $email ? '<a href="mailto:' . esc_attr( $email ) . '">' . esc_html( $email ) . '</a>' : '&mdash;'; ?></td>
+		</tr>
+		<tr>
+			<th><?php esc_html_e( 'Source', 'rankcraft-web' ); ?></th>
+			<td><?php echo esc_html( $source ? $source : '—' ); ?></td>
+		</tr>
+		<?php if ( $url ) : ?>
+		<tr>
+			<th><?php esc_html_e( 'Audited URL', 'rankcraft-web' ); ?></th>
+			<td><a href="<?php echo esc_url( $url ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html( $url ); ?></a></td>
+		</tr>
+		<?php endif; ?>
+		<?php if ( $url ) : ?>
+		<tr>
+			<th><?php esc_html_e( 'Audit scores', 'rankcraft-web' ); ?></th>
+			<td>
+				<strong><?php esc_html_e( 'Mobile:', 'rankcraft-web' ); ?></strong>
+				<?php
+				$mobile_parts = array();
+				foreach ( $mobile as $label => $value ) {
+					$mobile_parts[] = $label . ' ' . (int) $value;
+				}
+				echo esc_html( implode( ', ', $mobile_parts ) );
+				?>
+				<br>
+				<strong><?php esc_html_e( 'Desktop:', 'rankcraft-web' ); ?></strong>
+				<?php
+				$desktop_parts = array();
+				foreach ( $desktop as $label => $value ) {
+					$desktop_parts[] = $label . ' ' . (int) $value;
+				}
+				echo esc_html( implode( ', ', $desktop_parts ) );
+				?>
+			</td>
+		</tr>
+		<?php endif; ?>
+		<?php if ( $message ) : ?>
+		<tr>
+			<th><?php esc_html_e( 'Message', 'rankcraft-web' ); ?></th>
+			<td><?php echo nl2br( esc_html( $message ) ); ?></td>
+		</tr>
+		<?php endif; ?>
+		<tr>
+			<th><label for="rc_notes"><?php esc_html_e( 'Notes', 'rankcraft-web' ); ?></label></th>
+			<td>
+				<textarea name="rc_notes" id="rc_notes" rows="5" class="large-text"><?php echo esc_textarea( $notes ); ?></textarea>
+				<p class="description"><?php esc_html_e( 'Internal follow-up notes - not visible to the lead.', 'rankcraft-web' ); ?></p>
+			</td>
+		</tr>
+	</table>
+	<?php
+}
+
+function rankcraft_save_lead_meta( $post_id ) {
+	if ( ! isset( $_POST['rankcraft_lead_meta_nonce'] ) || ! wp_verify_nonce( $_POST['rankcraft_lead_meta_nonce'], 'rankcraft_save_lead_meta' ) ) {
+		return;
+	}
+
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+
+	if ( isset( $_POST['rc_notes'] ) ) {
+		update_post_meta( $post_id, '_rc_notes', sanitize_textarea_field( wp_unslash( $_POST['rc_notes'] ) ) );
+	}
+}
+add_action( 'save_post_rc_lead', 'rankcraft_save_lead_meta' );
+
+/**
  * Small "at a glance" dashboard widget over data that's already being
  * captured (status pipeline + audit scores) but never rolled up
  * anywhere. No new tracking, just a read of what's already there.
