@@ -118,7 +118,6 @@ get_header();
 					<li>Decides whether to accept or reject non-conforming lots, sub-assemblies, or finished goods using sampling specifications and test criteria</li>
 					<li>Conducts routine floor audits to verify adherence to standard operating procedures (SOPs), equipment calibration, maintenance, and housekeeping rules</li>
 					<li>Helps resolve product or process control problems and guides operators on defect identification and quality deviations</li>
-					<li>Checks tool and equipment conditions, performing basic troubleshooting or minor repairs as needed</li>
 				</ul>
 			</div>
 
