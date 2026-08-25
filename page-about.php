@@ -86,10 +86,8 @@ get_header();
 				</div>
 				<p class="experience-role">Analog Devices General Trias Inc.</p>
 				<ul>
-					<li>Set up, calibrate, and operate test equipment and automated handlers for electronic products</li>
-					<li>Perform first-level verification on yield or quality assurance (QA) failures and analyze test circuit faults</li>
-					<li>Maintain, repair, and clean test hardware, performance boards, and contact assemblies</li>
-					<li>Record test results, document activities through tracking systems, and report findings to engineering teams</li>
+					<li>Set up, calibrated, and repaired automated test equipment and hardware, tracing yield and QA failures to circuit-level faults</li>
+					<li>Recorded test results and reported findings to engineering teams through structured tracking systems</li>
 				</ul>
 			</div>
 
@@ -100,10 +98,8 @@ get_header();
 				</div>
 				<p class="experience-role">Telford Services Philippines Inc.</p>
 				<ul>
-					<li>Set up, convert, and calibrate automated test handlers and related sub-assemblies</li>
-					<li>Diagnose and repair hardware, circuit boards, and test chambers</li>
-					<li>Run tests, load samples, and log data to assist engineers</li>
-					<li>Perform routine checks and predictive maintenance to prevent machine downtime</li>
+					<li>Set up, converted, and calibrated automated test handlers and sub-assemblies, diagnosing and repairing hardware faults</li>
+					<li>Ran tests and logged data for engineers, and performed predictive maintenance to prevent downtime</li>
 				</ul>
 			</div>
 
@@ -114,10 +110,8 @@ get_header();
 				</div>
 				<p class="experience-role">Onsemi Philippines Inc.</p>
 				<ul>
-					<li>Performs visual inspections, mechanical/dimension checks, and electrical or reliability tests as required by the specific functional area</li>
-					<li>Decides whether to accept or reject non-conforming lots, sub-assemblies, or finished goods using sampling specifications and test criteria</li>
-					<li>Conducts routine floor audits to verify adherence to standard operating procedures (SOPs), equipment calibration, maintenance, and housekeeping rules</li>
-					<li>Helps resolve product or process control problems and guides operators on defect identification and quality deviations</li>
+					<li>Inspected and tested production lots against sampling specifications, deciding whether to accept or reject non-conforming output</li>
+					<li>Audited floor operations for SOP and calibration compliance, and helped resolve process or quality deviations</li>
 				</ul>
 			</div>
 
@@ -128,11 +122,8 @@ get_header();
 				</div>
 				<p class="experience-role">LBG Industries Inc.</p>
 				<ul>
-					<li>Inspect, test, and evaluate scrap materials and production samples to ensure they meet quality guidelines</li>
-					<li>Assist in setting up equipment and running routine physical or chemical tests on raw materials and output</li>
-					<li>Log test results accurately into sheets or digital systems and report deviations to senior staff</li>
-					<li>Clean and maintain testing instruments, tools, and the general workspace to ensure a safe environment</li>
-					<li>Monitor laboratory and testing supplies and assist in requesting replenishment items when stock is low</li>
+					<li>Tested and evaluated raw materials and production samples against quality guidelines, logging results and flagging deviations</li>
+					<li>Maintained testing instruments and the lab workspace, and helped keep supplies stocked</li>
 				</ul>
 			</div>
 		</div>
