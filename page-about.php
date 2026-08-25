@@ -99,8 +99,10 @@ get_header();
 				</div>
 				<p class="experience-role">Telford Services Philippines Inc.</p>
 				<ul>
-					<li>Maintained detailed equipment maintenance documentation and records</li>
-					<li>Assisted with monitoring machine performance and diagnostics</li>
+					<li>Set up, convert, and calibrate automated test handlers and related sub-assemblies</li>
+					<li>Diagnose and repair hardware, circuit boards, and test chambers</li>
+					<li>Run tests, load samples, and log data to assist engineers</li>
+					<li>Perform routine checks and predictive maintenance to prevent machine downtime</li>
 				</ul>
 			</div>
 
