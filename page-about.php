@@ -109,6 +109,21 @@ get_header();
 
 			<div class="experience-item">
 				<div class="experience-header">
+					<h3>In-Process Quality Assurance (IPQA) Inspector</h3>
+					<span class="experience-date">Feb 2018 – Jul 2020</span>
+				</div>
+				<p class="experience-role">Onsemi Philippines Inc.</p>
+				<ul>
+					<li>Performs visual inspections, mechanical/dimension checks, and electrical or reliability tests as required by the specific functional area</li>
+					<li>Decides whether to accept or reject non-conforming lots, sub-assemblies, or finished goods using sampling specifications and test criteria</li>
+					<li>Conducts routine floor audits to verify adherence to standard operating procedures (SOPs), equipment calibration, maintenance, and housekeeping rules</li>
+					<li>Helps resolve product or process control problems and guides operators on defect identification and quality deviations</li>
+					<li>Checks tool and equipment conditions, performing basic troubleshooting or minor repairs as needed</li>
+				</ul>
+			</div>
+
+			<div class="experience-item">
+				<div class="experience-header">
 					<h3>Technical Assistant</h3>
 					<span class="experience-date">Oct 2013 – Jan 2018</span>
 				</div>
