@@ -86,9 +86,10 @@ get_header();
 				</div>
 				<p class="experience-role">Analog Devices General Trias Inc.</p>
 				<ul>
-					<li>Prepared structured technical reports and operational documentation</li>
-					<li>Maintained systematic maintenance logs and diagnostic records</li>
-					<li>Followed standardized engineering procedures and documentation practices</li>
+					<li>Set up, calibrate, and operate test equipment and automated handlers for electronic products</li>
+					<li>Perform first-level verification on yield or quality assurance (QA) failures and analyze test circuit faults</li>
+					<li>Maintain, repair, and clean test hardware, performance boards, and contact assemblies</li>
+					<li>Record test results, document activities through tracking systems, and report findings to engineering teams</li>
 				</ul>
 			</div>
 
