@@ -329,6 +329,14 @@ function rankcraft_lead_status_views( $views ) {
 		);
 	}
 
+	// This filter replaces the whole $views array, which was silently
+	// dropping WordPress's own "Trash" link (and with it, the only way
+	// back to a trashed lead to restore or permanently delete it).
+	// Carry it over unchanged if WordPress already built one.
+	if ( isset( $views['trash'] ) ) {
+		$new_views['trash'] = $views['trash'];
+	}
+
 	return $new_views;
 }
 add_filter( 'views_edit-rc_lead', 'rankcraft_lead_status_views' );
