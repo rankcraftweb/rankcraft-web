@@ -11,7 +11,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	const prefersReducedMotion = window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
 
 	if ( 'IntersectionObserver' in window && ! prefersReducedMotion ) {
-		const revealEls = document.querySelectorAll( '.service-card, .step, .stat, .experience-item' );
+		const revealEls = document.querySelectorAll( '.service-card, .step, .stat' );
 
 		const observer = new IntersectionObserver( ( entries ) => {
 			entries.forEach( ( entry ) => {

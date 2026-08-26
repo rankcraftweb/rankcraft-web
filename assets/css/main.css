@@ -1067,99 +1067,6 @@ textarea:focus-visible {
 	color: var(--rc-navy);
 }
 
-.experience {
-	padding: 80px 0;
-	background: var(--rc-off-white);
-}
-
-.experience h2 {
-	font-size: 28px;
-	margin-bottom: 8px;
-}
-
-.experience-list {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	gap: 24px;
-	margin-top: 40px;
-	padding-left: 32px;
-}
-
-/* The vertical timeline line, drawn once behind every item. It sits
-   in the padding-left gutter so it never overlaps the item cards. */
-.experience-list::before {
-	content: '';
-	position: absolute;
-	top: 10px;
-	bottom: 10px;
-	left: 9px;
-	width: 2px;
-	background: var(--rc-border);
-}
-
-.experience-item {
-	position: relative;
-	background: white;
-	border: 1px solid var(--rc-border);
-	border-radius: 12px;
-	padding: 28px;
-}
-
-/* The dot marking each item on the timeline. */
-.experience-item::before {
-	content: '';
-	position: absolute;
-	top: 26px;
-	left: -29px;
-	width: 14px;
-	height: 14px;
-	border-radius: 50%;
-	background: var(--rc-green);
-	border: 3px solid var(--rc-off-white);
-}
-
-.experience-header {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-between;
-	gap: 16px;
-	flex-wrap: wrap;
-}
-
-.experience-header h3 {
-	font-size: 18px;
-	margin: 0;
-}
-
-.experience-date {
-	font-size: 13px;
-	color: var(--rc-slate);
-	white-space: nowrap;
-}
-
-.experience-role {
-	color: var(--rc-green);
-	font-size: 14px;
-	font-weight: 500;
-	margin: 4px 0 16px;
-}
-
-.experience-item ul {
-	margin: 0;
-	padding-left: 20px;
-	color: var(--rc-slate);
-}
-
-.experience-item li {
-	margin-bottom: 8px;
-	line-height: 1.6;
-}
-
-.experience-item li:last-child {
-	margin-bottom: 0;
-}
-
 .education {
 	padding: 80px 0;
 }
@@ -1402,17 +1309,5 @@ textarea:focus-visible {
 
 	.hero-text h1 {
 		font-size: 32px;
-	}
-
-	.experience-list {
-		padding-left: 24px;
-	}
-
-	.experience-list::before {
-		left: 5px;
-	}
-
-	.experience-item::before {
-		left: -21px;
 	}
 }

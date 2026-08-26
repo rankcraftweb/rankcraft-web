@@ -45,41 +45,6 @@ get_header();
 	</div>
 </section>
 
-<section class="experience">
-	<div class="container">
-		<h2>Experience</h2>
-		<div class="experience-list">
-			<div class="experience-item">
-				<div class="experience-header">
-					<h3>RankCraft Web</h3>
-					<span class="experience-date">2026 – Present</span>
-				</div>
-				<p class="experience-role">Designed, built, and maintain the full RankCraft ecosystem</p>
-				<ul>
-					<li>Designed and built a three-part product ecosystem end to end: a custom WordPress marketing site, a Next.js website-audit tool deployed on Vercel, and a lead-tracking system, all connected via server-to-server REST API calls</li>
-					<li>Built the WordPress site from scratch with a hand-coded theme (no page builder): custom post types, a working contact form with spam protection, blog, and a <a href="/portfolio/the-rankcraft-ecosystem">case-study system</a>, passing a full pre-launch audit across SEO, performance, accessibility, and security</li>
-					<li>Built the audit tool with Next.js, TypeScript, and Tailwind CSS, integrating Google's PageSpeed Insights API server-side to keep credentials off the client</li>
-					<li>Set up Google Search Console and GA4 tracking, and established a technical-SEO content calendar</li>
-				</ul>
-			</div>
-
-			<div class="experience-item">
-				<div class="experience-header">
-					<h3>Rossi Real Estate &amp; Ironclad Sites</h3>
-					<span class="experience-date">2026 – Present</span>
-				</div>
-				<p class="experience-role">Ongoing WordPress development and SEO clients</p>
-				<ul>
-					<li>Delivered full website builds (WordPress + Elementor) optimized for performance and search, achieving PageSpeed scores of 95–99 across mobile and desktop for both clients</li>
-					<li>Provide ongoing hosting and management of both clients' live production sites, including updates, uptime monitoring, and technical support</li>
-					<li>Implemented structured data (schema.org) for real-estate and service-business clients, validated through Google's Rich Results Test with zero errors</li>
-					<li>Integrated third-party services including IDX Broker for real-estate MLS listings, and built a custom WordPress plugin for schema markup where off-the-shelf plugins fell short</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</section>
-
 <section class="education">
 	<div class="container">
 		<h2>Education</h2>
