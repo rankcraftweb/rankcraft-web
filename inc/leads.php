@@ -67,11 +67,21 @@ add_action( 'init', 'rankcraft_register_leads_post_type' );
  * Grant the rc_lead post type's auto-generated capabilities to
  * administrators only. Runs on every 'init' but the has_cap() guard
  * makes it a no-op after the first run.
+ *
+ * The first version of this list was missing edit_private_rc_leads,
+ * edit_published_rc_leads, delete_private_rc_leads,
+ * delete_published_rc_leads, and delete_others_rc_leads - the exact
+ * caps map_meta_cap() actually resolves edit_post/delete_post to for
+ * a published post owned by someone else. Without them, administrators
+ * could open the Leads list but had no Edit/Trash row actions or bulk
+ * checkboxes, since WP hides those when the per-post capability check
+ * fails. The guard checks one of the newly-added caps specifically so
+ * a site provisioned under the old list actually gets the fix applied.
  */
 function rankcraft_grant_lead_capabilities() {
 	$role = get_role( 'administrator' );
 
-	if ( ! $role || $role->has_cap( 'edit_rc_leads' ) ) {
+	if ( ! $role || $role->has_cap( 'edit_published_rc_leads' ) ) {
 		return;
 	}
 
@@ -81,9 +91,14 @@ function rankcraft_grant_lead_capabilities() {
 		'delete_rc_lead',
 		'edit_rc_leads',
 		'edit_others_rc_leads',
+		'edit_private_rc_leads',
+		'edit_published_rc_leads',
 		'publish_rc_leads',
 		'read_private_rc_leads',
 		'delete_rc_leads',
+		'delete_private_rc_leads',
+		'delete_published_rc_leads',
+		'delete_others_rc_leads',
 	) as $cap ) {
 		$role->add_cap( $cap );
 	}
