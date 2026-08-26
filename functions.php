@@ -56,12 +56,26 @@ add_action( 'send_headers', 'rankcraft_security_headers' );
  * Redirect legacy URLs that are still indexed but no longer resolve
  * to a page (replaced by /performance-audits/ and /portfolio/).
  * /services/ used to redirect here too, but now has a real page.
+ *
+ * The batch below (packages, areas-we-serve, the two city-specific
+ * service pages, seo-optimization, refund-policy) turned up 404 in a
+ * GSC audit - a past site restructure dropped these pages without
+ * redirects, several of which had real impressions and page-2/3
+ * rankings for local-intent queries. Sending them to their closest
+ * surviving equivalent recovers that link/ranking equity instead of
+ * leaking it to a dead end.
  */
 function rankcraft_legacy_redirects() {
 	$path = untrailingslashit( parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ) );
 
 	$redirects = array(
-		'/projects' => home_url( '/portfolio/' ),
+		'/projects'                        => home_url( '/portfolio/' ),
+		'/packages'                        => home_url( '/services/' ),
+		'/areas-we-serve'                  => home_url( '/seo-and-local-search/' ),
+		'/web-design-seo-services-cavite'  => home_url( '/seo-and-local-search/' ),
+		'/web-design-seo-services-laguna'  => home_url( '/seo-and-local-search/' ),
+		'/seo-optimization'                => home_url( '/seo-and-local-search/' ),
+		'/refund-policy'                   => home_url( '/terms-of-service/' ),
 	);
 
 	if ( isset( $redirects[ $path ] ) ) {
