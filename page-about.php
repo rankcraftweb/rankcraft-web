@@ -51,10 +51,10 @@ get_header();
 		<div class="experience-list">
 			<div class="experience-item">
 				<div class="experience-header">
-					<h3>Founder &amp; Full-Stack Developer</h3>
+					<h3>RankCraft Web</h3>
 					<span class="experience-date">2026 – Present</span>
 				</div>
-				<p class="experience-role">RankCraft Web (self-initiated ecosystem)</p>
+				<p class="experience-role">Designed, built, and maintain the full RankCraft ecosystem</p>
 				<ul>
 					<li>Designed and built a three-part product ecosystem end to end: a custom WordPress marketing site, a Next.js website-audit tool deployed on Vercel, and a lead-tracking system, all connected via server-to-server REST API calls</li>
 					<li>Built the WordPress site from scratch with a hand-coded theme (no page builder): custom post types, a working contact form with spam protection, blog, and a <a href="/portfolio/the-rankcraft-ecosystem">case-study system</a>, passing a full pre-launch audit across SEO, performance, accessibility, and security</li>
@@ -65,10 +65,10 @@ get_header();
 
 			<div class="experience-item">
 				<div class="experience-header">
-					<h3>WordPress Developer &amp; SEO Specialist</h3>
+					<h3>Rossi Real Estate &amp; Ironclad Sites</h3>
 					<span class="experience-date">2026 – Present</span>
 				</div>
-				<p class="experience-role">Freelance – Rossi Real Estate &amp; Ironclad Sites</p>
+				<p class="experience-role">Ongoing WordPress development and SEO clients</p>
 				<ul>
 					<li>Delivered full website builds (WordPress + Elementor) optimized for performance and search, achieving PageSpeed scores of 95–99 across mobile and desktop for both clients</li>
 					<li>Provide ongoing hosting and management of both clients' live production sites, including updates, uptime monitoring, and technical support</li>

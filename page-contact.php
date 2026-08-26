@@ -23,7 +23,7 @@ while ( have_posts() ) :
 				<?php if ( isset( $_GET['contact'] ) && $_GET['contact'] === 'success' ) : ?>
 					<div class="form-notice form-notice-success">Thanks, your message has been sent. I'll get back to you within one business day.</div>
 				<?php elseif ( isset( $_GET['contact'] ) && $_GET['contact'] === 'error' ) : ?>
-					<div class="form-notice form-notice-error">Something went wrong. Double check your details and try again, or email us directly.</div>
+					<div class="form-notice form-notice-error">Something went wrong. Double check your details and try again, or email me directly.</div>
 				<?php endif; ?>
 
 				<?php rankcraft_contact_form(); ?>
