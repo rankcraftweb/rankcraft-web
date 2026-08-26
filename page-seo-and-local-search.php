@@ -51,7 +51,7 @@ get_header();
 			<div class="step">
 				<span class="step-number">1</span>
 				<h3>Audit</h3>
-				<p>I run a full technical and on-page audit to see exactly where you stand today.</p>
+				<p>I run a <a href="/performance-audits">full technical and on-page audit</a> to see exactly where you stand today.</p>
 			</div>
 			<div class="step">
 				<span class="step-number">2</span>
