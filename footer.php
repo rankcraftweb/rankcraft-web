@@ -8,30 +8,46 @@
 				</a>
 			</div>
 
+			<?php
+			/*
+			 * These three labels were <h2>, which put site-wide boilerplate
+			 * at the same outline level as the page's own section headings.
+			 * Demoting them to plain text on its own would have cost screen
+			 * reader users the grouping, so each list becomes a <nav> named
+			 * by its label instead: the labels leave the heading outline,
+			 * and the groups become landmarks you can jump straight to.
+			 */
+			?>
 			<div class="footer-col">
-				<h2>Services</h2>
-				<ul>
-					<li><a href="/wordpress-development">WordPress Development</a></li>
-					<li><a href="/seo-and-local-search">SEO and Local Search</a></li>
-					<li><a href="/performance-audits">Performance Audits</a></li>
-				</ul>
+				<p class="footer-col-title" id="footer-nav-services">Services</p>
+				<nav aria-labelledby="footer-nav-services">
+					<ul>
+						<li><a href="/wordpress-development">WordPress Development</a></li>
+						<li><a href="/seo-and-local-search">SEO and Local Search</a></li>
+						<li><a href="/performance-audits">Performance Audits</a></li>
+					</ul>
+				</nav>
 			</div>
 
 			<div class="footer-col">
-				<h2>Company</h2>
-				<ul>
-					<li><a href="/about">About</a></li>
-					<li><a href="/portfolio">Portfolio</a></li>
-					<li><a href="/blog">Blog</a></li>
-				</ul>
+				<p class="footer-col-title" id="footer-nav-company">Company</p>
+				<nav aria-labelledby="footer-nav-company">
+					<ul>
+						<li><a href="/about">About</a></li>
+						<li><a href="/portfolio">Portfolio</a></li>
+						<li><a href="/blog">Blog</a></li>
+					</ul>
+				</nav>
 			</div>
 
 			<div class="footer-col">
-				<h2>Get Started</h2>
-				<ul>
-					<li><a href="https://audit.rankcraftweb.com">Free Audit</a></li>
-					<li><a href="/contact">Contact</a></li>
-				</ul>
+				<p class="footer-col-title" id="footer-nav-get-started">Get Started</p>
+				<nav aria-labelledby="footer-nav-get-started">
+					<ul>
+						<li><a href="https://audit.rankcraftweb.com">Free Audit</a></li>
+						<li><a href="/contact">Contact</a></li>
+					</ul>
+				</nav>
 			</div>
 		</div>
 
