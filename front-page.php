@@ -21,7 +21,114 @@ get_header();
 				</div>
 			</div>
 			<div class="hero-visual">
-				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/hero-visual.png' ); ?>" alt="Illustration of a laptop displaying a website development dashboard with analytics, charts, and UI mockups" width="1024" height="1024" loading="eager" fetchpriority="high">
+				<?php
+				/*
+				 * Hand-drawn SVG rather than a rendered image: it's the LCP
+				 * element, so inlining it costs no extra request, it stays
+				 * sharp on any display, and every label is real text instead
+				 * of the garbled type stock/AI mockups tend to bake in.
+				 */
+				?>
+				<svg class="hero-visual-svg" viewBox="0 0 620 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="rc-hero-visual-title">
+					<title id="rc-hero-visual-title">A website mockup surrounded by result cards: a 99 performance score, a perfect SEO score, and a rising organic traffic chart.</title>
+
+					<defs>
+						<linearGradient id="rc-screen" x1="0" y1="0" x2="0" y2="1">
+							<stop offset="0" stop-color="#0E2E4E"/>
+							<stop offset="1" stop-color="#0A2440"/>
+						</linearGradient>
+						<linearGradient id="rc-card" x1="0" y1="0" x2="1" y2="1">
+							<stop offset="0" stop-color="#153E66"/>
+							<stop offset="1" stop-color="#102F52"/>
+						</linearGradient>
+						<linearGradient id="rc-base" x1="0" y1="0" x2="0" y2="1">
+							<stop offset="0" stop-color="#1B4571"/>
+							<stop offset="1" stop-color="#102E4D"/>
+						</linearGradient>
+						<linearGradient id="rc-area" x1="0" y1="0" x2="0" y2="1">
+							<stop offset="0" stop-color="#1D9E75" stop-opacity=".38"/>
+							<stop offset="1" stop-color="#1D9E75" stop-opacity="0"/>
+						</linearGradient>
+						<radialGradient id="rc-glow" cx="50%" cy="45%" r="62%">
+							<stop offset="0" stop-color="#1D9E75" stop-opacity=".16"/>
+							<stop offset="1" stop-color="#1D9E75" stop-opacity="0"/>
+						</radialGradient>
+					</defs>
+
+					<ellipse cx="330" cy="250" rx="300" ry="230" fill="url(#rc-glow)"/>
+
+					<!-- Laptop -->
+					<rect x="150" y="88" width="400" height="256" rx="12" fill="#16406B"/>
+					<rect x="162" y="100" width="376" height="232" rx="6" fill="url(#rc-screen)"/>
+					<path d="M148 344 H552 L588 382 H112 Z" fill="url(#rc-base)" stroke="#24547F" stroke-width="2" stroke-linejoin="round"/>
+					<path d="M152 347 H548" stroke="#2A5F92" stroke-width="2" opacity=".55"/>
+
+					<!-- Browser chrome -->
+					<path d="M162 106a6 6 0 0 1 6-6h364a6 6 0 0 1 6 6v26H162Z" fill="#123A61"/>
+					<circle cx="180" cy="116" r="4" fill="#2C5F8E"/>
+					<circle cx="194" cy="116" r="4" fill="#2C5F8E"/>
+					<circle cx="208" cy="116" r="4" fill="#2C5F8E"/>
+					<rect x="228" y="108" width="210" height="16" rx="8" fill="#0A2440"/>
+					<rect x="237" y="114" width="7" height="6" rx="1.5" fill="#63C89F"/>
+					<path d="M238.6 114v-1.8a1.9 1.9 0 0 1 3.8 0V114" fill="none" stroke="#63C89F" stroke-width="1.2"/>
+					<rect x="252" y="114" width="90" height="5" rx="2.5" fill="#35618C"/>
+
+					<!-- Page being built -->
+					<rect x="190" y="158" width="186" height="16" rx="4" fill="#F4F6F9" opacity=".92"/>
+					<rect x="190" y="184" width="248" height="9" rx="4.5" fill="#4A7BA7"/>
+					<rect x="190" y="200" width="196" height="9" rx="4.5" fill="#4A7BA7" opacity=".7"/>
+					<rect x="190" y="224" width="96" height="28" rx="7" fill="#1D9E75"/>
+					<rect x="296" y="224" width="88" height="28" rx="7" fill="none" stroke="#63C89F" stroke-width="1.5" opacity=".7"/>
+
+					<g fill="#123A61">
+						<rect x="190" y="272" width="104" height="44" rx="6"/>
+						<rect x="306" y="272" width="104" height="44" rx="6"/>
+						<rect x="422" y="272" width="104" height="44" rx="6"/>
+					</g>
+					<g fill="#63C89F">
+						<rect x="202" y="284" width="30" height="5" rx="2.5"/>
+						<rect x="318" y="284" width="30" height="5" rx="2.5"/>
+						<rect x="434" y="284" width="30" height="5" rx="2.5"/>
+					</g>
+					<g fill="#3C6E9C">
+						<rect x="202" y="296" width="68" height="4" rx="2"/>
+						<rect x="318" y="296" width="68" height="4" rx="2"/>
+						<rect x="434" y="296" width="68" height="4" rx="2"/>
+					</g>
+					<g fill="#3C6E9C" opacity=".7">
+						<rect x="202" y="305" width="48" height="4" rx="2"/>
+						<rect x="318" y="305" width="48" height="4" rx="2"/>
+						<rect x="434" y="305" width="48" height="4" rx="2"/>
+					</g>
+
+					<!-- Performance score -->
+					<g>
+						<rect x="34" y="140" width="190" height="104" rx="14" fill="url(#rc-card)" stroke="#2A5F92" stroke-width="1.5"/>
+						<circle cx="79" cy="192" r="27" fill="none" stroke="#1E4A72" stroke-width="8"/>
+						<circle cx="79" cy="192" r="27" fill="none" stroke="#1D9E75" stroke-width="8" stroke-linecap="round" stroke-dasharray="168 170" transform="rotate(-90 79 192)"/>
+						<text x="79" y="199" text-anchor="middle" font-family="Poppins, sans-serif" font-size="19" font-weight="700" fill="#F4F6F9">99</text>
+						<text x="122" y="186" font-family="Poppins, sans-serif" font-size="13.5" font-weight="600" fill="#63C89F">Performance</text>
+						<text x="122" y="204" font-family="Poppins, sans-serif" font-size="11.5" fill="#7FA0C4">PageSpeed</text>
+					</g>
+
+					<!-- SEO score -->
+					<g>
+						<rect x="452" y="44" width="142" height="52" rx="12" fill="url(#rc-card)" stroke="#2A5F92" stroke-width="1.5"/>
+						<circle cx="481" cy="70" r="13" fill="#1D9E75" opacity=".18"/>
+						<path d="M475.5 70l4 4 8.5-9" fill="none" stroke="#63C89F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<text x="506" y="66" font-family="Poppins, sans-serif" font-size="13" font-weight="600" fill="#F4F6F9">SEO</text>
+						<text x="506" y="83" font-family="Poppins, sans-serif" font-size="11.5" fill="#7FA0C4">100 / 100</text>
+					</g>
+
+					<!-- Organic traffic -->
+					<g>
+						<rect x="390" y="360" width="196" height="132" rx="14" fill="url(#rc-card)" stroke="#2A5F92" stroke-width="1.5"/>
+						<text x="410" y="388" font-family="Poppins, sans-serif" font-size="13.5" font-weight="600" fill="#63C89F">Organic traffic</text>
+						<path d="M410 462l31-16 31 6 31-28 31-12 32-22v72H410Z" fill="url(#rc-area)"/>
+						<polyline points="410,462 441,446 472,452 503,424 534,412 566,390" fill="none" stroke="#1D9E75" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+						<circle cx="566" cy="390" r="4.5" fill="#63C89F"/>
+					</g>
+				</svg>
 			</div>
 		</div>
 	</section>
