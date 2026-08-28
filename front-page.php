@@ -144,7 +144,7 @@ get_header();
 						<div class="stat"><span class="stat-number">99</span><span class="stat-label">Performance (mobile)</span></div>
 						<div class="stat"><span class="stat-number">100</span><span class="stat-label">SEO</span></div>
 					</div>
-					<a href="/portfolio/rossi-real-estate" class="link-arrow">Read the case study →</a>
+					<a href="/portfolio/rossi-real-estate" class="link-arrow">Read the Rossi Real Estate case study →</a>
 				</div>
 				<div class="service-card">
 					<h3>Ironclad Sites</h3>
@@ -152,7 +152,7 @@ get_header();
 						<div class="stat"><span class="stat-number">97</span><span class="stat-label">Performance (mobile)</span></div>
 						<div class="stat"><span class="stat-number">100</span><span class="stat-label">SEO</span></div>
 					</div>
-					<a href="/portfolio/ironclad-sites-case-study" class="link-arrow">Read the case study →</a>
+					<a href="/portfolio/ironclad-sites-case-study" class="link-arrow">Read the Ironclad Sites case study →</a>
 				</div>
 				<div class="service-card">
 					<h3>The RankCraft Ecosystem</h3>
@@ -160,7 +160,7 @@ get_header();
 						<div class="stat"><span class="stat-number">3</span><span class="stat-label">Connected products</span></div>
 						<div class="stat"><span class="stat-number">100%</span><span class="stat-label">Automated, audit to lead</span></div>
 					</div>
-					<a href="/portfolio/the-rankcraft-ecosystem" class="link-arrow">Read the case study →</a>
+					<a href="/portfolio/the-rankcraft-ecosystem" class="link-arrow">Read the RankCraft Ecosystem case study →</a>
 				</div>
 			</div>
 		</div>
@@ -174,19 +174,19 @@ get_header();
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>WordPress development</h3>
 					<p>Custom-built WordPress sites, hand-coded or built with tools like Elementor depending on what the project needs, always optimized to load fast and stay easy to manage.</p>
-					<a href="/wordpress-development" class="link-arrow">Learn more →</a>
+					<a href="/wordpress-development" class="link-arrow">See WordPress development services →</a>
 				</div>
 				<div class="service-card">
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-seo.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>SEO and local search</h3>
 					<p>On-page optimization, structured data, and local search strategy that help the right customers find you first.</p>
-					<a href="/seo-and-local-search" class="link-arrow">Learn more →</a>
+					<a href="/seo-and-local-search" class="link-arrow">Explore SEO and local search →</a>
 				</div>
 				<div class="service-card">
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-performance.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>Performance audits</h3>
 					<p>A full technical audit of your existing site. I'll show you what's slowing you down and how to fix it.</p>
-					<a href="/performance-audits" class="link-arrow">Learn more →</a>
+					<a href="/performance-audits" class="link-arrow">What a performance audit covers →</a>
 				</div>
 			</div>
 		</div>
