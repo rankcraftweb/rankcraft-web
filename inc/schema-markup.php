@@ -22,25 +22,70 @@ class RankCraft_Schema_Markup {
 		add_action( 'wp_head', array( __CLASS__, 'output_case_study_schema' ), 5 );
 	}
 
+	/**
+	 * Search Console shows the bare brand name ("rankcraft") sitting around
+	 * position 38 while the exact domain ranks 1-2, i.e. Google resolves the
+	 * URL to us but hasn't tied the short name to an entity yet. alternateName
+	 * states that mapping outright, and logo/image give the entity something
+	 * to attach to in a knowledge panel.
+	 */
 	private static function get_schema_data() {
 		return array(
-			'@context'    => 'https://schema.org',
-			'@type'       => 'ProfessionalService',
-			'@id'         => home_url( '/#organization' ),
-			'name'        => 'RankCraft Web',
-			'url'         => home_url( '/' ),
-			'description' => 'WordPress development, SEO, and website audits for small businesses.',
-			'areaServed'  => array(
+			'@context'        => 'https://schema.org',
+			'@type'           => 'ProfessionalService',
+			'@id'             => home_url( '/#organization' ),
+			'name'            => 'RankCraft Web',
+			'alternateName'   => 'RankCraft',
+			'url'             => home_url( '/' ),
+			// Square mark with its own background, so it stays legible
+			// wherever Google places it (light or dark surface).
+			'logo'            => RANKCRAFT_URI . '/assets/images/apple-touch-icon.png',
+			// Attachment 377 is the same fallback inc/seo-meta.php serves as
+			// og:image; going through the media library keeps the two in sync
+			// instead of hardcoding an uploads path that can move.
+			'image'           => wp_get_attachment_image_url( 377, 'full' ),
+			'description'     => 'WordPress development, SEO, and website audits for small businesses.',
+			'areaServed'      => array(
 				array( '@type' => 'Country', 'name' => 'United States' ),
 			),
-			'knowsAbout'  => array(
+			'knowsAbout'      => array(
 				'Real estate websites',
 				'Contractor and home services websites',
 				'Property management websites',
 				'WordPress development',
 				'Technical SEO',
 			),
-			'founder'     => array(
+			'hasOfferCatalog' => array(
+				'@type'           => 'OfferCatalog',
+				'name'            => 'WordPress development and SEO services',
+				'itemListElement' => array(
+					array(
+						'@type'       => 'Offer',
+						'itemOffered' => array(
+							'@type' => 'Service',
+							'name'  => 'Custom WordPress Development',
+							'url'   => home_url( '/wordpress-development/' ),
+						),
+					),
+					array(
+						'@type'       => 'Offer',
+						'itemOffered' => array(
+							'@type' => 'Service',
+							'name'  => 'SEO and Local Search',
+							'url'   => home_url( '/seo-and-local-search/' ),
+						),
+					),
+					array(
+						'@type'       => 'Offer',
+						'itemOffered' => array(
+							'@type' => 'Service',
+							'name'  => 'Performance Audits',
+							'url'   => home_url( '/performance-audits/' ),
+						),
+					),
+				),
+			),
+			'founder'         => array(
 				'@type'  => 'Person',
 				'name'   => 'Jan',
 				'url'    => home_url( '/about/' ),
@@ -49,8 +94,10 @@ class RankCraft_Schema_Markup {
 					'https://github.com/rankcraftweb',
 				),
 			),
-			'sameAs'      => array(
-				home_url( '/' ),
+			// sameAs is for profiles *elsewhere* that describe this same
+			// entity - listing our own homepage here (already given as `url`)
+			// said nothing, so it's dropped.
+			'sameAs'          => array(
 				'https://www.linkedin.com/in/jan-christopher-buen-24715117a',
 				'https://github.com/rankcraftweb',
 			),
