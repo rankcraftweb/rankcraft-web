@@ -97,7 +97,14 @@ class RankCraft_Schema_Markup {
 			// sameAs is for profiles *elsewhere* that describe this same
 			// entity - listing our own homepage here (already given as `url`)
 			// said nothing, so it's dropped.
+			//
+			// The Facebook page is the organisation's own profile and already
+			// ranks on page one for "RankCraft Web", so it's the strongest
+			// third-party confirmation that this name maps to this business -
+			// which is exactly what's missing while nine unrelated companies
+			// share the "RankCraft" name.
 			'sameAs'          => array(
+				'https://www.facebook.com/rankcraftweb',
 				'https://www.linkedin.com/in/jan-christopher-buen-24715117a',
 				'https://github.com/rankcraftweb',
 			),
