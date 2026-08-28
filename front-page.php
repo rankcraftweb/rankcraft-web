@@ -11,7 +11,7 @@ get_header();
 <main id="free-audit">
 
 	<section class="hero">
-		<video class="hero-video" autoplay muted loop playsinline preload="auto">
+		<video class="hero-video" autoplay muted playsinline preload="auto" data-loop-start="5" data-loop-end="9">
 			<source src="<?php echo esc_url( RANKCRAFT_URI . '/assets/videos/hero-background.mp4' ); ?>" type="video/mp4">
 		</video>
 		<div class="hero-overlay"></div>

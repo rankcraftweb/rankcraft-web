@@ -18,6 +18,24 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		heroVideo.pause();
 	}
 
+	// Only a 5-9s window of the source clip looks good on loop (the
+	// rest fades to a near-black pause) - jump back to the start of
+	// that window instead of looping the whole file.
+	if ( heroVideo && ! prefersReducedMotion ) {
+		const loopStart = parseFloat( heroVideo.dataset.loopStart ) || 0;
+		const loopEnd = parseFloat( heroVideo.dataset.loopEnd ) || heroVideo.duration;
+
+		heroVideo.addEventListener( 'loadedmetadata', function () {
+			heroVideo.currentTime = loopStart;
+		} );
+
+		heroVideo.addEventListener( 'timeupdate', function () {
+			if ( heroVideo.currentTime >= loopEnd ) {
+				heroVideo.currentTime = loopStart;
+			}
+		} );
+	}
+
 	if ( 'IntersectionObserver' in window && ! prefersReducedMotion ) {
 		const revealEls = document.querySelectorAll( '.service-card, .step, .stat' );
 
