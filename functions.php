@@ -125,6 +125,26 @@ function rankcraft_case_study_archive_title( $title_parts ) {
 add_filter( 'document_title_parts', 'rankcraft_case_study_archive_title' );
 
 /**
+ * Every inner page renders as "{Topic} - RankCraft Web", but WordPress
+ * inverts that on the front page to "{Site name} - {tagline}". That spends
+ * the most valuable part of the title on the brand, and Search Console puts
+ * the bare brand name around position 38 - it carries no pull yet, so
+ * nothing is searching for it. Lead with the service here too, and keep the
+ * name in the trailing half where it still builds recognition.
+ *
+ * On the front page the parts are 'title' + 'tagline'; elsewhere they're
+ * 'title' + 'site', which is why this can't just reuse the filter above.
+ */
+function rankcraft_front_page_title( $title_parts ) {
+	if ( is_front_page() ) {
+		$title_parts['title']   = 'WordPress Development & Technical SEO';
+		$title_parts['tagline'] = get_bloginfo( 'name' );
+	}
+	return $title_parts;
+}
+add_filter( 'document_title_parts', 'rankcraft_front_page_title' );
+
+/**
  * Include additional theme files.
  */
 require_once RANKCRAFT_DIR . '/inc/seo-meta.php';
