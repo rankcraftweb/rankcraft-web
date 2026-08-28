@@ -424,7 +424,8 @@ textarea:focus-visible {
 
 .footer-columns {
 	display: grid;
-	grid-template-columns: auto 1fr 1fr 1fr;
+	grid-template-columns: repeat(4, auto);
+	justify-content: space-between;
 	gap: 32px;
 	padding-bottom: 40px;
 	border-bottom: 1px solid rgba(244,246,249,0.15);
