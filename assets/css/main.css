@@ -1009,10 +1009,15 @@ textarea:focus-visible {
 	flex-shrink: 0;
 }
 
+/* Matches the lead paragraph's measure. The heading used to be short
+   enough that its full-width line box never showed, but a full sentence
+   runs the whole column and leaves the heading jutting ~330px past the
+   paragraph beneath it. */
 .about-hero h1 {
 	color: var(--rc-off-white);
 	font-size: 40px;
 	margin: 8px 0 16px;
+	max-width: 600px;
 }
 
 .about-hero-lead {
