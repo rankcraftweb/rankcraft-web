@@ -174,7 +174,7 @@ get_header();
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>WordPress development</h3>
 					<p>Custom-built WordPress sites, hand-coded or built with tools like Elementor depending on what the project needs, always optimized to load fast and stay easy to manage.</p>
-					<a href="/wordpress-development" class="link-arrow">See WordPress development services →</a>
+					<a href="/wordpress-development" class="link-arrow">WordPress development services →</a>
 				</div>
 				<div class="service-card">
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-seo.png' ); ?>" alt="" width="48" height="48" loading="lazy">
