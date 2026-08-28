@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RANKCRAFT_VERSION', '1.3.2' );
+define( 'RANKCRAFT_VERSION', '1.4.0' );
 define( 'RANKCRAFT_DIR', get_template_directory() );
 define( 'RANKCRAFT_URI', get_template_directory_uri() );
 define( 'RANKCRAFT_GA4_ID', 'G-S1816MHVM3' );
@@ -143,6 +143,20 @@ function rankcraft_front_page_title( $title_parts ) {
 	return $title_parts;
 }
 add_filter( 'document_title_parts', 'rankcraft_front_page_title' );
+
+/**
+ * "About" on its own spends the whole title tag on a word nobody
+ * searches, and Search Console shows this page pulling only branded
+ * queries. Name what the page is actually about so the tag carries
+ * something, while keeping the site-wide "{Topic} - RankCraft Web" shape.
+ */
+function rankcraft_about_page_title( $title_parts ) {
+	if ( is_page( 'about' ) ) {
+		$title_parts['title'] = 'About Jan, WordPress Developer & Technical SEO';
+	}
+	return $title_parts;
+}
+add_filter( 'document_title_parts', 'rankcraft_about_page_title' );
 
 /**
  * Include additional theme files.
