@@ -13,8 +13,8 @@ get_header();
 	<section class="hero">
 		<div class="container hero-inner">
 			<div class="hero-text">
-				<h1>Fast WordPress sites and technical SEO for real estate and home service businesses.</h1>
-				<p class="hero-subhead">Speed and search built in from the start, not bolted on after. Real client sites score 97 to 99 on Google PageSpeed. Get a free audit and see where yours stands.</p>
+				<h1>Fast WordPress sites and technical SEO, built end to end by one developer.</h1>
+				<p class="hero-subhead">Speed and search built in from the start, not bolted on after. Sites I've built score 97 to 99 on Google PageSpeed. Get a free audit and see where yours stands.</p>
 				<div class="hero-cta">
 					<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 					<a href="/portfolio" class="btn btn-secondary">See my work</a>
