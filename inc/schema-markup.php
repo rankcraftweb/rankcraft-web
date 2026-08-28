@@ -48,12 +48,16 @@ class RankCraft_Schema_Markup {
 			'areaServed'      => array(
 				array( '@type' => 'Country', 'name' => 'United States' ),
 			),
+			// Capabilities, not verticals. The industries previously listed
+			// here came from work delivered under a client's own brand, so
+			// they described their market rather than this one's.
 			'knowsAbout'      => array(
-				'Real estate websites',
-				'Contractor and home services websites',
-				'Property management websites',
 				'WordPress development',
+				'Custom WordPress theme development',
 				'Technical SEO',
+				'Core Web Vitals optimization',
+				'Website performance optimization',
+				'Structured data and schema markup',
 			),
 			'hasOfferCatalog' => array(
 				'@type'           => 'OfferCatalog',
@@ -131,7 +135,7 @@ class RankCraft_Schema_Markup {
 			),
 			array(
 				'question' => 'What type of businesses do you work with?',
-				'answer'   => 'Mostly service-based businesses, real estate, home services, and local businesses that depend on their website to bring in leads, not just look good.',
+				'answer'   => "Small and service-based businesses whose website has to bring in leads, not just look good. If your site is slow or isn't showing up in search, that's the work I do.",
 			),
 			array(
 				'question' => 'Can you work with my existing website, or does it need a full rebuild?',

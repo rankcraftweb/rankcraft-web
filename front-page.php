@@ -136,7 +136,7 @@ get_header();
 	<section class="proof">
 		<div class="container">
 			<p class="section-label">Real results, not promises</p>
-			<h2>Real client sites, real numbers</h2>
+			<h2>Real sites, real numbers</h2>
 			<div class="services-grid proof-grid">
 				<div class="service-card">
 					<h3>Rossi Real Estate</h3>
@@ -239,7 +239,7 @@ get_header();
 				</details>
 				<details class="faq-item">
 					<summary>What type of businesses do you work with?</summary>
-					<p>Mostly service-based businesses, real estate, home services, and local businesses that depend on their website to bring in leads, not just look good.</p>
+					<p>Small and service-based businesses whose website has to bring in leads, not just look good. If your site is slow or isn't showing up in search, that's the work I do.</p>
 				</details>
 				<details class="faq-item">
 					<summary>Can you work with my existing website, or does it need a full rebuild?</summary>
