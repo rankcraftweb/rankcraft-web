@@ -145,37 +145,18 @@ textarea:focus-visible {
 
 /* Hero */
 .hero {
-	position: relative;
 	background: var(--rc-navy);
-	padding: 140px 0;
-	overflow: hidden;
-}
-
-.hero-video {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	z-index: 0;
-}
-
-.hero-overlay {
-	position: absolute;
-	inset: 0;
-	background: rgba(12, 42, 74, 0.72);
-	z-index: 1;
+	padding: 80px 0;
 }
 
 .hero-inner {
-	position: relative;
-	z-index: 2;
 	display: flex;
 	align-items: center;
+	gap: 48px;
 }
 
 .hero-text {
-	max-width: 640px;
+	flex: 1;
 }
 
 .hero-text h1 {
@@ -203,13 +184,14 @@ textarea:focus-visible {
 	color: var(--rc-green-light);
 }
 
-/* Video autoplay drains battery and bandwidth for no visual gain on
-   small screens where it's cropped tightly by object-fit anyway, so
-   swap back to a plain navy hero below the point the nav goes mobile. */
-@media (max-width: 900px) {
-	.hero-video {
-		display: none;
-	}
+.hero-visual {
+	flex: 1;
+}
+
+.hero-visual img {
+	width: 100%;
+	height: auto;
+	border-radius: 16px;
 }
 
 /* Proof section */

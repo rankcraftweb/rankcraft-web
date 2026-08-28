@@ -11,10 +11,6 @@ get_header();
 <main id="free-audit">
 
 	<section class="hero">
-		<video class="hero-video" autoplay muted playsinline preload="auto" data-loop-start="5" data-loop-end="9">
-			<source src="<?php echo esc_url( RANKCRAFT_URI . '/assets/videos/hero-background.mp4' ); ?>" type="video/mp4">
-		</video>
-		<div class="hero-overlay"></div>
 		<div class="container hero-inner">
 			<div class="hero-text">
 				<h1>Custom WordPress development and technical SEO, built to convert.</h1>
@@ -23,6 +19,9 @@ get_header();
 					<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 					<a href="/portfolio" class="btn btn-secondary">See my work</a>
 				</div>
+			</div>
+			<div class="hero-visual">
+				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/hero-visual.png' ); ?>" alt="Illustration of a laptop displaying a website development dashboard with analytics, charts, and UI mockups" width="1024" height="1024" loading="eager" fetchpriority="high">
 			</div>
 		</div>
 	</section>

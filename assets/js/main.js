@@ -10,32 +10,6 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	// visitors who've asked their OS/browser for reduced motion.
 	const prefersReducedMotion = window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
 
-	// The hero background video autoplays for visual effect only - it
-	// carries no information, so pause it for visitors who've asked
-	// their OS/browser for reduced motion instead of forcing it on them.
-	const heroVideo = document.querySelector( '.hero-video' );
-	if ( heroVideo && prefersReducedMotion ) {
-		heroVideo.pause();
-	}
-
-	// Only a 5-9s window of the source clip looks good on loop (the
-	// rest fades to a near-black pause) - jump back to the start of
-	// that window instead of looping the whole file.
-	if ( heroVideo && ! prefersReducedMotion ) {
-		const loopStart = parseFloat( heroVideo.dataset.loopStart ) || 0;
-		const loopEnd = parseFloat( heroVideo.dataset.loopEnd ) || heroVideo.duration;
-
-		heroVideo.addEventListener( 'loadedmetadata', function () {
-			heroVideo.currentTime = loopStart;
-		} );
-
-		heroVideo.addEventListener( 'timeupdate', function () {
-			if ( heroVideo.currentTime >= loopEnd ) {
-				heroVideo.currentTime = loopStart;
-			}
-		} );
-	}
-
 	if ( 'IntersectionObserver' in window && ! prefersReducedMotion ) {
 		const revealEls = document.querySelectorAll( '.service-card, .step, .stat' );
 
