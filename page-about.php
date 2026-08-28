@@ -23,9 +23,8 @@ get_header();
 	<div class="container about-bio-inner">
 		<h2>How I work</h2>
 		<p>Most agencies hand your project between account managers, designers, and developers before it ever gets built. RankCraft is different: it's just me. When you work with RankCraft, you're talking directly to the person writing the code, running the SEO audit, and fixing what's broken.</p>
-		<p>That means fewer handoffs, faster turnaround, and someone who's personally accountable for the results, not just the deliverable. You can see that in the <a href="/portfolio">portfolio</a> — real client sites, with the numbers to back them up.</p>
-		<p>Before freelancing, I spent years as a technician in industrial and product engineering roles, work that was structured, procedural, and documentation-driven. I bring that same discipline to client sites: clear audits, systematic fixes, and records of what changed and why.</p>
-		<p>I got here through hands-on practice rather than a single formal path: hundreds of hours building real front-end projects, hands-on client work managing WordPress sites and SEO, and continuously testing what actually moves rankings versus what's just theory.</p>
+		<p>That means fewer handoffs, faster turnaround, and someone who's personally accountable for the results, not just the deliverable. You can see that in the <a href="/portfolio">portfolio</a> — real sites, with the numbers to back them up.</p>
+		<p>Every site I work on gets the same treatment: a clear audit, systematic fixes, and a record of what changed and why. No black boxes, no vague monthly reports.</p>
 	</div>
 </section>
 
@@ -42,16 +41,6 @@ get_header();
 			<li>Deployment and hosting (Vercel, Hostinger, SSH, WP-CLI)</li>
 			<li>Git version control</li>
 		</ul>
-	</div>
-</section>
-
-<section class="education">
-	<div class="container">
-		<h2>Education</h2>
-		<div class="education-item">
-			<h3>B.S. Industrial Technology, Mechanical Technology</h3>
-			<p class="education-school">Aurora State College of Technology</p>
-		</div>
 	</div>
 </section>
 
