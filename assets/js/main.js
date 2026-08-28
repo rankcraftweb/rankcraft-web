@@ -10,6 +10,14 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	// visitors who've asked their OS/browser for reduced motion.
 	const prefersReducedMotion = window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
 
+	// The hero background video autoplays for visual effect only - it
+	// carries no information, so pause it for visitors who've asked
+	// their OS/browser for reduced motion instead of forcing it on them.
+	const heroVideo = document.querySelector( '.hero-video' );
+	if ( heroVideo && prefersReducedMotion ) {
+		heroVideo.pause();
+	}
+
 	if ( 'IntersectionObserver' in window && ! prefersReducedMotion ) {
 		const revealEls = document.querySelectorAll( '.service-card, .step, .stat' );
 
