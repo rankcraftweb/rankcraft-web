@@ -22,6 +22,64 @@ SSH connection details:
 - WP-CLI is available on the server at `/usr/local/bin/wp` — always pass
   `--allow-root`, since the SSH user isn't `www-data`.
 
+## Checking the site before a deploy
+
+Two scripts in `bin/`, both driving a real headless browser. They exist
+because three overflow bugs and three design problems shipped unnoticed in
+a single afternoon, and between them they cover the two different kinds of
+mistake that caused it.
+
+### bin/check-responsive.js
+
+```bash
+node bin/check-responsive.js                      # live site, all pages
+node bin/check-responsive.js http://localhost:8080 # same pages, another host
+node bin/check-responsive.js https://.../about/    # one page
+```
+
+Loads each page at thirteen widths and reports any that scroll sideways,
+naming the element at fault. Exits 1 on any overflow, so it can gate a
+deploy.
+
+Only horizontal overflow, deliberately. That is the one responsive fault
+that is fully objective: the document is either wider than the viewport or
+it is not. Measure, spacing and appearance need judgement, and automating
+them would only manufacture confidence.
+
+The width list includes 769 and 901, one pixel past each of the theme's
+breakpoints. Two of the three bugs it was written for were hiding exactly
+there, between the widths being spot checked.
+
+### bin/screenshot.js
+
+```bash
+node bin/screenshot.js https://rankcraftweb.com/
+node bin/screenshot.js https://rankcraftweb.com/ --selector "#services .services-grid"
+node bin/screenshot.js http://localhost:8080/ --width 375 --full --out mobile.png
+```
+
+Photographs a page or one element on it, at 2x.
+
+Use it whenever a change is visual. Measurements will not tell you that an
+illustration is floating in a half-empty frame, that a drawing is too pale
+to register against the card behind it, or that a card's contents are in
+the wrong order. All three of those shipped past a full set of passing
+checks, and every one measured identically to the version that replaced
+it.
+
+It also works where the editor's browser pane does not: IntersectionObserver
+never fires there while the pane is hidden, so anything behind the scroll
+reveal photographs as a blank rectangle. The script scrolls the page first
+for the same reason.
+
+### Playwright
+
+Neither script declares a dependency. This theme has no build step and no
+package.json, so `bin/lib/find-playwright.js` locates the copy already on
+the machine, including the one in the npx cache, and falls back to the
+installed Chrome if the bundled Chromium is missing or the wrong revision.
+If it cannot find anything: `npm i -D playwright`.
+
 ## Creating or updating case studies via WP-CLI
 
 Browser-based Gutenberg editing is slow and unreliable for long case study

@@ -23,14 +23,11 @@
  *
  * Exits 1 if any page overflows, so it can gate a deploy.
  *
- * Needs Playwright. It is resolved from wherever it already lives on
- * this machine, including the npx cache, so no install is normally
- * required. If it cannot be found: npm i -D playwright
+ * Needs Playwright, which is resolved from wherever it already lives.
+ * See bin/lib/find-playwright.js.
  */
 
-const fs = require( 'fs' );
-const path = require( 'path' );
-const os = require( 'os' );
+const { launch } = require( './lib/find-playwright' );
 
 /* Widths worth checking, and why each earns its place:
  *  320  iPhone SE 1st gen and budget Android, the narrowest in real use
@@ -64,66 +61,6 @@ const DEFAULT_PAGES = [
 
 const DEFAULT_BASE = 'https://rankcraftweb.com';
 
-/**
- * Playwright is not a dependency of this theme, which has no build step
- * and no package.json. Rather than introduce one for a single script,
- * find the copy that is already on the machine: a local install first,
- * then the npx cache, whose directory names are content hashes and so
- * have to be globbed rather than hardcoded.
- */
-function loadPlaywright() {
-	try {
-		return require( 'playwright' );
-	} catch ( e ) {
-		// Fall through to the cache search.
-	}
-
-	const cache = path.join( os.homedir(), 'AppData', 'Local', 'npm-cache', '_npx' );
-	let entries = [];
-	try {
-		entries = fs.readdirSync( cache );
-	} catch ( e ) {
-		entries = [];
-	}
-
-	// The cache can hold several versions side by side, each expecting a
-	// specific Chromium build. Picking the first one found is how this
-	// script failed the first time it ran: the copy it grabbed wanted a
-	// browser revision that was not downloaded. Prefer a copy whose
-	// browser is actually present, and keep any other as a fallback for
-	// the system-Chrome path below.
-	let fallback = null;
-
-	for ( const entry of entries ) {
-		const candidate = path.join( cache, entry, 'node_modules', 'playwright' );
-		if ( ! fs.existsSync( candidate ) ) {
-			continue;
-		}
-		let mod;
-		try {
-			mod = require( candidate );
-		} catch ( e ) {
-			continue;
-		}
-		try {
-			if ( fs.existsSync( mod.chromium.executablePath() ) ) {
-				return mod;
-			}
-		} catch ( e ) {
-			// executablePath() throws if nothing is registered at all.
-		}
-		fallback = fallback || mod;
-	}
-
-	if ( fallback ) {
-		return fallback;
-	}
-
-	console.error( 'Could not find Playwright.' );
-	console.error( 'Install it with:  npm i -D playwright' );
-	console.error( '(the Chromium binary itself is usually already cached)' );
-	process.exit( 2 );
-}
 
 /**
  * Runs inside the page. Returns the overflow verdict plus the elements
@@ -176,7 +113,6 @@ function probe() {
 
 async function main() {
 	const args = process.argv.slice( 2 );
-	const { chromium } = loadPlaywright();
 
 	// A single bare origin means "sweep the usual pages against this
 	// host", which is how you point it at a staging or local copy.
@@ -190,16 +126,7 @@ async function main() {
 		targets = args;
 	}
 
-	// Fall back to the Chrome already installed on the machine if the
-	// bundled Chromium is missing or is the wrong revision. The check
-	// only measures layout, so the exact build does not matter.
-	let browser;
-	try {
-		browser = await chromium.launch();
-	} catch ( e ) {
-		console.log( 'Bundled Chromium unavailable, using installed Chrome.\n' );
-		browser = await chromium.launch( { channel: 'chrome' } );
-	}
+	const browser = await launch();
 
 	const failures = [];
 
