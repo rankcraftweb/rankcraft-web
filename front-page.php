@@ -252,7 +252,7 @@ get_header();
 				</details>
 				<details class="faq-item">
 					<summary>Do you offer support after the site launches?</summary>
-					<p>Yes. I offer ongoing maintenance and support after launch, hosting, updates, and changes, so you're never stuck if something needs fixing down the line.</p>
+					<p>Yes, as a separate monthly plan rather than something folded into the build price. Hosting, updates, backups, security monitoring and small changes, so you are not stuck when something needs fixing later.</p>
 				</details>
 			</div>
 		</div>

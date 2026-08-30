@@ -26,7 +26,7 @@ get_header();
 		<h2>Websites built to convert, not just look nice</h2>
 		<p>A good-looking site that loads slowly or doesn't rank won't grow your business. I build every site the way it needs to be built, hand-coded or with tools like Elementor, always optimized so it loads fast, ranks well, and holds up as your business grows. Not sure which approach fits your project? <a href="/elementor-vs-custom-wordpress-theme-which-one-actually-fits-your-business/">Here's how I decide</a>, using <a href="/portfolio/ironclad-sites-case-study">Ironclad Sites</a> as an example.</p>
 		<p>That means a custom theme built around your content and goals, not a generic template stretched to fit. Every build includes structured data, accessible markup, and a foundation that's easy to maintain, the same groundwork that makes <a href="/seo-and-local-search">SEO and local search</a> work effective from day one.</p>
-		<p>And because I handle every project personally, you're never waiting on a queue of other clients or explaining your business to a new account manager. Not sure a rebuild is even what you need? A <a href="/performance-audits">performance audit</a> will tell you first.</p>
+		<p>And because I handle every project personally, you are never explaining your business twice or waiting on a handover between people. I take a small number of projects at a time, which is what keeps that true. Not sure a rebuild is even what you need? A <a href="/performance-audits">performance audit</a> will tell you first.</p>
 	</div>
 </section>
 

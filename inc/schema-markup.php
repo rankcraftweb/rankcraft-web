@@ -160,7 +160,7 @@ class RankCraft_Schema_Markup {
 			),
 			array(
 				'question' => 'Do you offer support after the site launches?',
-				'answer'   => "Yes. I offer ongoing maintenance and support after launch, hosting, updates, and changes, so you're never stuck if something needs fixing down the line.",
+				'answer'   => 'Yes, as a separate monthly plan rather than something folded into the build price. Hosting, updates, backups, security monitoring and small changes, so you are not stuck when something needs fixing later.',
 			),
 		);
 	}
