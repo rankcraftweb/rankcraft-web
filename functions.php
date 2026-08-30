@@ -71,8 +71,8 @@ function rankcraft_legacy_redirects() {
 	$redirects = array(
 		'/projects'                        => home_url( '/portfolio/' ),
 		'/packages'                        => home_url( '/services/' ),
-		'/areas-we-serve'                  => home_url( '/seo-and-local-search/' ),
-		'/web-design-seo-services-cavite'  => home_url( '/seo-and-local-search/' ),
+		'/areas-we-serve'                  => home_url( '/website-developer-silang-cavite/' ),
+		'/web-design-seo-services-cavite'  => home_url( '/website-developer-silang-cavite/' ),
 		'/web-design-seo-services-laguna'  => home_url( '/seo-and-local-search/' ),
 		'/seo-optimization'                => home_url( '/seo-and-local-search/' ),
 		'/refund-policy'                   => home_url( '/terms-of-service/' ),
