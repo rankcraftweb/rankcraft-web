@@ -32,23 +32,53 @@ get_header();
 <section class="service-deliverables">
 	<div class="container">
 		<h2>What this covers</h2>
-		<div class="sub-services">
-			<div class="sub-service">
+		<div class="service-row">
+			<div class="service-row-text">
 				<h3>Free Automated Audit</h3>
 				<p>Put in your address and get mobile and desktop scores with the numbers underneath, in about a minute. No call and no obligation, and the report is yours whether or not we ever speak.</p>
+				<ul class="service-row-points">
+					<li>Mobile and desktop, scored separately</li>
+					<li>Core Web Vitals with the underlying figures</li>
+					<li>Emailed to you, no call required</li>
+				</ul>
 			</div>
-			<div class="sub-service">
+			<div class="service-row-art"><svg class="row-illustration" viewBox="0 0 280 200" aria-hidden="true" focusable="false"><rect x="10" y="10" width="260" height="180" rx="14" fill="#0C2A4A"/><rect x="34" y="58" width="212" height="30" rx="15" fill="#0C2A4A" stroke="#2C4D6B" stroke-width="2"/><circle cx="56" cy="73" r="7" fill="none" stroke="#F4F6F9" stroke-width="2.5"/><path d="M61 78l6 6" stroke="#F4F6F9" stroke-width="2.5" stroke-linecap="round"/><circle cx="140" cy="132" r="30" fill="none" stroke="#2C4D6B" stroke-width="8"/><path d="M140 102a30 30 0 0 1 22 50" fill="none" stroke="#63C89F" stroke-width="8" stroke-linecap="round"/><rect x="126" y="128" width="28" height="8" rx="4" fill="#F4F6F9"/></svg></div>
+		</div>
+		<div class="service-row">
+			<div class="service-row-text">
 				<h3>Manual Technical Review</h3>
 				<p>The automated run finds what a tool can find. This is the read behind it: what is actually causing those numbers, what is worth fixing, and what to leave alone.</p>
+				<ul class="service-row-points">
+					<li>Indexing, canonicals and redirects</li>
+					<li>Structured data and internal linking</li>
+					<li>Ranked by impact, in plain English</li>
+				</ul>
 			</div>
-			<div class="sub-service">
+			<div class="service-row-art"><svg class="row-illustration" viewBox="0 0 280 200" aria-hidden="true" focusable="false"><rect x="10" y="10" width="260" height="180" rx="14" fill="#0C2A4A"/><rect x="40" y="46" width="150" height="120" rx="10" fill="#2C4D6B"/><rect x="58" y="68" width="76" height="7" rx="3.5" fill="#F4F6F9"/><rect x="58" y="86" width="108" height="6" rx="3" fill="#0C2A4A"/><rect x="58" y="102" width="90" height="6" rx="3" fill="#0C2A4A"/><rect x="58" y="126" width="54" height="6" rx="3" fill="#63C89F"/><rect x="58" y="142" width="100" height="6" rx="3" fill="#0C2A4A"/><circle cx="196" cy="120" r="34" fill="none" stroke="#F4F6F9" stroke-width="6"/><path d="M220 144l22 22" stroke="#F4F6F9" stroke-width="8" stroke-linecap="round"/></svg></div>
+		</div>
+		<div class="service-row">
+			<div class="service-row-text">
 				<h3>Core Web Vitals Fixes</h3>
 				<p>Most audits stop at the report. This is the work itself, done in order of impact with before and after figures, so the difference is yours to check rather than mine to claim.</p>
+				<ul class="service-row-points">
+					<li>Largest Contentful Paint and layout shift</li>
+					<li>Image weight, unused CSS and blocking scripts</li>
+					<li>Before and after, measured the same way</li>
+				</ul>
 			</div>
-			<div class="sub-service">
+			<div class="service-row-art"><svg class="row-illustration" viewBox="0 0 280 200" aria-hidden="true" focusable="false"><rect x="10" y="10" width="260" height="180" rx="14" fill="#0C2A4A"/><rect x="46" y="60" width="60" height="14" rx="7" fill="#2C4D6B"/><rect x="46" y="100" width="60" height="14" rx="7" fill="#2C4D6B"/><rect x="46" y="140" width="60" height="14" rx="7" fill="#2C4D6B"/><rect x="126" y="60" width="108" height="14" rx="7" fill="#63C89F"/><rect x="126" y="100" width="78" height="14" rx="7" fill="#63C89F"/><rect x="126" y="140" width="128" height="14" rx="7" fill="#63C89F"/><path d="M116 52v112" stroke="#F4F6F9" stroke-width="2" stroke-dasharray="5 6"/></svg></div>
+		</div>
+		<div class="service-row">
+			<div class="service-row-text">
 				<h3>Redesign &amp; Migration Checks</h3>
 				<p>Moving or rebuilding a site is where rankings quietly disappear: pages dropped without redirects, canonicals still pointing at the old structure. I found exactly this on my own site, and it is far cheaper to catch before launch than after.</p>
+				<ul class="service-row-points">
+					<li>Old URLs mapped before anything is switched</li>
+					<li>Redirects checked, not assumed</li>
+					<li>Indexing watched for weeks afterwards</li>
+				</ul>
 			</div>
+			<div class="service-row-art"><svg class="row-illustration" viewBox="0 0 280 200" aria-hidden="true" focusable="false"><rect x="10" y="10" width="260" height="180" rx="14" fill="#0C2A4A"/><rect x="30" y="60" width="70" height="80" rx="10" fill="#2C4D6B"/><rect x="180" y="60" width="70" height="80" rx="10" fill="#2C4D6B"/><rect x="42" y="76" width="46" height="6" rx="3" fill="#0C2A4A"/><rect x="42" y="90" width="34" height="6" rx="3" fill="#0C2A4A"/><rect x="42" y="104" width="46" height="6" rx="3" fill="#0C2A4A"/><rect x="192" y="76" width="46" height="6" rx="3" fill="#F4F6F9"/><rect x="192" y="90" width="34" height="6" rx="3" fill="#F4F6F9"/><rect x="192" y="104" width="46" height="6" rx="3" fill="#63C89F"/><path d="M108 92h56" stroke="#63C89F" stroke-width="4" stroke-linecap="round"/><path d="M156 84l10 8-10 8" stroke="#63C89F" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M164 116h-56" stroke="#2C4D6B" stroke-width="4" stroke-linecap="round"/><path d="M116 108l-10 8 10 8" stroke="#2C4D6B" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 		</div>
 	</div>
 </section>

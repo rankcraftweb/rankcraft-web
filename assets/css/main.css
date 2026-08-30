@@ -849,41 +849,96 @@ a.cert-card:focus-visible,
 	margin-bottom: 16px;
 }
 
-/* Named sub-services replacing the old "what's included" pills,
-   which were four words each and said almost nothing. Two columns
-   rather than three: these carry a paragraph now, and three
-   columns at this container width would run the measure too
-   narrow to read. */
-.sub-services {
+/* Full-width alternating rows, one per named sub-service. The
+   reference design this follows gives each of its services a row of
+   its own rather than a cell in a grid, which is what makes them read
+   as distinct offerings instead of bullet points with extra words. */
+.service-row {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 8px 48px;
-}
-
-.sub-service {
-	padding: 24px 0;
+	grid-template-columns: 1fr 1fr;
+	gap: 64px;
+	align-items: center;
+	padding: 56px 0;
 	border-top: 1px solid var(--rc-border);
 }
 
-.sub-service h3 {
-	margin: 0 0 8px;
-	font-size: 19px;
+/* Every second row puts the drawing on the left. nth-of-type, not
+   nth-child: the section heading is a sibling too, so nth-child would
+   count it and the whole alternation would flip if that heading ever
+   moved. Done with order
+   rather than by reversing the markup, so the heading still comes
+   before its illustration for anything reading the document rather
+   than looking at it. */
+.service-row:nth-of-type(even) .service-row-art {
+	order: -1;
 }
 
-.sub-service p {
+.service-row-text h3 {
+	margin: 0 0 12px;
+	font-size: 26px;
+}
+
+.service-row-text > p {
+	margin: 0 0 20px;
+	color: var(--rc-slate);
+	max-width: 520px;
+}
+
+.service-row-points {
+	list-style: none;
 	margin: 0;
+	padding: 0;
+}
+
+/* The tick is drawn in a pseudo-element so it never reaches the
+   accessibility tree: it is punctuation, not content. */
+.service-row-points li {
+	position: relative;
+	padding-left: 26px;
+	margin-bottom: 10px;
 	color: var(--rc-slate);
 	font-size: 15px;
-	line-height: 1.6;
+	line-height: 1.5;
+}
+
+.service-row-points li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 6px;
+	width: 12px;
+	height: 7px;
+	border-left: 2px solid var(--rc-green);
+	border-bottom: 2px solid var(--rc-green);
+	transform: rotate(-45deg);
+}
+
+.row-illustration {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 @media (max-width: 900px) {
-	/* One column, capped for the same reason every other body block
-	   here is: the container is wider than a comfortable measure. */
-	.sub-services {
+	/* Stacked, and the alternation goes with it: on one column the
+	   drawing belongs under its own heading rather than above the
+	   previous row's text. */
+	.service-row {
 		grid-template-columns: 1fr;
+		gap: 28px;
+		padding: 40px 0;
+	}
+
+	.service-row:nth-of-type(even) .service-row-art {
+		order: 0;
+	}
+
+	.service-row-text > p {
 		max-width: 560px;
-		gap: 0;
+	}
+
+	.row-illustration {
+		max-width: 400px;
 	}
 }
 
