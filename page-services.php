@@ -167,7 +167,7 @@ get_header();
 
 		<div class="pricing-notes">
 			<p>After launch, hosting and maintenance is <strong>&#8369;3,500 a month</strong>: hosting, updates, backups, security monitoring, and up to an hour of small changes. Anything bigger is quoted before it starts, never after.</p>
-			<p>Plugin work, performance fixes and migration checks are quoted as a fixed scope once there is something to look at, never by the hour. That is the same promise as step two above: you should not be finding out what it costs while the work is happening.</p>
+			<p>Plugin work, performance fixes and migration checks are quoted once I have seen the site, because what they cost depends entirely on what is there.</p>
 			<p>The automated audit stays free, and always will. That one is a tool, not a service.</p>
 			<p>Prices are in Philippine pesos. Working from outside the Philippines? Get in touch and I will quote for your market.</p>
 		</div>
