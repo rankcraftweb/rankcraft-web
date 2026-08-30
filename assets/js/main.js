@@ -25,11 +25,22 @@ document.addEventListener( 'DOMContentLoaded', function () {
 					// only lists opacity and transform, which beat the CSS on
 					// specificity: card hovers would run at half a second and
 					// their shadow and border would snap rather than ease.
-					entry.target.addEventListener( 'transitionend', () => {
+					//
+					// The timer is not belt and braces. Anything already inside
+					// the viewport is revealed on the observer's first callback,
+					// which can land before the browser has painted the hidden
+					// state: there is no animation, so transitionend never fires
+					// and those elements would keep the inline styles forever.
+					// That is exactly what happened to the cards near the top of
+					// the services page.
+					const release = () => {
 						entry.target.style.transition = '';
 						entry.target.style.transform = '';
 						entry.target.style.opacity = '';
-					}, { once: true } );
+					};
+
+					entry.target.addEventListener( 'transitionend', release, { once: true } );
+					window.setTimeout( release, 700 );
 				}
 			} );
 		}, { threshold: 0.15 } );
