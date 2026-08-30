@@ -124,6 +124,7 @@ get_header();
 				</div>
 			</li>
 			</ol>
+			<p class="process-outro"><a href="/portfolio">See what that produced in the portfolio &rarr;</a></p>
 		</div>
 	</div>
 </section>

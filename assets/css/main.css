@@ -846,6 +846,14 @@ textarea:focus-visible {
 
 /* Sized in em so the icon tracks the heading rather than being pinned
    to a pixel value that stops matching if the type scale moves. */
+/* Sits inside .process-timeline, so it already carries the rail's left
+   padding and lines up with the step text rather than the markers. The
+   process ends on "show what changed"; this is where that evidence
+   actually lives, and it was the one thing the page never linked to. */
+.process-outro {
+	margin: 32px 0 0;
+}
+
 .process-step-icon {
 	display: block;
 	width: 1.75em;
