@@ -22,6 +22,15 @@ body {
 	line-height: 1.6;
 }
 
+/* Responsive baseline that was missing: without it any image sized by
+   a fixed dimension keeps that width no matter how narrow the viewport
+   gets, and pushes the page sideways. The footer logo did exactly that
+   at 320px. Class rules still win on specificity, so this only fills
+   the gap where nothing else has an opinion. */
+img {
+	max-width: 100%;
+}
+
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -45,9 +54,13 @@ body {
 	line-height: 0;
 }
 
+/* Sized by width rather than height. With height fixed and width auto,
+   max-width could only squash the image; driving from width lets the
+   height follow. 1800/320 is a ratio of 5.625, so 203px wide is the
+   36px tall this used to be. */
 .site-logo-img {
-	height: 36px;
-	width: auto;
+	width: 203px;
+	height: auto;
 	display: block;
 }
 
@@ -466,9 +479,12 @@ textarea:focus-visible {
 	align-items: center;
 }
 
+/* Same reasoning as .site-logo-img: 315px wide is the 56px tall this
+   was, and it can now shrink instead of forcing the footer wider than
+   the screen. */
 .footer-logo-img {
-	height: 56px;
-	width: auto;
+	width: 315px;
+	height: auto;
 	display: block;
 }
 
