@@ -72,7 +72,7 @@ get_header();
 				<div class="process-step-body">
 					<span class="process-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 17a9 9 0 1 1 17 0"/><path d="M12 17l4-5"/><circle cx="12" cy="17" r="1.3" fill="currentColor" stroke="none"/></svg></span>
 					<h3>Measure before anything changes</h3>
-					<p>No work starts on a guess. I crawl the whole site and write down where it actually stands, so every decision after this has a number behind it. You get that baseline whether or not we end up working together.</p>
+					<p>No work starts on a guess. If there is a site already, I crawl it and write down where it actually stands. If there is not, we settle what the new one has to do and what would count as it working. Either way there is a number to come back to later, and it is yours whether or not we go any further.</p>
 					<ul class="process-points">
 						<li><strong>Full crawl and baseline</strong>Every page, redirect and broken link recorded before anything moves.</li>
 						<li><strong>Core Web Vitals</strong>Real mobile figures for loading, responsiveness and layout stability, not a desktop score that flatters.</li>
@@ -86,7 +86,7 @@ get_header();
 				<div class="process-step-body">
 					<span class="process-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 5.5H6.5A1.5 1.5 0 0 0 5 7v12a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 19V7a1.5 1.5 0 0 0-1.5-1.5H15"/><rect x="9" y="3.5" width="6" height="3.5" rx="1"/><path d="M8.75 13.5l2.25 2.25 4.25-4.5"/></svg></span>
 					<h3>Agree what actually gets done</h3>
-					<p>Before I touch anything we settle what is worth doing and what is not. Most audit findings are not worth the hours they would cost, and saying so out loud is part of the job.</p>
+					<p>Before I touch anything we settle what is worth doing and what is not. Plenty of findings, and plenty of features, are not worth the hours they would cost, and saying so out loud is part of the job.</p>
 					<ul class="process-points">
 						<li><strong>Priority order</strong>Ranked by what moves the needle, not by what is quickest to bill for.</li>
 						<li><strong>What stays out</strong>The findings I recommend ignoring, and the reason for each.</li>
@@ -113,8 +113,8 @@ get_header();
 				<span class="process-step-num" aria-hidden="true">04</span>
 				<div class="process-step-body">
 					<span class="process-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4.5v15h16"/><path d="M7.5 15l3.5-3.75 3 2.5L19.5 8"/><path d="M15.75 8h3.75v3.75"/></svg></span>
-					<h3>Show what changed, then hand it over</h3>
-					<p>The work ends with evidence rather than a summary. You get the same measurements from step one, run again under the same conditions, so the difference is yours to check instead of mine to claim.</p>
+					<h3>Show what changed</h3>
+					<p>Evidence rather than a summary: the same measurements from step one, run again under the same conditions, so the difference is yours to check instead of mine to claim. On a build that is the handover. On a retainer it is the monthly report, and the things that did not move are in it too.</p>
 					<ul class="process-points">
 						<li><strong>Before and after</strong>The same tests, the same conditions, side by side.</li>
 						<li><strong>A record of every change</strong>What changed, when, and why it was worth doing.</li>
