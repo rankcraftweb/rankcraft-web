@@ -1480,6 +1480,16 @@ textarea:focus-visible {
 		grid-template-columns: 1fr;
 	}
 
+	/* Going to one column let the card text run to roughly 104 characters
+	   at 900px and 84 at 768, both past a readable measure. Capping and
+	   centring fixes it without a two-column step, which would leave the
+	   third card of these three-item grids stranded on its own row. */
+	.services-grid, .steps-grid {
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.skills-list {
 		grid-template-columns: 1fr;
 	}
