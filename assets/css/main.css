@@ -1089,7 +1089,6 @@ textarea:focus-visible {
 }
 
 .about-proof h2,
-.about-process h2,
 .about-tools h2 {
 	font-size: 28px;
 	margin-bottom: 24px;
@@ -1100,8 +1099,60 @@ textarea:focus-visible {
 	text-align: center;
 }
 
-.about-process {
+/* Editorial two-column block. The framing stays put on the left while
+   the prose runs down the right, which is deliberately not the
+   three-card grid this replaced: every service page already carries its
+   own process section, so a fourth one here made the About page read
+   like a service page. This is about standards rather than steps, so it
+   runs as continuous prose. Left unpainted to keep the alternating band
+   going down the page. */
+.about-standards {
 	padding: 80px 0;
+}
+
+.about-standards-inner {
+	display: grid;
+	grid-template-columns: 320px 1fr;
+	gap: 64px;
+	align-items: start;
+}
+
+.about-standards-aside h2 {
+	font-size: 32px;
+	margin: 8px 0 16px;
+}
+
+.about-standards-standfirst {
+	color: var(--rc-slate);
+	font-size: 17px;
+	line-height: 1.6;
+}
+
+/* Holds the same measure the rest of the page reads at, so the wider
+   grid does not stretch lines past comfortable. */
+.about-standards-body {
+	max-width: 640px;
+}
+
+.about-standards-body p {
+	margin-bottom: 20px;
+}
+
+.pull-quote {
+	border-left: 3px solid var(--rc-green);
+	margin: 28px 0;
+	padding: 4px 0 4px 24px;
+	font-size: 21px;
+	line-height: 1.5;
+	font-weight: 500;
+	color: var(--rc-navy);
+}
+
+@media (max-width: 900px) {
+	.about-standards-inner {
+		grid-template-columns: 1fr;
+		gap: 32px;
+	}
 }
 
 .about-tools {

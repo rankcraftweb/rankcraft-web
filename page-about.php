@@ -49,22 +49,18 @@ get_header();
 	</div>
 </section>
 
-<section class="about-process">
-	<div class="container">
-		<h2>How a project runs</h2>
-		<div class="steps-grid">
-			<div class="step">
-				<h3>Measure first</h3>
-				<p>Before anything changes, I crawl the site and record where it actually stands: Core Web Vitals, indexing, canonicals, schema, internal linking. You get those findings whether or not we go further.</p>
-			</div>
-			<div class="step">
-				<h3>Fix in order of impact</h3>
-				<p>The biggest problems go first, one change at a time, tested as we go. If a fix is risky or the payoff is uncertain, I'll say so before doing it rather than after.</p>
-			</div>
-			<div class="step">
-				<h3>Show the difference</h3>
-				<p>Before and after numbers, a record of every change, and the reasoning behind each one. If something didn't move the needle, that goes in the report too.</p>
-			</div>
+<section class="about-standards">
+	<div class="container about-standards-inner">
+		<div class="about-standards-aside">
+			<p class="section-label">Standards</p>
+			<h2>What you can hold me to</h2>
+			<p class="about-standards-standfirst">The same three commitments apply to every project, whether it is a full build or a single afternoon of fixes.</p>
+		</div>
+		<div class="about-standards-body">
+			<p>Nothing changes before it is measured. I crawl the site first and record where it actually stands: Core Web Vitals, indexing, canonicals, schema, internal linking. Those findings are yours whether or not we go any further.</p>
+			<blockquote class="pull-quote">If a fix is risky, or the payoff is uncertain, I will say so before doing it rather than after.</blockquote>
+			<p>After that the biggest problems go first, one change at a time, tested as we go. Small and reversible beats clever and sweeping, because when something does break you want to know exactly which change did it.</p>
+			<p>At the end you get before and after numbers, a record of every change, and the reasoning behind each one. If something did not move the needle, that goes in the report too. A report with only wins in it is not telling you very much.</p>
 		</div>
 	</div>
 </section>
