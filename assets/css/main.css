@@ -692,7 +692,7 @@ a.cert-card:focus-visible,
 }
 
 .portfolio-card-image {
-	aspect-ratio: 16 / 9;
+	aspect-ratio: 2.4 / 1;
 	overflow: hidden;
 }
 
@@ -701,6 +701,10 @@ a.cert-card:focus-visible,
 	height: 100%;
 	display: block;
 	object-fit: cover;
+	/* Anchored rather than centred. A screenshot carries its nav
+	   and its headline in the top left, so that is the corner
+	   worth keeping when the ratios do not match exactly. */
+	object-position: left top;
 }
 
 .portfolio-card-body {
