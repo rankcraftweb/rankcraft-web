@@ -58,16 +58,19 @@ get_header();
 </section>
 
 <section class="process">
-	<div class="container">
-		<p class="section-label">Process</p>
-		<h2>How the work runs</h2>
-		<p class="section-intro">The same four steps whether it is a full build, an ongoing SEO engagement, or a single round of fixes. What gets done changes. The order does not.</p>
+	<div class="container process-inner">
+		<div class="process-intro">
+			<p class="section-label">Process</p>
+			<h2>How the work runs</h2>
+			<p class="section-intro">The same four steps whether it is a full build, an ongoing SEO engagement, or a single round of fixes. What gets done changes. The order does not.</p>
+		</div>
 		<div class="process-timeline">
 			<div class="process-rail" aria-hidden="true"><span class="process-rail-progress"></span></div>
 			<ol class="process-steps">
 			<li class="process-step">
 				<span class="process-step-num" aria-hidden="true">01</span>
 				<div class="process-step-body">
+					<span class="process-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 17a9 9 0 1 1 17 0"/><path d="M12 17l4-5"/><circle cx="12" cy="17" r="1.3" fill="currentColor" stroke="none"/></svg></span>
 					<h3>Measure before anything changes</h3>
 					<p>No work starts on a guess. I crawl the whole site and write down where it actually stands, so every decision after this has a number behind it. You get that baseline whether or not we end up working together.</p>
 					<ul class="process-points">
@@ -81,6 +84,7 @@ get_header();
 			<li class="process-step">
 				<span class="process-step-num" aria-hidden="true">02</span>
 				<div class="process-step-body">
+					<span class="process-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 5.5H6.5A1.5 1.5 0 0 0 5 7v12a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 19V7a1.5 1.5 0 0 0-1.5-1.5H15"/><rect x="9" y="3.5" width="6" height="3.5" rx="1"/><path d="M8.75 13.5l2.25 2.25 4.25-4.5"/></svg></span>
 					<h3>Agree what actually gets done</h3>
 					<p>Before I touch anything we settle what is worth doing and what is not. Most audit findings are not worth the hours they would cost, and saying so out loud is part of the job.</p>
 					<ul class="process-points">
@@ -94,6 +98,7 @@ get_header();
 			<li class="process-step">
 				<span class="process-step-num" aria-hidden="true">03</span>
 				<div class="process-step-body">
+					<span class="process-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 7.5L3.5 12 8 16.5"/><path d="M16 7.5L20.5 12 16 16.5"/><path d="M13.5 4.5l-3 15"/></svg></span>
 					<h3>Build and fix, one change at a time</h3>
 					<p>Changes go in small and reversible. When something breaks, and occasionally something does, you want to know exactly which change caused it rather than unpicking a week of work.</p>
 					<ul class="process-points">
@@ -107,6 +112,7 @@ get_header();
 			<li class="process-step">
 				<span class="process-step-num" aria-hidden="true">04</span>
 				<div class="process-step-body">
+					<span class="process-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4.5v15h16"/><path d="M7.5 15l3.5-3.75 3 2.5L19.5 8"/><path d="M15.75 8h3.75v3.75"/></svg></span>
 					<h3>Show what changed, then hand it over</h3>
 					<p>The work ends with evidence rather than a summary. You get the same measurements from step one, run again under the same conditions, so the difference is yours to check instead of mine to claim.</p>
 					<ul class="process-points">
