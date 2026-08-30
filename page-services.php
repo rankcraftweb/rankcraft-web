@@ -129,6 +129,36 @@ get_header();
 	</div>
 </section>
 
+<section class="pricing">
+	<div class="container">
+		<p class="section-label">Pricing</p>
+		<h2>What it costs</h2>
+		<p class="section-intro">Starting figures rather than "contact us for a quote". If your budget is well under these, it is better that we both find that out now instead of after two emails.</p>
+		<div class="services-grid">
+			<div class="service-card">
+				<span class="price-figure">from &#8369;45,000</span>
+				<h3>Website build</h3>
+				<p>A custom WordPress site built for speed rather than assembled from a template. What moves the final figure is the number of pages and how much of the content already exists.</p>
+			</div>
+			<div class="service-card">
+				<span class="price-figure">&#8369;25,000<span class="price-unit">&nbsp;/ month</span></span>
+				<h3>SEO and local search</h3>
+				<p>Technical fixes, on-page work and local signals, with a report every month. Three month minimum, because nothing in search moves faster than that and a shorter run would only prove nothing.</p>
+			</div>
+			<div class="service-card">
+				<span class="price-figure">&#8369;12,000</span>
+				<h3>Manual audit</h3>
+				<p>A technical review done by hand, which is a different thing from the automated one. Deducted from the cost if you go ahead with a build or a retainer afterwards.</p>
+			</div>
+		</div>
+		<div class="pricing-notes">
+			<p>After launch, hosting and maintenance is <strong>&#8369;3,500 a month</strong>: hosting, updates, backups, security monitoring, and up to an hour of small changes. Anything bigger is quoted before it starts, never after.</p>
+			<p>The automated audit stays free, and always will. That one is a tool, not a service.</p>
+			<p>Prices are in Philippine pesos. Working from outside the Philippines? Get in touch and I will quote for your market.</p>
+		</div>
+	</div>
+</section>
+
 <section class="service-local">
 	<div class="container service-overview-inner">
 		<h2>Where I work</h2>
@@ -136,7 +166,7 @@ get_header();
 	</div>
 </section>
 
-<section class="about-cta about-cta--shaded">
+<section class="about-cta">
 	<div class="container">
 		<h2>Not sure which one you need?</h2>
 		<div class="about-cta-buttons">

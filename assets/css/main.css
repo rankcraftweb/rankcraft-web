@@ -1005,11 +1005,9 @@ textarea:focus-visible {
 
 }
 
-/* Left unpainted. It sits between the off-white process band and the
-   shaded closing CTA, so white here is what keeps the alternation
-   running rather than breaking it. */
 .service-local {
 	padding: 80px 0;
+	background: var(--rc-off-white);
 }
 
 .service-process {
@@ -1487,6 +1485,53 @@ textarea:focus-visible {
    alternation. .final-cta already paints this way on the front page,
    but it also resizes the heading, so this carries the background on
    its own. */
+/* Unpainted, sitting between the off-white process band and the
+   off-white local note. Reuses .services-grid and .service-card rather
+   than inventing a card: those already carry the single column cap and
+   centring, so the price cards inherit the responsive behaviour instead
+   of repeating the same mistakes. */
+.pricing {
+	padding: 80px 0;
+}
+
+.price-figure {
+	display: block;
+	margin-bottom: 4px;
+	color: var(--rc-green);
+	font-size: 26px;
+	font-weight: 700;
+}
+
+.price-unit {
+	color: var(--rc-slate);
+	font-size: 15px;
+	font-weight: 500;
+}
+
+/* Left aligned rather than centred: the hosting line runs to three
+   lines and centred prose that long is hard to track back to. Held to
+   560px for the same reason every other body block on this site is. */
+.pricing-notes {
+	max-width: 560px;
+	margin: 40px auto 0;
+	color: var(--rc-slate);
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+.pricing-notes p {
+	margin: 0 0 12px;
+}
+
+.pricing-notes p:last-child {
+	margin-bottom: 0;
+}
+
+.pricing-notes strong {
+	color: var(--rc-navy);
+	font-weight: 700;
+}
+
 .about-cta--shaded {
 	background: var(--rc-off-white);
 }
