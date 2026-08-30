@@ -926,14 +926,26 @@ textarea:focus-visible {
 	margin-bottom: 24px;
 }
 
+/* One column is the default here, not the fallback. These sit inside
+   the right-hand column of a two column section, so the space they get
+   is much narrower than the viewport suggests: at 901px the two column
+   version gave 161px a side, about 21 characters. Two columns only earn
+   their place once the section is wide enough to carry them. */
 .process-points {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 1fr;
+	max-width: 520px;
 	gap: 20px 32px;
-	max-width: 720px;
+}
+
+@media (min-width: 1150px) {
+	.process-points {
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 720px;
+	}
 }
 
 .process-points li {
@@ -983,14 +995,6 @@ textarea:focus-visible {
 		font-size: 13px;
 	}
 
-	/* One column, but capped: at exactly 768px the full-width single
-	   column ran 653px, about 86 characters, which is well past a
-	   comfortable measure. The cap only bites in the 560-768 band; below
-	   that the container is already narrower than the limit. */
-	.process-points {
-		grid-template-columns: 1fr;
-		max-width: 520px;
-	}
 }
 
 /* Left unpainted. It sits between the off-white process band and the
@@ -1521,10 +1525,6 @@ textarea:focus-visible {
 
 	.header-nav-wrap.is-open {
 		display: flex;
-	}
-
-	.site-header {
-		position: relative;
 	}
 
 	.nav-menu {
