@@ -151,7 +151,11 @@ get_header();
 				<p>A technical review done by hand, which is a different thing from the automated one. Deducted from the cost if you go ahead with a build or a retainer afterwards.</p>
 			</div>
 		</div>
+		<!-- TEMPORARY: the launch discount below is for the first three
+		     projects only. Delete this note and the paragraph once those
+		     are done, otherwise it quietly becomes the actual price. -->
 		<div class="pricing-notes">
+			<p><strong>&#8369;10,000 off the first three projects</strong>, in exchange for a review and permission to write the work up as a case study using your real numbers. Once those three are taken, this comes down.</p>
 			<p>After launch, hosting and maintenance is <strong>&#8369;3,500 a month</strong>: hosting, updates, backups, security monitoring, and up to an hour of small changes. Anything bigger is quoted before it starts, never after.</p>
 			<p>The automated audit stays free, and always will. That one is a tool, not a service.</p>
 			<p>Prices are in Philippine pesos. Working from outside the Philippines? Get in touch and I will quote for your market.</p>
