@@ -136,7 +136,7 @@ get_header();
 		<p class="section-intro">Starting figures rather than "contact us for a quote". If your budget is well under these, it is better that we both find that out now instead of after two emails.</p>
 		<div class="services-grid">
 			<div class="service-card">
-				<span class="price-figure">from &#8369;45,000</span>
+				<span class="price-figure"><span class="price-unit">Starts at</span> &#8369;45,000</span>
 				<h3>Website build</h3>
 				<p>Priced per project. A custom theme or a page builder build costs the same, because what moves the figure is the number of pages and how much content already exists, not which tool it is made with.</p>
 				<a href="/contact" class="link-arrow">Ask about a build &rarr;</a>

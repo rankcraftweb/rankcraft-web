@@ -1687,6 +1687,9 @@ a.cert-card:focus-visible,
 	font-weight: 700;
 }
 
+/* Used either side of the figure: "Starts at" before it, "/ month"
+   after. Small and quiet on purpose, so the number is what the eye
+   lands on rather than the qualifier competing with it. */
 .price-unit {
 	color: var(--rc-slate);
 	font-size: 15px;
