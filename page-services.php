@@ -138,19 +138,19 @@ get_header();
 			<div class="service-card">
 				<span class="price-figure">from &#8369;45,000</span>
 				<h3>Website build</h3>
-				<p>A custom WordPress site built for speed rather than assembled from a template. What moves the final figure is the number of pages and how much of the content already exists.</p>
+				<p>Priced per project. A custom theme or a page builder build costs the same, because what moves the figure is the number of pages and how much content already exists, not which tool it is made with.</p>
 				<a href="/contact" class="link-arrow">Ask about a build &rarr;</a>
 			</div>
 			<div class="service-card">
 				<span class="price-figure">&#8369;25,000<span class="price-unit">&nbsp;/ month</span></span>
 				<h3>SEO and local search</h3>
-				<p>Technical fixes, on-page work and local signals, with a report every month. Three month minimum, because nothing in search moves faster than that and a shorter run would only prove nothing.</p>
+				<p>One monthly fee covering all four parts. They are not sold separately, because technical fixes with no reporting tell you nothing. Three month minimum, since nothing in search moves faster than that.</p>
 				<a href="/contact" class="link-arrow">Ask about a retainer &rarr;</a>
 			</div>
 			<div class="service-card">
 				<span class="price-figure">&#8369;12,000</span>
 				<h3>Manual audit</h3>
-				<p>A technical review done by hand, which is a different thing from the automated one. Deducted from the cost if you go ahead with a build or a retainer afterwards.</p>
+				<p>A one-off, and deducted from the cost if you go ahead afterwards. The fixes it recommends are quoted from what it finds, so nothing is priced before anyone knows what it is.</p>
 				<a href="/contact" class="link-arrow">Book an audit &rarr;</a>
 			</div>
 		</div>
@@ -167,6 +167,7 @@ get_header();
 
 		<div class="pricing-notes">
 			<p>After launch, hosting and maintenance is <strong>&#8369;3,500 a month</strong>: hosting, updates, backups, security monitoring, and up to an hour of small changes. Anything bigger is quoted before it starts, never after.</p>
+			<p>Work that cannot honestly be scoped in advance, like plugin development, performance fixes and migration checks, is <strong>&#8369;1,500 an hour</strong> in blocks agreed before anything starts. Four hour minimum.</p>
 			<p>The automated audit stays free, and always will. That one is a tool, not a service.</p>
 			<p>Prices are in Philippine pesos. Working from outside the Philippines? Get in touch and I will quote for your market.</p>
 		</div>
