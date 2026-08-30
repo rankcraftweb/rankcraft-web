@@ -907,8 +907,13 @@ textarea:focus-visible {
 		font-size: 13px;
 	}
 
+	/* One column, but capped: at exactly 768px the full-width single
+	   column ran 653px, about 86 characters, which is well past a
+	   comfortable measure. The cap only bites in the 560-768 band; below
+	   that the container is already narrower than the limit. */
 	.process-points {
 		grid-template-columns: 1fr;
+		max-width: 520px;
 	}
 }
 
