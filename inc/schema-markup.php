@@ -45,8 +45,17 @@ class RankCraft_Schema_Markup {
 			// instead of hardcoding an uploads path that can move.
 			'image'           => wp_get_attachment_image_url( 377, 'full' ),
 			'description'     => 'WordPress development, SEO, and website audits for small businesses.',
+			// Three months of Search Console data: the Philippines supplies 118
+			// impressions and 3 of the 4 total clicks, while the United States
+			// supplies 81 impressions at position 11 and has never produced a
+			// single click - part of that being Laguna Beach and Laguna Hills in
+			// California matching pages written for Laguna province. Naming the
+			// real service area also stops the markup contradicting the Google
+			// Business Profile, which is set to Cavite.
 			'areaServed'      => array(
-				array( '@type' => 'Country', 'name' => 'United States' ),
+				array( '@type' => 'City', 'name' => 'Silang' ),
+				array( '@type' => 'AdministrativeArea', 'name' => 'Cavite' ),
+				array( '@type' => 'Country', 'name' => 'Philippines' ),
 			),
 			// Capabilities, not verticals. The industries previously listed
 			// here came from work delivered under a client's own brand, so
@@ -261,7 +270,9 @@ class RankCraft_Schema_Markup {
 				'name'  => 'RankCraft Web',
 			),
 			'areaServed'  => array(
-				array( '@type' => 'Country', 'name' => 'United States' ),
+				array( '@type' => 'City', 'name' => 'Silang' ),
+				array( '@type' => 'AdministrativeArea', 'name' => 'Cavite' ),
+				array( '@type' => 'Country', 'name' => 'Philippines' ),
 			),
 		);
 
