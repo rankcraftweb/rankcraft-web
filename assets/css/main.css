@@ -768,6 +768,14 @@ textarea:focus-visible {
 	margin-bottom: 24px;
 }
 
+/* .service-process and .about-cta are both unpainted, so a third plain
+   section between them would merge all three into one white run. This
+   carries the alternating band the rest of the page already uses. */
+.service-local {
+	padding: 80px 0;
+	background: var(--rc-off-white);
+}
+
 .service-process {
 	padding: 80px 0;
 	text-align: center;

@@ -25,7 +25,7 @@ get_header();
 	<div class="container service-overview-inner">
 		<h2>Ranking is about fundamentals, not tricks</h2>
 		<p>Most sites that don't rank aren't missing some secret tactic, they're missing the fundamentals: clean technical SEO, structured data search engines can actually read, and content that matches what people are searching for. See <a href="/technical-seo-fixes-that-move-rankings/">5 technical SEO fixes that actually move rankings</a> for the specific checks I run.</p>
-		<p>I focus on the fixes that move the needle for real businesses: local service providers, real estate, and home services companies that need to show up when someone nearby is ready to buy. That's the same approach behind <a href="/portfolio/rossi-real-estate">Rossi Real Estate's</a> custom structured data upgrade.</p>
+		<p>I focus on the fixes that move the needle for small and service-based businesses, the ones whose website has to bring in enquiries rather than just look presentable. That usually means getting the technical foundations clean first, then the local signals that decide whether you appear at all when somebody nearby is ready to buy. The structured data side of that work is set out in the <a href="/portfolio/rossi-real-estate">Rossi Real Estate case study</a>.</p>
 		<p>That includes technical SEO, on-page optimization, and local search signals like schema markup and Google Business Profile, tracked and reported on every month so you can see what's actually working. If your site also needs a rebuild rather than just fixes, that's what <a href="/wordpress-development">custom WordPress development</a> is for.</p>
 	</div>
 </section>
@@ -64,6 +64,13 @@ get_header();
 				<p>I monitor rankings and traffic monthly, adjusting strategy as your site grows.</p>
 			</div>
 		</div>
+	</div>
+</section>
+
+<section class="service-local">
+	<div class="container service-overview-inner">
+		<h2>Where I work</h2>
+		<p>Most of this work happens remotely and the location rarely matters. But I am based in Silang, and the businesses I end up measuring are mostly here in Cavite. If you are local, there is a page for that: <a href="/website-developer-silang-cavite">website development in Silang and Cavite</a>, including what came back when I ran nine local business websites through PageSpeed.</p>
 	</div>
 </section>
 
