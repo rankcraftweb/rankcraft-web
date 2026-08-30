@@ -139,16 +139,19 @@ get_header();
 				<span class="price-figure">from &#8369;45,000</span>
 				<h3>Website build</h3>
 				<p>A custom WordPress site built for speed rather than assembled from a template. What moves the final figure is the number of pages and how much of the content already exists.</p>
+				<a href="/contact" class="link-arrow">Ask about a build &rarr;</a>
 			</div>
 			<div class="service-card">
 				<span class="price-figure">&#8369;25,000<span class="price-unit">&nbsp;/ month</span></span>
 				<h3>SEO and local search</h3>
 				<p>Technical fixes, on-page work and local signals, with a report every month. Three month minimum, because nothing in search moves faster than that and a shorter run would only prove nothing.</p>
+				<a href="/contact" class="link-arrow">Ask about a retainer &rarr;</a>
 			</div>
 			<div class="service-card">
 				<span class="price-figure">&#8369;12,000</span>
 				<h3>Manual audit</h3>
 				<p>A technical review done by hand, which is a different thing from the automated one. Deducted from the cost if you go ahead with a build or a retainer afterwards.</p>
+				<a href="/contact" class="link-arrow">Book an audit &rarr;</a>
 			</div>
 		</div>
 		<!-- TEMPORARY: launch offer. Delete this note and the paragraph
