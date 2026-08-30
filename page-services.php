@@ -25,24 +25,24 @@ get_header();
 	<div class="container">
 		<h2>What I do</h2>
 		<div class="services-grid">
-			<div class="service-card">
+			<a href="/wordpress-development" class="service-card">
 				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 				<h3>WordPress development</h3>
 				<p>Custom-built WordPress sites, hand-coded or built with tools like Elementor depending on what the project needs, always optimized to load fast and stay easy to manage.</p>
-				<a href="/wordpress-development" class="link-arrow">Learn more →</a>
-			</div>
-			<div class="service-card">
+				<span class="link-arrow">Learn more →</span>
+			</a>
+			<a href="/seo-and-local-search" class="service-card">
 				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-seo.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 				<h3>SEO and local search</h3>
 				<p>On-page optimization, structured data, and local search strategy that help the right customers find you first.</p>
-				<a href="/seo-and-local-search" class="link-arrow">Learn more →</a>
-			</div>
-			<div class="service-card">
+				<span class="link-arrow">Learn more →</span>
+			</a>
+			<a href="/performance-audits" class="service-card">
 				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-performance.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 				<h3>Performance audits</h3>
 				<p>A full technical audit of your existing site. I'll show you what's slowing you down and how to fix it.</p>
-				<a href="/performance-audits" class="link-arrow">Learn more →</a>
-			</div>
+				<span class="link-arrow">Learn more →</span>
+			</a>
 		</div>
 	</div>
 </section>
@@ -158,8 +158,11 @@ get_header();
 		     a claim about availability that nothing here can keep true, and
 		     a stale one would sit in the pricing section of a site whose
 		     whole argument is that it does not overstate things. -->
-		<div class="pricing-notes">
+		<div class="pricing-offer">
 			<p><strong>&#8369;10,000 off</strong> in exchange for a review and permission to write the work up as a case study using your real numbers. Say so at the quote stage.</p>
+		</div>
+
+		<div class="pricing-notes">
 			<p>After launch, hosting and maintenance is <strong>&#8369;3,500 a month</strong>: hosting, updates, backups, security monitoring, and up to an hour of small changes. Anything bigger is quoted before it starts, never after.</p>
 			<p>The automated audit stays free, and always will. That one is a tool, not a service.</p>
 			<p>Prices are in Philippine pesos. Working from outside the Philippines? Get in touch and I will quote for your market.</p>

@@ -19,6 +19,17 @@ document.addEventListener( 'DOMContentLoaded', function () {
 					entry.target.style.opacity = '1';
 					entry.target.style.transform = 'translateY(0)';
 					observer.unobserve( entry.target );
+
+					// Hand the element back to the stylesheet once it has
+					// arrived. The inline transition set below is 0.5s and
+					// only lists opacity and transform, which beat the CSS on
+					// specificity: card hovers would run at half a second and
+					// their shadow and border would snap rather than ease.
+					entry.target.addEventListener( 'transitionend', () => {
+						entry.target.style.transition = '';
+						entry.target.style.transform = '';
+						entry.target.style.opacity = '';
+					}, { once: true } );
 				}
 			} );
 		}, { threshold: 0.15 } );

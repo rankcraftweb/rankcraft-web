@@ -7,7 +7,10 @@
 	--rc-off-white: #F4F6F9;
 	--rc-slate: #627288;
 	--rc-slate-light: #8392A6;
-	--rc-border: #E2E8F0;
+	/* Was #E2E8F0, which at roughly 1.19:1 against white was invisible
+	   on the unpainted bands: the cards looked borderless. This is
+	   visible without turning into a hard outline. */
+	--rc-border: #CBD5E1;
 
 	/* Measured, not guessed: 20px padding either side of a 36px logo
 	   and the nav that sits with it. Anything that has to clear the
@@ -630,6 +633,49 @@ textarea:focus-visible {
 .portfolio-card:hover {
 	transform: translateY(-2px);
 	box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Cards that carry a destination are now the whole click target, so
+   they take the link reset and can honestly lift on hover. The price
+   cards were deliberately left as divs because they have nowhere to
+   go, and this selector passes over them without naming them: a lift
+   on a card that cannot be clicked is a promise the page cannot keep. */
+a.service-card,
+a.cert-card {
+	text-decoration: none;
+	color: inherit;
+	transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+a.service-card:hover,
+a.cert-card:hover {
+	transform: translateY(-2px);
+	border-color: var(--rc-slate-light);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* The global focus ring rounds to 4px, which cuts the corners off a
+   12px card. These now need the card radius instead. */
+a.service-card:focus-visible,
+a.cert-card:focus-visible,
+.portfolio-card:focus-visible {
+	border-radius: 12px;
+}
+
+/* main.js already honours this for the scroll reveal; the CSS had no
+   equivalent until there was motion living in it. */
+@media (prefers-reduced-motion: reduce) {
+	a.service-card,
+	a.cert-card,
+	.portfolio-card {
+		transition: none;
+	}
+
+	a.service-card:hover,
+	a.cert-card:hover,
+	.portfolio-card:hover {
+		transform: none;
+	}
 }
 
 .portfolio-card-image {
@@ -1544,9 +1590,35 @@ textarea:focus-visible {
 /* Left aligned rather than centred: the hosting line runs to three
    lines and centred prose that long is hard to track back to. Held to
    560px for the same reason every other body block on this site is. */
-.pricing-notes {
+/* A bordered box rather than a banner. Two sections below this the
+   page says it is probably not the right fit for anyone shopping on
+   price; a coloured sale ribbon directly above that would argue with
+   it. This gives the offer enough weight to be seen without switching
+   the page into the language of a discount. */
+.pricing-offer {
 	max-width: 560px;
 	margin: 40px auto 0;
+	padding: 24px 28px;
+	border: 1px solid var(--rc-border);
+	border-radius: 12px;
+	background: var(--rc-off-white);
+	color: var(--rc-slate);
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+.pricing-offer p {
+	margin: 0;
+}
+
+.pricing-offer strong {
+	color: var(--rc-navy);
+	font-weight: 700;
+}
+
+.pricing-notes {
+	max-width: 560px;
+	margin: 24px auto 0;
 	color: var(--rc-slate);
 	font-size: 15px;
 	line-height: 1.6;
