@@ -29,11 +29,14 @@ while ( have_posts() ) :
 
 		<?php
 		// Build the stat row from meta fields, skipping any that are empty.
+		// Compared against the empty string rather than tested for truth:
+		// "0" is falsy in PHP, so a truthiness check silently swallows a
+		// zero, which is usually the whole point of the stat.
 		$stats = array();
 		for ( $i = 1; $i <= 4; $i++ ) {
 			$number = get_post_meta( get_the_ID(), '_rc_stat_' . $i . '_number', true );
 			$label  = get_post_meta( get_the_ID(), '_rc_stat_' . $i . '_label', true );
-			if ( $number && $label ) {
+			if ( '' !== $number && '' !== $label ) {
 				$stats[] = array( 'number' => $number, 'label' => $label );
 			}
 		}
