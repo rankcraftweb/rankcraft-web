@@ -171,22 +171,19 @@ get_header();
 			<h2>What I do</h2>
 			<div class="services-grid">
 				<a href="/wordpress-development" class="service-card">
-					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>WordPress development</h3>
-					<p>Custom-built WordPress sites, hand-coded or built with tools like Elementor depending on what the project needs, always optimized to load fast and stay easy to manage.</p>
-					<span class="link-arrow">WordPress development services →</span>
+					<svg class="service-illustration" viewBox="0 0 240 140" aria-hidden="true" focusable="false"><rect x="20" y="18" width="200" height="104" rx="10" fill="#F4F6F9" stroke="#CBD5E1" stroke-width="2"/><path d="M20 40h200" stroke="#CBD5E1" stroke-width="2"/><circle cx="34" cy="29" r="3" fill="#CBD5E1"/><circle cx="46" cy="29" r="3" fill="#CBD5E1"/><circle cx="58" cy="29" r="3" fill="#CBD5E1"/><rect x="36" y="56" width="70" height="8" rx="4" fill="#0C2A4A"/><rect x="36" y="72" width="104" height="8" rx="4" fill="#CBD5E1"/><rect x="36" y="88" width="52" height="8" rx="4" fill="#17805F"/><rect x="36" y="104" width="86" height="8" rx="4" fill="#CBD5E1"/><path d="M172 64l-10 10 10 10M196 64l10 10-10 10" fill="none" stroke="#0C2A4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					<span class="link-arrow">WordPress development services &rarr;</span>
 				</a>
 				<a href="/seo-and-local-search" class="service-card">
-					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-seo.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>SEO and local search</h3>
-					<p>On-page optimization, structured data, and local search strategy that help the right customers find you first.</p>
-					<span class="link-arrow">Explore SEO and local search →</span>
+					<svg class="service-illustration" viewBox="0 0 240 140" aria-hidden="true" focusable="false"><rect x="20" y="18" width="200" height="104" rx="10" fill="#F4F6F9" stroke="#CBD5E1" stroke-width="2"/><rect x="36" y="32" width="168" height="20" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/><circle cx="51" cy="42" r="5" fill="none" stroke="#0C2A4A" stroke-width="2"/><path d="M55 46l4.5 4.5" stroke="#0C2A4A" stroke-width="2" stroke-linecap="round"/><rect x="36" y="66" width="112" height="7" rx="3.5" fill="#0C2A4A"/><rect x="36" y="78" width="146" height="6" rx="3" fill="#CBD5E1"/><rect x="36" y="96" width="92" height="7" rx="3.5" fill="#CBD5E1"/><rect x="36" y="108" width="124" height="6" rx="3" fill="#CBD5E1"/><path d="M196 62c0 7.5-9 17-9 17s-9-9.5-9-17a9 9 0 1 1 18 0z" fill="#17805F"/><circle cx="187" cy="62" r="3.5" fill="#F4F6F9"/></svg>
+					<span class="link-arrow">Explore SEO and local search &rarr;</span>
 				</a>
 				<a href="/performance-audits" class="service-card">
-					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-performance.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 					<h3>Performance audits</h3>
-					<p>A full technical audit of your existing site. I'll show you what's slowing you down and how to fix it.</p>
-					<span class="link-arrow">What a performance audit covers →</span>
+					<svg class="service-illustration" viewBox="0 0 240 140" aria-hidden="true" focusable="false"><rect x="20" y="18" width="200" height="104" rx="10" fill="#F4F6F9" stroke="#CBD5E1" stroke-width="2"/><path d="M44 98a32 32 0 0 1 64 0" fill="none" stroke="#CBD5E1" stroke-width="9" stroke-linecap="round"/><path d="M44 98a32 32 0 0 1 48-27" fill="none" stroke="#17805F" stroke-width="9" stroke-linecap="round"/><path d="M76 98l19-16" stroke="#0C2A4A" stroke-width="3.5" stroke-linecap="round"/><circle cx="76" cy="98" r="5" fill="#0C2A4A"/><rect x="130" y="48" width="58" height="8" rx="4" fill="#0C2A4A"/><rect x="130" y="66" width="74" height="7" rx="3.5" fill="#CBD5E1"/><rect x="130" y="82" width="40" height="7" rx="3.5" fill="#17805F"/><rect x="130" y="98" width="64" height="7" rx="3.5" fill="#CBD5E1"/></svg>
+					<span class="link-arrow">What a performance audit covers &rarr;</span>
 				</a>
 			</div>
 		</div>

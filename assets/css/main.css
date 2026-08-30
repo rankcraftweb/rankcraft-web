@@ -319,6 +319,19 @@ textarea:focus-visible {
 	flex-direction: column;
 }
 
+/* Teaser illustrations on the home page. The cards there used to
+   repeat the services page word for word, so they now carry a
+   drawing, a heading and a link and nothing else. All three share
+   the same rounded screen so they read as one set. */
+
+.service-illustration {
+	display: block;
+	width: 100%;
+	max-width: 220px;
+	height: auto;
+	margin: 4px auto 24px;
+}
+
 .service-card img, .step img {
 	margin-bottom: 16px;
 	border-radius: 12px;
