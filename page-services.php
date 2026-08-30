@@ -159,6 +159,20 @@ get_header();
 	</div>
 </section>
 
+<section class="not-a-fit">
+	<div class="container service-overview-inner">
+		<p class="section-label">Fit</p>
+		<h2>When I am not the right person</h2>
+		<p class="section-intro">Saying this here saves us both an email chain.</p>
+		<ul class="not-a-fit-list">
+			<li><strong>You need it live next week.</strong>A custom build takes two to four weeks. I would rather turn the work down than rush it and hand you something I would not put in the portfolio.</li>
+			<li><strong>You want a guaranteed position in search.</strong>Nobody can promise that, and anyone who does is either guessing or selling you something else. I can tell you what is holding the site back, and fix it. Where it lands after that is Google’s call.</li>
+			<li><strong>You are looking for the cheapest quote.</strong>There is always someone cheaper, and for a simple brochure site they may well be the right answer. This costs more because it is measured first, tested as it goes, and written down.</li>
+			<li><strong>You want someone who will just do what they are told.</strong>The work starts by measuring, and sometimes what that turns up is that the thing you asked for is not the thing that will help. I will say so before starting rather than after invoicing. If you would rather skip that conversation, we will both end up frustrated.</li>
+		</ul>
+	</div>
+</section>
+
 <section class="service-local">
 	<div class="container service-overview-inner">
 		<h2>Where I work</h2>
@@ -166,7 +180,7 @@ get_header();
 	</div>
 </section>
 
-<section class="about-cta">
+<section class="about-cta about-cta--shaded">
 	<div class="container">
 		<h2>Not sure which one you need?</h2>
 		<div class="about-cta-buttons">
