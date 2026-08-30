@@ -97,7 +97,7 @@ get_header();
 					<h3>Build and fix, one change at a time</h3>
 					<p>Changes go in small and reversible. When something breaks, and occasionally something does, you want to know exactly which change caused it rather than unpicking a week of work.</p>
 					<ul class="process-points">
-						<li><strong>Hand-built, no page builder</strong>Code written for your site, which is why these builds score 97 to 99 on mobile.</li>
+						<li><strong>Built lean either way</strong>Hand-coded or on a page builder, whichever the project calls for, but what ships is stripped of everything the site does not use. That is what holds these builds at 97 to 99 on mobile.</li>
 						<li><strong>Tested as it goes</strong>Each change checked before the next one starts, not all at once at the end.</li>
 						<li><strong>Nothing hidden</strong>You can watch the work happen rather than waiting for a reveal.</li>
 						<li><strong>Reversible</strong>Every step is version controlled and can be rolled back on its own.</li>
@@ -129,7 +129,7 @@ get_header();
 	</div>
 </section>
 
-<section class="about-cta">
+<section class="about-cta about-cta--shaded">
 	<div class="container">
 		<h2>Not sure which one you need?</h2>
 		<div class="about-cta-buttons">
