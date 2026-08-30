@@ -44,29 +44,6 @@ get_header();
 	</div>
 </section>
 
-<section class="service-process">
-	<div class="container">
-		<h2>How a project comes together</h2>
-		<div class="steps-grid">
-			<div class="step">
-				<span class="step-number">1</span>
-				<h3>Discovery &amp; planning</h3>
-				<p>I start with a quick email exchange to understand your business, goals, and what your current site is missing.</p>
-			</div>
-			<div class="step">
-				<span class="step-number">2</span>
-				<h3>Design &amp; build</h3>
-				<p>I design and build your site personally, with regular check-ins so you always know where things stand.</p>
-			</div>
-			<div class="step">
-				<span class="step-number">3</span>
-				<h3>Launch &amp; support</h3>
-				<p>Once it's live, I stick around to handle hosting, updates, and any changes you need.</p>
-			</div>
-		</div>
-	</div>
-</section>
-
 <section class="about-cta">
 	<div class="container">
 		<h2>Ready to build a site that works as hard as you do?</h2>

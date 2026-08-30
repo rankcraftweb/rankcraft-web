@@ -11,7 +11,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	const prefersReducedMotion = window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
 
 	if ( 'IntersectionObserver' in window && ! prefersReducedMotion ) {
-		const revealEls = document.querySelectorAll( '.service-card, .step, .stat' );
+		const revealEls = document.querySelectorAll( '.service-card, .step, .stat, .process-step' );
 
 		const observer = new IntersectionObserver( ( entries ) => {
 			entries.forEach( ( entry ) => {
@@ -29,6 +29,44 @@ document.addEventListener( 'DOMContentLoaded', function () {
 			el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
 			observer.observe( el );
 		} );
+	}
+
+	/**
+	 * Process timeline rail. Fills as the section travels up the viewport.
+	 * Reduced motion gets the finished state immediately rather than an
+	 * empty track, since the rail is part of the design and not decoration.
+	 */
+	const railProgress = document.querySelector( '.process-rail-progress' );
+	const timeline = document.querySelector( '.process-timeline' );
+
+	if ( railProgress && timeline ) {
+		if ( prefersReducedMotion ) {
+			railProgress.style.height = '100%';
+		} else {
+			let ticking = false;
+
+			const updateRail = () => {
+				const box = timeline.getBoundingClientRect();
+				// Start filling when the timeline's top passes 60% down the
+				// viewport, so the rail is already moving by the time the
+				// first step is comfortably readable.
+				const travelled = window.innerHeight * 0.6 - box.top;
+				const ratio = box.height ? travelled / box.height : 0;
+				railProgress.style.height = Math.min( Math.max( ratio, 0 ), 1 ) * 100 + '%';
+				ticking = false;
+			};
+
+			const onScroll = () => {
+				if ( ! ticking ) {
+					ticking = true;
+					window.requestAnimationFrame( updateRail );
+				}
+			};
+
+			window.addEventListener( 'scroll', onScroll, { passive: true } );
+			window.addEventListener( 'resize', onScroll, { passive: true } );
+			updateRail();
+		}
 	}
 
 	/**

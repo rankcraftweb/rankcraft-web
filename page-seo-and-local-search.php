@@ -44,29 +44,6 @@ get_header();
 	</div>
 </section>
 
-<section class="service-process">
-	<div class="container">
-		<h2>How I approach SEO</h2>
-		<div class="steps-grid">
-			<div class="step">
-				<span class="step-number">1</span>
-				<h3>Audit</h3>
-				<p>I run a <a href="/performance-audits">full technical and on-page audit</a> to see exactly where you stand today.</p>
-			</div>
-			<div class="step">
-				<span class="step-number">2</span>
-				<h3>Optimize</h3>
-				<p>I fix what's holding you back and implement the on-page and technical changes that move rankings.</p>
-			</div>
-			<div class="step">
-				<span class="step-number">3</span>
-				<h3>Track &amp; refine</h3>
-				<p>I monitor rankings and traffic monthly, adjusting strategy as your site grows.</p>
-			</div>
-		</div>
-	</div>
-</section>
-
 <section class="about-cta">
 	<div class="container">
 		<h2>Want to know where your site stands in search?</h2>
