@@ -32,15 +32,25 @@ get_header();
 
 <section class="service-deliverables">
 	<div class="container">
-		<h2>What's included</h2>
-		<ul class="skills-list">
-			<li>On-page SEO optimization</li>
-			<li>Technical SEO audits and fixes</li>
-			<li>Local business schema markup</li>
-			<li>Google Business Profile optimization</li>
-			<li>Keyword and content strategy</li>
-			<li>Monthly performance reporting</li>
-		</ul>
+		<h2>What this covers</h2>
+		<div class="sub-services">
+			<div class="sub-service">
+				<h3>Technical SEO Fixes</h3>
+				<p>Crawl, indexing, canonicals and redirects. This is the layer that decides whether any of the rest counts: a canonical pointing one redirect away from itself will hold a page back for months without ever looking broken.</p>
+			</div>
+			<div class="sub-service">
+				<h3>Local SEO &amp; Google Business Profile</h3>
+				<p>Categories, service areas and the details that decide whether you appear in the map pack at all. A profile set to the wrong service area can put your pin in the middle of the ocean, which is a real thing I have had to fix.</p>
+			</div>
+			<div class="sub-service">
+				<h3>Structured Data &amp; Schema Markup</h3>
+				<p>Hand-written schema telling search engines what the business is, where it works and what it offers, so the site and the listing agree with each other. Most sites either skip this or leave a plugin guessing.</p>
+			</div>
+			<div class="sub-service">
+				<h3>Search Console Setup &amp; Reporting</h3>
+				<p>What people actually searched, where you appeared and what moved, monthly. Including the queries that turn out to be the wrong country entirely, which is worth knowing before you write anything for them.</p>
+			</div>
+		</div>
 	</div>
 </section>
 

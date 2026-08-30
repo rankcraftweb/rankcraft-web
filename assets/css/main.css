@@ -849,6 +849,44 @@ a.cert-card:focus-visible,
 	margin-bottom: 16px;
 }
 
+/* Named sub-services replacing the old "what's included" pills,
+   which were four words each and said almost nothing. Two columns
+   rather than three: these carry a paragraph now, and three
+   columns at this container width would run the measure too
+   narrow to read. */
+.sub-services {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 8px 48px;
+}
+
+.sub-service {
+	padding: 24px 0;
+	border-top: 1px solid var(--rc-border);
+}
+
+.sub-service h3 {
+	margin: 0 0 8px;
+	font-size: 19px;
+}
+
+.sub-service p {
+	margin: 0;
+	color: var(--rc-slate);
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+	/* One column, capped for the same reason every other body block
+	   here is: the container is wider than a comfortable measure. */
+	.sub-services {
+		grid-template-columns: 1fr;
+		max-width: 560px;
+		gap: 0;
+	}
+}
+
 .service-deliverables {
 	padding: 80px 0;
 	background: var(--rc-off-white);

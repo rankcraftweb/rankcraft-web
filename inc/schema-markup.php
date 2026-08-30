@@ -76,7 +76,7 @@ class RankCraft_Schema_Markup {
 						'@type'       => 'Offer',
 						'itemOffered' => array(
 							'@type' => 'Service',
-							'name'  => 'Custom WordPress Development',
+							'name'  => 'WordPress Development',
 							'url'   => home_url( '/wordpress-development/' ),
 						),
 					),
@@ -240,7 +240,7 @@ class RankCraft_Schema_Markup {
 	 */
 	private static function get_service_pages() {
 		return array(
-			'wordpress-development' => 'Custom WordPress Development',
+			'wordpress-development' => 'WordPress Development',
 			'seo-and-local-search'  => 'SEO and Local Search',
 			'performance-audits'    => 'Performance Audits',
 		);

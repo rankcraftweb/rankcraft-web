@@ -31,14 +31,25 @@ get_header();
 
 <section class="service-deliverables">
 	<div class="container">
-		<h2>What's included</h2>
-		<ul class="skills-list">
-			<li>Core Web Vitals and speed analysis</li>
-			<li>Full technical SEO audit</li>
-			<li>Accessibility and best-practices check</li>
-			<li>Prioritized, plain-English fix list</li>
-			<li>Detailed walkthrough sent by email</li>
-		</ul>
+		<h2>What this covers</h2>
+		<div class="sub-services">
+			<div class="sub-service">
+				<h3>Free Automated Audit</h3>
+				<p>Put in your address and get mobile and desktop scores with the numbers underneath, in about a minute. No call and no obligation, and the report is yours whether or not we ever speak.</p>
+			</div>
+			<div class="sub-service">
+				<h3>Manual Technical Review</h3>
+				<p>The automated run finds what a tool can find. This is the read behind it: what is actually causing those numbers, what is worth fixing, and what to leave alone.</p>
+			</div>
+			<div class="sub-service">
+				<h3>Core Web Vitals Fixes</h3>
+				<p>Most audits stop at the report. This is the work itself, done in order of impact with before and after figures, so the difference is yours to check rather than mine to claim.</p>
+			</div>
+			<div class="sub-service">
+				<h3>Redesign &amp; Migration Checks</h3>
+				<p>Moving or rebuilding a site is where rankings quietly disappear: pages dropped without redirects, canonicals still pointing at the old structure. I found exactly this on my own site, and it is far cheaper to catch before launch than after.</p>
+			</div>
+		</div>
 	</div>
 </section>
 

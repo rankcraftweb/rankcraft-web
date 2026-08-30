@@ -66,7 +66,7 @@ get_header();
 	<div class="container">
 		<h2>What I do</h2>
 		<ul class="skills-list">
-			<li><a href="/wordpress-development">Custom WordPress development</a>, built without a page builder so it stays fast</li>
+			<li><a href="/wordpress-development">WordPress development</a>, hand-coded or on a builder, whichever keeps the site fast</li>
 			<li><a href="/performance-audits">Performance audits</a> with Core Web Vitals, and the fixes afterwards</li>
 			<li><a href="/seo-and-local-search">Technical SEO and local search</a>, including schema markup and Google Business Profile</li>
 			<li>Rebuilds and repairs of existing WordPress sites</li>

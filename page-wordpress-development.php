@@ -12,7 +12,7 @@ get_header();
 	<div class="container">
 		<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="56" height="56" class="service-hero-icon">
 		<p class="section-label">Services</p>
-		<h1>Custom WordPress development built to perform</h1>
+		<h1>WordPress development built to perform</h1>
 		<p class="service-hero-lead">Hand-coded or built with tools like Elementor depending on what the project needs, always optimized for speed and search. I build clean, fast WordPress sites tailored to your business.</p>
 		<div class="hero-cta">
 			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
@@ -32,15 +32,25 @@ get_header();
 
 <section class="service-deliverables">
 	<div class="container">
-		<h2>What's included</h2>
-		<ul class="skills-list">
-			<li>Custom WordPress theme development</li>
-			<li>Fully responsive, mobile-first design</li>
-			<li>Speed-optimized, clean code</li>
-			<li>Lead capture forms and integrations</li>
-			<li>Ongoing maintenance and updates</li>
-			<li>Personal, single-point-of-contact support</li>
-		</ul>
+		<h2>What I build</h2>
+		<div class="sub-services">
+			<div class="sub-service">
+				<h3>Custom WordPress Themes</h3>
+				<p>Built for your site rather than a theme bought and bent into shape. Responsive and checked at thirteen widths, not two, because most responsive faults hide between the sizes people think to test. These builds land at 97 to 99 on mobile.</p>
+			</div>
+			<div class="sub-service">
+				<h3>Page Builder Builds</h3>
+				<p>Not every project needs a hand-coded theme, and pretending otherwise costs you money. Where Elementor is the right answer I use it, then strip what the page does not need so the result stays fast.</p>
+			</div>
+			<div class="sub-service">
+				<h3>Plugin Development &amp; Integration</h3>
+				<p>Custom functionality for when nothing off the shelf fits: REST endpoints, forms that post into other systems, admin screens for the data your business actually keeps. The free audit tool talks to this site that way.</p>
+			</div>
+			<div class="sub-service">
+				<h3>Maintenance &amp; Support</h3>
+				<p>Updates, backups and security monitoring after launch, with one person to reach rather than a ticket queue. Priced separately so you are not paying for it inside the build.</p>
+			</div>
+		</div>
 	</div>
 </section>
 

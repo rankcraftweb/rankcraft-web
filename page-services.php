@@ -28,7 +28,7 @@ get_header();
 			<a href="/wordpress-development" class="service-card">
 				<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="48" height="48" loading="lazy">
 				<h3>WordPress development</h3>
-				<p>Custom-built WordPress sites, hand-coded or built with tools like Elementor depending on what the project needs, always optimized to load fast and stay easy to manage.</p>
+				<p>WordPress sites built to load fast and stay easy to manage, hand-coded or on a page builder depending on what the project actually needs.</p>
 				<span class="link-arrow">Learn more →</span>
 			</a>
 			<a href="/seo-and-local-search" class="service-card">
