@@ -715,6 +715,53 @@ a.cert-card:focus-visible,
 .portfolio-card-body p {
 	color: var(--rc-slate);
 	font-size: 14px;
+	margin: 0;
+}
+
+.portfolio-archive .section-label {
+	margin: 0 0 8px;
+}
+
+/* The h1 and intro run the full 1200px container otherwise, which is
+   about 150 characters of lead. */
+.portfolio-intro {
+	max-width: 620px;
+}
+
+/* A compact stat row for inside a card. The .stat-row used on single
+   case studies sets 40px numerals and 48px gaps, which is sized for a
+   full-width band and overruns a half-container card. */
+.card-stats {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+	align-items: start;
+	margin: 20px 0 0;
+	padding-top: 20px;
+	border-top: 1px solid var(--rc-border);
+}
+
+.card-stat-number {
+	display: block;
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 1.1;
+	color: var(--rc-green);
+}
+
+/* Labels are author-entered and vary from one word to a short phrase,
+   so this has to wrap cleanly rather than assume it fits. */
+.card-stat-label {
+	display: block;
+	margin-top: 4px;
+	font-size: 11px;
+	line-height: 1.35;
+	color: var(--rc-slate);
+}
+
+.portfolio-card-body .link-arrow {
+	display: inline-block;
+	margin-top: 20px;
 }
 
 /* Contact page */
