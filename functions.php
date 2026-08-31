@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RANKCRAFT_VERSION', '1.19.0' );
+define( 'RANKCRAFT_VERSION', '1.20.0' );
 define( 'RANKCRAFT_DIR', get_template_directory() );
 define( 'RANKCRAFT_URI', get_template_directory_uri() );
 define( 'RANKCRAFT_GA4_ID', 'G-S1816MHVM3' );
@@ -35,7 +35,6 @@ add_action( 'after_setup_theme', 'rankcraft_setup' );
  * Enqueue theme styles and scripts.
  */
 function rankcraft_enqueue_assets() {
-	wp_enqueue_style( 'rankcraft-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap', array(), null );
 	wp_enqueue_style( 'rankcraft-main', RANKCRAFT_URI . '/assets/css/main.css', array(), RANKCRAFT_VERSION );
 	wp_enqueue_script( 'rankcraft-main', RANKCRAFT_URI . '/assets/js/main.js', array(), RANKCRAFT_VERSION, true );
 }

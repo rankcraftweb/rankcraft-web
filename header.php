@@ -13,8 +13,8 @@
 	  gtag('config', '<?php echo esc_js( RANKCRAFT_GA4_ID ); ?>');
 	</script>
 	<?php endif; ?>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" as="font" type="font/woff2" crossorigin href="<?php echo esc_url( RANKCRAFT_URI . '/assets/fonts/poppins-400-latin.woff2' ); ?>">
+	<link rel="preload" as="font" type="font/woff2" crossorigin href="<?php echo esc_url( RANKCRAFT_URI . '/assets/fonts/poppins-700-latin.woff2' ); ?>">
 	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/favicon-32.png' ); ?>">
 	<link rel="icon" type="image/png" sizes="192x192" href="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/favicon-192.png' ); ?>">
 	<link rel="apple-touch-icon" href="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/apple-touch-icon.png' ); ?>">
