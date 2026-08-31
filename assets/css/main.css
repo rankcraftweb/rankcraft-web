@@ -627,6 +627,10 @@ textarea:focus-visible {
 	margin: 0 0 16px;
 }
 
+/* font-size here, not only on the link inside: an li inheriting 16px
+   from body builds a 25.6px line box even when its only child is 14px,
+   because the strut comes from the element own font. That is where the
+   last 3.2px of difference against the address block was hiding. */
 .footer-col ul {
 	list-style: none;
 	margin: 0;
@@ -634,6 +638,7 @@ textarea:focus-visible {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+	font-size: 14px;
 }
 
 .footer-col a {
