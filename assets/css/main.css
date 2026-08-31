@@ -612,7 +612,7 @@ textarea:focus-visible {
 
 .footer-columns {
 	display: grid;
-	grid-template-columns: repeat(5, auto);
+	grid-template-columns: repeat(4, auto);
 	justify-content: space-between;
 	gap: 32px;
 	padding-bottom: 40px;
@@ -651,7 +651,28 @@ textarea:focus-visible {
 
 .footer-brand {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
+}
+
+/* Set rather than placed: at 315px the logo image made the brand
+   column a different weight of thing from the three beside it,
+   whose headings are 14px. 20px sits just above those headings,
+   which is where a brand belongs without taking the column over.
+   Two classes so it beats .footer-col a, which would otherwise
+   drop it to 14px. */
+.footer-brand .footer-wordmark {
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.2;
+	color: var(--rc-off-white);
+	opacity: 1;
+	text-decoration: none;
+}
+
+.footer-brand .footer-wordmark span {
+	color: var(--rc-green-light);
 }
 
 /* <address> is italic by default, which is wrong for a postal block.
@@ -672,11 +693,6 @@ textarea:focus-visible {
 /* Same reasoning as .site-logo-img: 315px wide is the 56px tall this
    was, and it can now shrink instead of forcing the footer wider than
    the screen. */
-.footer-logo-img {
-	width: 315px;
-	height: auto;
-	display: block;
-}
 
 .footer-bottom {
 	padding-top: 24px;
@@ -2094,8 +2110,8 @@ a.cert-card:focus-visible,
 		width: 100%;
 	}
 
-	/* Same story as .hero-inner above: the 5-column footer (brand,
-	   Services, Company, Get Started, Contact) doesn't drop to 2 columns until
+	/* Same story as .hero-inner above: the 4-column footer (brand,
+	   Services, Company, Get Started) doesn't drop to 2 columns until
 	   768px, so 769-900px squeezes each nav column to ~145px, wrapping
 	   "WordPress Development" and "SEO and Local Search" to 2 lines
 	   while their neighbors stay on 1, an uneven, cramped-looking mix. */

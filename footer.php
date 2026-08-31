@@ -4,10 +4,32 @@
 	<div class="container footer-inner">
 
 		<div class="footer-columns">
+			<?php
+			/*
+			 * A typeset wordmark rather than the logo image. The image was
+			 * 315px wide against columns whose headings are 14px, so the
+			 * first column read as a different weight of thing from the
+			 * other three. The header still carries the full logo.
+			 *
+			 * <address> for the details below it: this is the contact
+			 * information for the owner of the page, which is what the
+			 * element is for, and it puts them on every page rather than
+			 * only on /contact/.
+			 *
+			 * The phone number has to match the Google Business Profile
+			 * character for character. The profile displays it as
+			 * 0969 601 2157; the href stays international so the link still
+			 * dials from anywhere. Change it in both places or in neither.
+			 */
+			?>
 			<div class="footer-col footer-brand">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/rankcraft-web-no-tagline-dark.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="footer-logo-img" width="1800" height="320" loading="lazy">
-				</a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-wordmark">RankCraft <span>Web</span></a>
+				<address class="footer-nap">
+					<span>Silang, Cavite, Philippines</span>
+					<a href="tel:+639696012157">0969 601 2157</a>
+					<a href="mailto:hello@rankcraftweb.com">hello@rankcraftweb.com</a>
+					<a href="https://maps.google.com/?cid=8104698444060568540" target="_blank" rel="noopener">Google Business Profile</a>
+				</address>
 			</div>
 
 			<?php
@@ -52,29 +74,6 @@
 				</nav>
 			</div>
 
-			<?php
-			/*
-			 * <address> rather than a div: this is the contact information
-			 * for the owner of the page, which is what the element is for,
-			 * and it puts the details on every page instead of only on
-			 * /contact/.
-			 *
-			 * The phone number has to match the Google Business Profile
-			 * character for character, formatting included. The profile
-			 * displays it as 0969 601 2157; the href stays international so
-			 * the link still dials from anywhere. Change it in both places
-			 * or in neither.
-			 */
-			?>
-			<div class="footer-col">
-				<p class="footer-col-title">Contact</p>
-				<address class="footer-nap">
-					<span>Silang, Cavite, Philippines</span>
-					<a href="tel:+639696012157">0969 601 2157</a>
-					<a href="mailto:hello@rankcraftweb.com">hello@rankcraftweb.com</a>
-					<a href="https://maps.google.com/?cid=8104698444060568540" target="_blank" rel="noopener">Google Business Profile</a>
-				</address>
-			</div>
 		</div>
 
 		<div class="footer-bottom">
