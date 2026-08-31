@@ -10,12 +10,12 @@ get_header();
 
 <section class="about-hero">
 	<div class="container about-hero-inner">
-		<div>
+		<div class="about-hero-text">
 			<p class="section-label">About</p>
 			<h1>Hi, I'm Jan. I build fast WordPress sites and fix technical SEO.</h1>
 			<p class="about-hero-lead">Based in the Philippines, working with clients remotely. Every project is handled personally, from the first audit through launch and after, so the person you brief is the person writing the code.</p>
 		</div>
-		<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/about-headshot.png' ); ?>" alt="Jan, founder of RankCraft Web" class="about-hero-headshot" width="180" height="180">
+		<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/about-headshot.png' ); ?>" alt="Jan, founder of RankCraft Web" class="about-hero-headshot" width="220" height="220">
 	</div>
 </section>
 

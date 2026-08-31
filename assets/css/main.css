@@ -1548,6 +1548,11 @@ a.cert-card:focus-visible,
 	gap: 40px;
 }
 
+.about-hero-text {
+	flex: 1;
+	min-width: 0;
+}
+
 .about-hero-headshot {
 	border-radius: 50%;
 	flex-shrink: 0;
