@@ -21,14 +21,17 @@ get_header();
 ?>
 
 <section class="service-hero">
-	<div class="container">
-		<p class="section-label">Silang, Cavite</p>
-		<h1>Website developer in Silang, Cavite</h1>
-		<p class="service-hero-lead">I build fast WordPress sites and fix technical SEO for businesses around Silang, Tagaytay, and the rest of Cavite. I live here, so you are hiring one person you can actually reach, not an agency queue.</p>
-		<div class="hero-cta">
-			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
-			<a href="/contact" class="btn btn-secondary">Get in touch</a>
+	<div class="container service-hero-inner">
+		<div class="service-hero-text">
+			<p class="section-label">Silang, Cavite</p>
+			<h1>Website developer in Silang, Cavite</h1>
+			<p class="service-hero-lead">I build fast WordPress sites and fix technical SEO for businesses around Silang, Tagaytay, and the rest of Cavite. I live here, so you are hiring one person you can actually reach, not an agency queue.</p>
+			<div class="hero-cta">
+				<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
+				<a href="/contact" class="btn btn-secondary">Get in touch</a>
+			</div>
 		</div>
+		<div class="service-hero-visual"><svg class="hero-illustration" viewBox="0 0 400 300" aria-hidden="true" focusable="false"><rect x="20" y="30" width="360" height="240" rx="16" fill="#123A5E" stroke="#2A5F92" stroke-width="1.5"/><g stroke="#2A5F92" stroke-width="3" fill="none" stroke-linecap="round"><path d="M34 112h136l40 40h176"/><path d="M122 44v68"/><path d="M258 258v-84l46-46"/><path d="M34 212h84l28-28"/></g><circle cx="96" cy="84" r="5" fill="#3C6E9C"/><circle cx="312" cy="180" r="5" fill="#3C6E9C"/><circle cx="126" cy="228" r="5" fill="#3C6E9C"/><path d="M200 92c-21 0-38 17-38 38 0 27 38 66 38 66s38-39 38-66c0-21-17-38-38-38z" fill="#1D9E75"/><circle cx="200" cy="130" r="13" fill="#0C2A4A"/></svg></div>
 	</div>
 </section>
 

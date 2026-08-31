@@ -9,14 +9,17 @@ get_header();
 ?>
 
 <section class="service-hero">
-	<div class="container">
-		<p class="section-label">Services</p>
-		<h1>WordPress development, SEO, and performance audits</h1>
-		<p class="service-hero-lead">Three ways to work together, each one built around the same goal: a site that loads fast, ranks well, and actually brings in business.</p>
-		<div class="hero-cta">
-			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
-			<a href="/contact" class="btn btn-secondary">Get in touch</a>
+	<div class="container service-hero-inner">
+		<div class="service-hero-text">
+			<p class="section-label">Services</p>
+			<h1>WordPress development, SEO, and performance audits</h1>
+			<p class="service-hero-lead">Three ways to work together, each one built around the same goal: a site that loads fast, ranks well, and actually brings in business.</p>
+			<div class="hero-cta">
+				<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
+				<a href="/contact" class="btn btn-secondary">Get in touch</a>
+			</div>
 		</div>
+		<div class="service-hero-visual"><svg class="hero-illustration" viewBox="0 0 400 300" aria-hidden="true" focusable="false"><rect x="14" y="60" width="112" height="180" rx="14" fill="#123A5E" stroke="#2A5F92" stroke-width="1.5"/><path d="M52 98l-14 14 14 14M88 98l14 14-14 14" stroke="#63C89F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="38" y="156" width="64" height="8" rx="4" fill="#F4F6F9"/><rect x="38" y="174" width="46" height="6" rx="3" fill="#3C6E9C"/><rect x="38" y="188" width="56" height="6" rx="3" fill="#3C6E9C"/><rect x="144" y="40" width="112" height="200" rx="14" fill="#123A5E" stroke="#2A5F92" stroke-width="1.5"/><circle cx="195" cy="97" r="17" fill="none" stroke="#63C89F" stroke-width="3"/><path d="M207 109l12 12" stroke="#63C89F" stroke-width="3" stroke-linecap="round"/><rect x="168" y="156" width="64" height="8" rx="4" fill="#F4F6F9"/><rect x="168" y="174" width="46" height="6" rx="3" fill="#3C6E9C"/><rect x="168" y="188" width="56" height="6" rx="3" fill="#3C6E9C"/><rect x="274" y="60" width="112" height="180" rx="14" fill="#123A5E" stroke="#2A5F92" stroke-width="1.5"/><path d="M304 124a26 26 0 0 1 52 0" fill="none" stroke="#1E4A72" stroke-width="7" stroke-linecap="round"/><path d="M304 124a26 26 0 0 1 41-21" fill="none" stroke="#63C89F" stroke-width="7" stroke-linecap="round"/><path d="M330 124l13-15" stroke="#F4F6F9" stroke-width="3" stroke-linecap="round"/><rect x="298" y="156" width="64" height="8" rx="4" fill="#F4F6F9"/><rect x="298" y="174" width="46" height="6" rx="3" fill="#3C6E9C"/><rect x="298" y="188" width="56" height="6" rx="3" fill="#3C6E9C"/></svg></div>
 	</div>
 </section>
 

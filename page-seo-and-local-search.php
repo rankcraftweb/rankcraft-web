@@ -9,14 +9,17 @@ get_header();
 ?>
 
 <section class="service-hero">
-	<div class="container">
-		<p class="section-label">Services</p>
-		<h1>SEO and local search that brings in the right customers</h1>
-		<p class="service-hero-lead">On-page optimization, technical fixes, and local search strategy so the people searching for what you offer actually find you.</p>
-		<div class="hero-cta">
-			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
-			<a href="/contact" class="btn btn-secondary">Get in touch</a>
+	<div class="container service-hero-inner">
+		<div class="service-hero-text">
+			<p class="section-label">Services</p>
+			<h1>SEO and local search that brings in the right customers</h1>
+			<p class="service-hero-lead">On-page optimization, technical fixes, and local search strategy so the people searching for what you offer actually find you.</p>
+			<div class="hero-cta">
+				<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
+				<a href="/contact" class="btn btn-secondary">Get in touch</a>
+			</div>
 		</div>
+		<div class="service-hero-visual"><svg class="hero-illustration" viewBox="0 0 400 300" aria-hidden="true" focusable="false"><rect x="20" y="30" width="360" height="240" rx="16" fill="#123A5E" stroke="#2A5F92" stroke-width="1.5"/><rect x="44" y="56" width="312" height="34" rx="17" fill="#0C2A4A" stroke="#2A5F92" stroke-width="1.5"/><circle cx="70" cy="73" r="7.5" fill="none" stroke="#63C89F" stroke-width="2.5"/><path d="M76 79l7 7" stroke="#63C89F" stroke-width="2.5" stroke-linecap="round"/><rect x="96" y="69" width="120" height="8" rx="4" fill="#3C6E9C"/><rect x="44" y="106" width="312" height="48" rx="10" fill="#0C2A4A" stroke="#63C89F" stroke-width="2"/><rect x="62" y="120" width="150" height="9" rx="4.5" fill="#F4F6F9"/><rect x="62" y="136" width="210" height="6" rx="3" fill="#3C6E9C"/><path d="M326 140v-22M317 127l9-9 9 9" stroke="#63C89F" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="44" y="166" width="312" height="42" rx="10" fill="#0C2A4A"/><rect x="62" y="179" width="118" height="7" rx="3.5" fill="#3C6E9C"/><rect x="62" y="193" width="186" height="5" rx="2.5" fill="#1E4A72"/><rect x="44" y="216" width="312" height="42" rx="10" fill="#0C2A4A"/><rect x="62" y="229" width="96" height="7" rx="3.5" fill="#3C6E9C"/><rect x="62" y="243" width="164" height="5" rx="2.5" fill="#1E4A72"/></svg></div>
 	</div>
 </section>
 

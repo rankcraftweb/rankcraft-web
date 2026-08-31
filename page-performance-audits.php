@@ -9,14 +9,17 @@ get_header();
 ?>
 
 <section class="service-hero">
-	<div class="container">
-		<p class="section-label">Services</p>
-		<h1>Find out exactly what's slowing your site down</h1>
-		<p class="service-hero-lead">A full technical audit of your existing website, speed, SEO, and technical health, with a clear, no-jargon report and a plan to fix it.</p>
-		<div class="hero-cta">
-			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
-			<a href="/contact" class="btn btn-secondary">Get in touch</a>
+	<div class="container service-hero-inner">
+		<div class="service-hero-text">
+			<p class="section-label">Services</p>
+			<h1>Find out exactly what's slowing your site down</h1>
+			<p class="service-hero-lead">A full technical audit of your existing website, speed, SEO, and technical health, with a clear, no-jargon report and a plan to fix it.</p>
+			<div class="hero-cta">
+				<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
+				<a href="/contact" class="btn btn-secondary">Get in touch</a>
+			</div>
 		</div>
+		<div class="service-hero-visual"><svg class="hero-illustration" viewBox="0 0 400 300" aria-hidden="true" focusable="false"><rect x="20" y="30" width="360" height="240" rx="16" fill="#123A5E" stroke="#2A5F92" stroke-width="1.5"/><path d="M120 186a80 80 0 0 1 160 0" fill="none" stroke="#1E4A72" stroke-width="16" stroke-linecap="round"/><path d="M120 186a80 80 0 0 1 127-65" fill="none" stroke="#1D9E75" stroke-width="16" stroke-linecap="round"/><path d="M200 186l38-57" stroke="#F4F6F9" stroke-width="5" stroke-linecap="round"/><circle cx="200" cy="186" r="9" fill="#63C89F"/><rect x="120" y="218" width="46" height="9" rx="4.5" fill="#63C89F"/><rect x="177" y="218" width="46" height="9" rx="4.5" fill="#3C6E9C"/><rect x="234" y="218" width="46" height="9" rx="4.5" fill="#3C6E9C"/><rect x="120" y="238" width="160" height="6" rx="3" fill="#1E4A72"/></svg></div>
 	</div>
 </section>
 

@@ -673,10 +673,6 @@ textarea:focus-visible {
 	padding: 80px 0;
 }
 
-.portfolio-archive h1 {
-	font-size: 36px;
-	margin-bottom: 8px;
-}
 
 .section-intro {
 	color: var(--rc-slate);
@@ -778,15 +774,7 @@ a.cert-card:focus-visible,
 	margin: 0;
 }
 
-.portfolio-archive .section-label {
-	margin: 0 0 8px;
-}
 
-/* The h1 and intro run the full 1200px container otherwise, which is
-   about 150 characters of lead. */
-.portfolio-intro {
-	max-width: 620px;
-}
 
 /* A compact stat row for inside a card. The .stat-row used on single
    case studies sets 40px numerals and 48px gaps, which is sized for a
@@ -949,6 +937,34 @@ a.cert-card:focus-visible,
 .service-hero {
 	background: var(--rc-navy);
 	padding: 80px 0;
+}
+
+/* Same two-column hero the front page uses. These heroes were a
+   single text column in a 1200px container, so past the h1's 700px
+   cap the right-hand third of every one of them was empty. */
+.service-hero-inner {
+	display: flex;
+	align-items: center;
+	gap: 48px;
+}
+
+/* min-width:0 because a flex item defaults to min-content width and
+   a long unbroken heading would otherwise refuse to shrink and push
+   the drawing off the side. */
+.service-hero-text,
+.service-hero-visual {
+	flex: 1;
+	min-width: 0;
+}
+
+.service-hero-visual {
+	max-width: 440px;
+}
+
+.hero-illustration {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 .service-hero h1 {
@@ -1940,8 +1956,16 @@ a.cert-card:focus-visible,
 	   between ~769-900px, right where the nav has already gone to a
 	   hamburger. Stack it at the same breakpoint so the two switch to
 	   "mobile" together instead of one lagging the other. */
-	.hero-inner {
+	.hero-inner,
+	.service-hero-inner {
 		flex-direction: column;
+	}
+
+	/* Stacked, the drawing would otherwise run the full column width
+	   and push the buttons a screen and a half down. */
+	.service-hero-visual {
+		max-width: 360px;
+		width: 100%;
 	}
 
 	/* Same story as .hero-inner above: the 4-column footer (brand,
@@ -2046,7 +2070,6 @@ a.cert-card:focus-visible,
 	.service-hero h1,
 	.case-study-hero h1,
 	.single-post-header h1,
-	.portfolio-archive h1,
 	.contact-intro h1,
 	.legal-page h1 {
 		font-size: 32px;

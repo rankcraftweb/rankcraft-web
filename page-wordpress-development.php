@@ -9,14 +9,17 @@ get_header();
 ?>
 
 <section class="service-hero">
-	<div class="container">
-		<p class="section-label">Services</p>
-		<h1>WordPress development built to perform</h1>
-		<p class="service-hero-lead">Hand-coded or built with tools like Elementor depending on what the project needs, always optimized for speed and search. I build clean, fast WordPress sites tailored to your business.</p>
-		<div class="hero-cta">
-			<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
-			<a href="/contact" class="btn btn-secondary">Get in touch</a>
+	<div class="container service-hero-inner">
+		<div class="service-hero-text">
+			<p class="section-label">Services</p>
+			<h1>WordPress development built to perform</h1>
+			<p class="service-hero-lead">Hand-coded or built with tools like Elementor depending on what the project needs, always optimized for speed and search. I build clean, fast WordPress sites tailored to your business.</p>
+			<div class="hero-cta">
+				<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
+				<a href="/contact" class="btn btn-secondary">Get in touch</a>
+			</div>
 		</div>
+		<div class="service-hero-visual"><svg class="hero-illustration" viewBox="0 0 400 300" aria-hidden="true" focusable="false"><rect x="20" y="30" width="360" height="240" rx="16" fill="#123A5E" stroke="#2A5F92" stroke-width="1.5"/><path d="M20 68h360" stroke="#2A5F92" stroke-width="1.5"/><circle cx="44" cy="49" r="4.5" fill="#3C6E9C"/><circle cx="60" cy="49" r="4.5" fill="#3C6E9C"/><circle cx="76" cy="49" r="4.5" fill="#3C6E9C"/><g fill="#3C6E9C"><rect x="46" y="94" width="112" height="8" rx="4"/><rect x="62" y="114" width="150" height="8" rx="4"/><rect x="62" y="134" width="92" height="8" rx="4"/><rect x="78" y="154" width="130" height="8" rx="4"/><rect x="46" y="200" width="104" height="8" rx="4"/><rect x="62" y="220" width="140" height="8" rx="4"/></g><rect x="78" y="177" width="118" height="8" rx="4" fill="#63C89F"/><rect x="46" y="242" width="74" height="8" rx="4" fill="#F4F6F9"/><path d="M296 122l-18 22 18 22M338 122l18 22-18 22" stroke="#63C89F" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 	</div>
 </section>
 
