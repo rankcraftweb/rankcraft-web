@@ -30,28 +30,57 @@ body {
 	line-height: 1.6;
 }
 
-/* Every h1 except the homepage was inheriting the body line-height.
-   1.6 is a reading measure for paragraphs; on a 40px heading it puts
-   64px between lines, which is what made the headings on ten of the
-   twelve pages look unlike the one on the front page. Set once here
-   rather than repeated on each hero rule, because none of them
-   declare line-height at all and so nothing overrides this. */
+/* Headings had no typography of their own worth the name. Only the
+   front-page h1 declared a line-height, so every other heading
+   inherited body's 1.6 - a reading measure for paragraphs, which on a
+   40px heading puts 64px between the lines and is the whole reason
+   the front page looked right and nothing else did. Below h1 there
+   was no base size either: the theme sizes headings by section class,
+   so any section written without a matching rule fell through to the
+   browser default, and 35 headings were doing exactly that, including
+   six h2 sitting at 24px beside 32px section headings on the same
+   page.
+
+   Measured before any of this changed, across twelve pages at 375,
+   768 and 1280: eleven of twelve h1 came back at ratio 1.6, and below
+   h1, 28 of 96 rendered h2 and 11 of 99 h3 wrapped past one line, so
+   the looseness was visible rather than theoretical.
+
+   Ratios loosen as the type gets smaller on purpose: a 20px h3 needs
+   more room between lines than a 44px h1. Every existing rule still
+   wins on specificity, so nothing already decided is overridden -
+   .blog-card-body h2 keeps its 18px/1.4, .cert-card h3 its 16px/1.4.
+   The point is that a section added tomorrow is right by default and
+   only states a size when it genuinely differs. */
 h1 {
 	line-height: 1.2;
 }
 
-/* Same inheritance, one level down, and not a theoretical problem:
-   across seven pages at three widths, 28 of 96 rendered h2 and 11 of
-   99 h3 wrapped past one line, where the 1.6 was plainly visible.
-   Loosening as the type gets smaller is deliberate - a 19px h3 needs
-   more room between lines than a 44px h1 does. .blog-card-body h2 and
-   .cert-card h3 already state 1.4 and keep it on specificity. */
 h2 {
+	font-size: 32px;
 	line-height: 1.25;
 }
 
 h3 {
+	font-size: 20px;
 	line-height: 1.35;
+}
+
+h4 {
+	font-size: 18px;
+	line-height: 1.4;
+}
+
+/* There was no rule for a link at all. Sixty of them across the site
+   rendered in the browser default blue with the default underline,
+   inline links in body copy on every page among them. Measured
+   against the two backgrounds they actually sit on, this green is
+   4.90:1 on white and 4.52:1 on the off-white bands, both past the
+   4.5:1 AA threshold. The underline stays: colour alone is not
+   enough to mark a link. */
+a {
+	color: var(--rc-green);
+	text-underline-offset: 3px;
 }
 
 /* Responsive baseline that was missing: without it any image sized by
@@ -397,7 +426,7 @@ textarea:focus-visible {
 }
 
 .about-text h2 {
-	font-size: 28px;
+	font-size: 32px;
 	margin: 0 0 16px;
 }
 
@@ -949,7 +978,7 @@ a.cert-card:focus-visible,
 }
 
 .service-overview h2 {
-	font-size: 28px;
+	font-size: 32px;
 	margin-bottom: 20px;
 }
 
@@ -1058,7 +1087,7 @@ a.cert-card:focus-visible,
 }
 
 .service-deliverables h2 {
-	font-size: 28px;
+	font-size: 32px;
 	margin-bottom: 24px;
 }
 
@@ -1098,7 +1127,7 @@ a.cert-card:focus-visible,
 }
 
 .process h2 {
-	font-size: 36px;
+	font-size: 32px;
 	margin: 8px 0 16px;
 }
 
@@ -1538,7 +1567,7 @@ a.cert-card:focus-visible,
 }
 
 .about-bio h2 {
-	font-size: 28px;
+	font-size: 32px;
 	margin-bottom: 20px;
 }
 
@@ -1554,7 +1583,7 @@ a.cert-card:focus-visible,
 }
 
 .skills h2 {
-	font-size: 28px;
+	font-size: 32px;
 	margin-bottom: 24px;
 }
 
@@ -1585,7 +1614,7 @@ a.cert-card:focus-visible,
 
 .about-proof h2,
 .about-tools h2 {
-	font-size: 28px;
+	font-size: 32px;
 	margin-bottom: 24px;
 }
 
@@ -1681,7 +1710,7 @@ a.cert-card:focus-visible,
 }
 
 .certifications h2 {
-	font-size: 28px;
+	font-size: 32px;
 	margin-bottom: 8px;
 }
 
@@ -1861,7 +1890,7 @@ a.cert-card:focus-visible,
 }
 
 .about-cta h2 {
-	font-size: 28px;
+	font-size: 32px;
 	margin-bottom: 24px;
 }
 
@@ -2025,5 +2054,9 @@ a.cert-card:focus-visible,
 	.contact-intro h1,
 	.legal-page h1 {
 		font-size: 32px;
+	}
+
+	h2 {
+		font-size: 26px;
 	}
 }
