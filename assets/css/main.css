@@ -612,7 +612,7 @@ textarea:focus-visible {
 
 .footer-columns {
 	display: grid;
-	grid-template-columns: repeat(4, auto);
+	grid-template-columns: repeat(5, auto);
 	justify-content: space-between;
 	gap: 32px;
 	padding-bottom: 40px;
@@ -651,9 +651,7 @@ textarea:focus-visible {
 
 .footer-brand {
 	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 20px;
+	align-items: center;
 }
 
 /* <address> is italic by default, which is wrong for a postal block.
@@ -2096,8 +2094,8 @@ a.cert-card:focus-visible,
 		width: 100%;
 	}
 
-	/* Same story as .hero-inner above: the 4-column footer (brand,
-	   Services, Company, Get Started) doesn't drop to 2 columns until
+	/* Same story as .hero-inner above: the 5-column footer (brand,
+	   Services, Company, Get Started, Contact) doesn't drop to 2 columns until
 	   768px, so 769-900px squeezes each nav column to ~145px, wrapping
 	   "WordPress Development" and "SEO and Local Search" to 2 lines
 	   while their neighbors stay on 1, an uneven, cramped-looking mix. */

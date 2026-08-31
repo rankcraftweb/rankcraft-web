@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RANKCRAFT_VERSION', '1.21.0' );
+define( 'RANKCRAFT_VERSION', '1.21.1' );
 define( 'RANKCRAFT_DIR', get_template_directory() );
 define( 'RANKCRAFT_URI', get_template_directory_uri() );
 define( 'RANKCRAFT_GA4_ID', 'G-S1816MHVM3' );
