@@ -773,7 +773,8 @@ textarea:focus-visible {
 }
 
 .portfolio-card {
-	display: block;
+	display: flex;
+	flex-direction: column;
 	text-decoration: none;
 	color: inherit;
 	border: 1px solid var(--rc-border);
@@ -848,6 +849,9 @@ a.cert-card:focus-visible,
 
 .portfolio-card-body {
 	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
 }
 
 .portfolio-card-body h2 {
@@ -895,8 +899,9 @@ a.cert-card:focus-visible,
 }
 
 .portfolio-card-body .link-arrow {
-	display: inline-block;
-	margin-top: 20px;
+	display: block;
+	margin-top: auto;
+	padding-top: 20px;
 }
 
 /* Contact page */
@@ -1437,6 +1442,8 @@ a.cert-card:focus-visible,
 	border: 1px solid var(--rc-border);
 	border-radius: 12px;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 }
 
 .blog-card-thumb {
@@ -1452,6 +1459,17 @@ a.cert-card:focus-visible,
 
 .blog-card-body {
 	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+/* Same pin as .service-card above: the link sits at the bottom of
+   the card rather than wherever the excerpt happened to end. */
+.blog-card-body .link-arrow {
+	display: block;
+	margin-top: auto;
+	padding-top: 12px;
 }
 
 .blog-card-date {
