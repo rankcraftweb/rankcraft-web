@@ -31,7 +31,7 @@ get_header();
 				<a href="/contact" class="btn btn-secondary">Get in touch</a>
 			</div>
 		</div>
-		<div class="service-hero-visual"><svg class="hero-illustration" viewBox="0 0 400 300" aria-hidden="true" focusable="false"><rect x="20" y="30" width="360" height="240" rx="16" fill="#1C5991" stroke="#4286C9" stroke-width="1.5"/><g stroke="#4286C9" stroke-width="3" fill="none" stroke-linecap="round"><path d="M34 112h136l40 40h176"/><path d="M122 44v68"/><path d="M258 258v-84l46-46"/><path d="M34 212h84l28-28"/></g><circle cx="96" cy="84" r="5" fill="#5E91C1"/><circle cx="312" cy="180" r="5" fill="#5E91C1"/><circle cx="126" cy="228" r="5" fill="#5E91C1"/><path d="M200 92c-21 0-38 17-38 38 0 27 38 66 38 66s38-39 38-66c0-21-17-38-38-38z" fill="#22B885"/><circle cx="200" cy="130" r="13" fill="#123F6F"/></svg></div>
+		<div class="service-hero-visual"><svg class="hero-illustration" viewBox="0 0 400 300" aria-hidden="true" focusable="false"><rect x="20" y="30" width="360" height="240" rx="16" fill="#F4F6F9" stroke="#B9C6D6" stroke-width="1.5"/><g stroke="#B9C6D6" stroke-width="3" fill="none" stroke-linecap="round"><path d="M34 112h136l40 40h176"/><path d="M122 44v68"/><path d="M258 258v-84l46-46"/><path d="M34 212h84l28-28"/></g><circle cx="96" cy="84" r="5" fill="#8496AC"/><circle cx="312" cy="180" r="5" fill="#8496AC"/><circle cx="126" cy="228" r="5" fill="#8496AC"/><path d="M200 92c-21 0-38 17-38 38 0 27 38 66 38 66s38-39 38-66c0-21-17-38-38-38z" fill="#17805F"/><circle cx="200" cy="130" r="13" fill="#DCE4ED"/></svg></div>
 	</div>
 </section>
 
