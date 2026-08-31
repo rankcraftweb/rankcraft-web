@@ -158,6 +158,21 @@ function rankcraft_about_page_title( $title_parts ) {
 add_filter( 'document_title_parts', 'rankcraft_about_page_title' );
 
 /**
+ * "Services" spends the tag on a nav label. The page carries the
+ * pricing, and published prices are uncommon enough in this trade to
+ * be worth naming: someone comparing quotes is searching for exactly
+ * that. The nav label stays "Services", because only the tag needs to
+ * say more.
+ */
+function rankcraft_services_page_title( $title_parts ) {
+	if ( is_page( 'services' ) ) {
+		$title_parts['title'] = 'Services and Pricing';
+	}
+	return $title_parts;
+}
+add_filter( 'document_title_parts', 'rankcraft_services_page_title' );
+
+/**
  * Include additional theme files.
  */
 require_once RANKCRAFT_DIR . '/inc/seo-meta.php';
