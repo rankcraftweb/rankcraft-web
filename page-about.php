@@ -25,6 +25,7 @@ get_header();
 		<p>Most agencies hand your project between account managers, designers, and developers before it ever gets built. RankCraft is different: it's just me. When you work with RankCraft, you're talking directly to the person writing the code, running the SEO audit, and fixing what's broken.</p>
 		<p>That means fewer handoffs, faster turnaround, and someone who's personally accountable for the results, not just the deliverable. You can see that in the <a href="/portfolio">portfolio</a> — real sites, with the numbers to back them up.</p>
 		<p>Every site I work on gets the same treatment: a clear audit, systematic fixes, and a record of what changed and why. No black boxes, no vague monthly reports.</p>
+		<p>There are three ways that work is packaged, and <a href="/services">what each one costs</a> is published rather than quoted on request.</p>
 	</div>
 </section>
 
