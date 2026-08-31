@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<main class="container">
+<div class="container">
 	<?php
 	if ( have_posts() ) :
 		while ( have_posts() ) :
@@ -24,6 +24,6 @@ get_header();
 		echo '<p>' . esc_html__( 'Nothing found.', 'rankcraft-web' ) . '</p>';
 	endif;
 	?>
-</main>
+</div>
 
 <?php get_footer(); ?>

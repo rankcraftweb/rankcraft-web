@@ -310,6 +310,20 @@ textarea:focus-visible {
 	font-size: 13px;
 }
 
+/* --rc-green is 4.90:1 on white and 2.97:1 on the navy bands, so
+   the same label passed on the light sections and failed on every
+   dark hero - eight pages of it, which is what dropped those pages
+   to 93 on Lighthouse while the front page, whose hero has no
+   label, stayed at 100. --rc-green-light is 7.12:1 there and is
+   already the colour of the lead paragraph underneath it. */
+.hero .section-label,
+.service-hero .section-label,
+.about-hero .section-label,
+.case-study-hero .section-label,
+.single-post-header .section-label {
+	color: var(--rc-green-light);
+}
+
 .proof h2 {
 	font-size: 32px;
 	max-width: 700px;

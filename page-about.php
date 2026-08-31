@@ -108,49 +108,49 @@ get_header();
 		<p class="section-intro">Ongoing training across SEO platforms and web development.</p>
 
 		<div class="cert-grid">
-			<a href="https://ahrefs.com/academy/certificate/7698a4e0522f43c29026c61e921b49eb" target="_blank" rel="noopener" aria-label="Verify the Ahrefs Marketing Platform certificate" class="cert-card">
+			<a href="https://ahrefs.com/academy/certificate/7698a4e0522f43c29026c61e921b49eb" target="_blank" rel="noopener" class="cert-card">
 				<span class="cert-issuer">Ahrefs</span>
 				<h3>Ahrefs' Marketing Platform</h3>
 				<span class="cert-date">Issued March 2026</span>
 				<span class="cert-verify">Verify →</span>
 			</a>
 
-			<a href="https://app-na2.hubspot.com/academy/achievements/mwqcd44w/en/1/jan-christopher-buen/seo" target="_blank" rel="noopener" aria-label="Verify the HubSpot SEO certificate" class="cert-card">
+			<a href="https://app-na2.hubspot.com/academy/achievements/mwqcd44w/en/1/jan-christopher-buen/seo" target="_blank" rel="noopener" class="cert-card">
 				<span class="cert-issuer">HubSpot Academy</span>
 				<h3>SEO Certified</h3>
 				<span class="cert-date">Issued March 2026</span>
 				<span class="cert-verify">Verify →</span>
 			</a>
 
-			<a href="https://static.semrush.com/academy/certificates/01cfb57b77/jan-christopher-buen_25.pdf" target="_blank" rel="noopener" aria-label="Verify the Semrush SEO Toolkit Crash Course certificate" class="cert-card">
+			<a href="https://static.semrush.com/academy/certificates/01cfb57b77/jan-christopher-buen_25.pdf" target="_blank" rel="noopener" class="cert-card">
 				<span class="cert-issuer">Semrush Academy</span>
 				<h3>SEO Toolkit Crash Course</h3>
 				<span class="cert-date">Issued 2026</span>
 				<span class="cert-verify">Verify →</span>
 			</a>
 
-			<a href="https://static.semrush.com/academy/certificates/a730b13fe9/jan-christopher-buen_25.pdf" target="_blank" rel="noopener" aria-label="Verify the Semrush Technical SEO and AI Search Essentials certificate" class="cert-card">
+			<a href="https://static.semrush.com/academy/certificates/a730b13fe9/jan-christopher-buen_25.pdf" target="_blank" rel="noopener" class="cert-card">
 				<span class="cert-issuer">Semrush Academy</span>
 				<h3>Technical SEO and AI Search Essentials</h3>
 				<span class="cert-date">Issued 2026</span>
 				<span class="cert-verify">Verify →</span>
 			</a>
 
-			<a href="https://freecodecamp.org/certification/janchristopherbuen/responsive-web-design-v9" target="_blank" rel="noopener" aria-label="Verify the freeCodeCamp Responsive Web Design certificate" class="cert-card">
+			<a href="https://freecodecamp.org/certification/janchristopherbuen/responsive-web-design-v9" target="_blank" rel="noopener" class="cert-card">
 				<span class="cert-issuer">freeCodeCamp</span>
 				<h3>Responsive Web Design</h3>
 				<span class="cert-date">Issued March 2026</span>
 				<span class="cert-verify">Verify →</span>
 			</a>
 
-			<a href="https://freecodecamp.org/certification/janchristopherbuen/javascript-v9" target="_blank" rel="noopener" aria-label="Verify the freeCodeCamp JavaScript certificate" class="cert-card">
+			<a href="https://freecodecamp.org/certification/janchristopherbuen/javascript-v9" target="_blank" rel="noopener" class="cert-card">
 				<span class="cert-issuer">freeCodeCamp</span>
 				<h3>JavaScript</h3>
 				<span class="cert-date">Issued May 2026</span>
 				<span class="cert-verify">Verify →</span>
 			</a>
 
-			<a href="https://freecodecamp.org/certification/janchristopherbuen/front-end-development-libraries-v9" target="_blank" rel="noopener" aria-label="Verify the freeCodeCamp Front-End Development Libraries certificate" class="cert-card">
+			<a href="https://freecodecamp.org/certification/janchristopherbuen/front-end-development-libraries-v9" target="_blank" rel="noopener" class="cert-card">
 				<span class="cert-issuer">freeCodeCamp</span>
 				<h3>Front-End Development Libraries</h3>
 				<span class="cert-date">Issued August 2026</span>
