@@ -45,6 +45,23 @@ class RankCraft_Schema_Markup {
 			// instead of hardcoding an uploads path that can move.
 			'image'           => wp_get_attachment_image_url( 377, 'full' ),
 			'description'     => 'WordPress development, SEO, and website audits for small businesses.',
+			// Name, phone and locality are what a Google Business Profile
+			// and a website have to agree on before local search treats
+			// them as the same business. Until now this node carried the
+			// name and nothing else.
+			//
+			// No street address on purpose: this is a service-area
+			// business and the profile does not publish one, so publishing
+			// one here would create a mismatch rather than a match.
+			// Locality, region and country are what the two share.
+			'telephone'       => '+639696012157',
+			'email'           => 'hello@rankcraftweb.com',
+			'address'         => array(
+				'@type'           => 'PostalAddress',
+				'addressLocality' => 'Silang',
+				'addressRegion'   => 'Cavite',
+				'addressCountry'  => 'PH',
+			),
 			// Three months of Search Console data: the Philippines supplies 118
 			// impressions and 3 of the 4 total clicks, while the United States
 			// supplies 81 impressions at position 11 and has never produced a

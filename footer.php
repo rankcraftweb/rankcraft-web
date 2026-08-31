@@ -8,6 +8,24 @@
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/rankcraft-web-no-tagline-dark.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="footer-logo-img" width="1800" height="320" loading="lazy">
 				</a>
+
+				<?php
+				/*
+				 * <address> rather than a div: this is the contact information
+				 * for the owner of the page, which is exactly what the element
+				 * is for, and it puts the details in one place on every page
+				 * instead of only on /contact/.
+				 *
+				 * The phone number has to match the Google Business Profile
+				 * character for character, formatting included. Change it in
+				 * both places or in neither.
+				 */
+				?>
+				<address class="footer-nap">
+					<span>Silang, Cavite, Philippines</span>
+					<a href="tel:+639696012157">+63 969 601 2157</a>
+					<a href="mailto:hello@rankcraftweb.com">hello@rankcraftweb.com</a>
+				</address>
 			</div>
 
 			<?php

@@ -651,7 +651,24 @@ textarea:focus-visible {
 
 .footer-brand {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
+}
+
+/* <address> is italic by default, which is wrong for a postal block.
+   Colour comes from --rc-off-white rather than --rc-slate-light: the
+   slate measures 4.58:1 on the footer navy, which clears AA by four
+   hundredths and is the kind of margin that disappears the next time
+   a colour is nudged. The links inherit .footer-col a. */
+.footer-nap {
+	font-style: normal;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--rc-off-white);
 }
 
 /* Same reasoning as .site-logo-img: 315px wide is the 56px tall this
