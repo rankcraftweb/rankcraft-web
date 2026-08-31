@@ -62,6 +62,21 @@ class RankCraft_Schema_Markup {
 				'addressRegion'   => 'Cavite',
 				'addressCountry'  => 'PH',
 			),
+			// hasMap rather than sameAs: schema.org has a property for
+			// exactly this, and it ties the entity to the profile without
+			// claiming the profile is a separate identity.
+			'hasMap'          => 'https://maps.google.com/?cid=8104698444060568540',
+			// Read off the profile itself, signed out, on 31 August 2026:
+			// Monday to Friday 9 AM to 6 PM, closed at the weekend. These
+			// have to move together with the profile or not at all.
+			'openingHoursSpecification' => array(
+				array(
+					'@type'     => 'OpeningHoursSpecification',
+					'dayOfWeek' => array( 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday' ),
+					'opens'     => '09:00',
+					'closes'    => '18:00',
+				),
+			),
 			// Three months of Search Console data: the Philippines supplies 118
 			// impressions and 3 of the 4 total clicks, while the United States
 			// supplies 81 impressions at position 11 and has never produced a

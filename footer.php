@@ -23,8 +23,9 @@
 				?>
 				<address class="footer-nap">
 					<span>Silang, Cavite, Philippines</span>
-					<a href="tel:+639696012157">+63 969 601 2157</a>
+					<a href="tel:+639696012157">0969 601 2157</a>
 					<a href="mailto:hello@rankcraftweb.com">hello@rankcraftweb.com</a>
+					<a href="https://maps.google.com/?cid=8104698444060568540" target="_blank" rel="noopener">Google Business Profile</a>
 				</address>
 			</div>
 

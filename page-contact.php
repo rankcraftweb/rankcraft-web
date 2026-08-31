@@ -27,7 +27,7 @@ get_header();
 			<p class="contact-lead">One person reads everything that arrives here, and you will hear back within one business day.</p>
 			<p class="contact-lead">If you have a site already, paste the address into the message. Most of what I would otherwise ask in a first reply I can see for myself, which saves us both a round trip.</p>
 
-			<p class="contact-direct">Or reach me directly at <a href="mailto:hello@rankcraftweb.com">hello@rankcraftweb.com</a> or <a href="tel:+639696012157">+63 969 601 2157</a>.</p>
+			<p class="contact-direct">Or reach me directly at <a href="mailto:hello@rankcraftweb.com">hello@rankcraftweb.com</a> or <a href="tel:+639696012157">0969 601 2157</a>.</p>
 		</div>
 
 		<div class="contact-form-wrap">

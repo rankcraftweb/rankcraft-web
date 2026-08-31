@@ -25,7 +25,7 @@ get_header();
 		<div class="service-hero-text">
 			<p class="section-label">Silang, Cavite</p>
 			<h1>Website developer in Silang, Cavite</h1>
-			<p class="service-hero-lead">I build fast WordPress sites and fix technical SEO for businesses around Silang, Tagaytay, and the rest of Cavite. I live here, so you are hiring one person you can actually reach, not an agency queue.</p>
+			<p class="service-hero-lead">I build fast WordPress sites and fix technical SEO for businesses around Silang, Tagaytay, and the rest of Cavite. I live here, so you are hiring one person you can actually reach, not an agency queue. You can check the <a href="https://maps.google.com/?cid=8104698444060568540" target="_blank" rel="noopener">Google Business Profile</a> too.</p>
 			<div class="hero-cta">
 				<a href="https://audit.rankcraftweb.com" class="btn btn-primary">Get your free audit</a>
 				<a href="/contact" class="btn btn-secondary">Get in touch</a>
