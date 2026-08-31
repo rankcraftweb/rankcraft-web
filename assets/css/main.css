@@ -30,6 +30,30 @@ body {
 	line-height: 1.6;
 }
 
+/* Every h1 except the homepage was inheriting the body line-height.
+   1.6 is a reading measure for paragraphs; on a 40px heading it puts
+   64px between lines, which is what made the headings on ten of the
+   twelve pages look unlike the one on the front page. Set once here
+   rather than repeated on each hero rule, because none of them
+   declare line-height at all and so nothing overrides this. */
+h1 {
+	line-height: 1.2;
+}
+
+/* Same inheritance, one level down, and not a theoretical problem:
+   across seven pages at three widths, 28 of 96 rendered h2 and 11 of
+   99 h3 wrapped past one line, where the 1.6 was plainly visible.
+   Loosening as the type gets smaller is deliberate - a 19px h3 needs
+   more room between lines than a 44px h1 does. .blog-card-body h2 and
+   .cert-card h3 already state 1.4 and keep it on specificity. */
+h2 {
+	line-height: 1.25;
+}
+
+h3 {
+	line-height: 1.35;
+}
+
 /* Responsive baseline that was missing: without it any image sized by
    a fixed dimension keeps that width no matter how narrow the viewport
    gets, and pushes the page sideways. The footer logo did exactly that
@@ -1988,7 +2012,18 @@ a.cert-card:focus-visible,
 		text-align: center;
 	}
 
-	.hero-text h1 {
+	/* The front page dropped to 32px here and nothing else did, so a
+	   40px h1 was still 40px on a 375px screen and ran to five lines.
+	   Every hero heading now steps to the same size at the same
+	   width. */
+	.hero-text h1,
+	.about-hero h1,
+	.service-hero h1,
+	.case-study-hero h1,
+	.single-post-header h1,
+	.portfolio-archive h1,
+	.contact-intro h1,
+	.legal-page h1 {
 		font-size: 32px;
 	}
 }
