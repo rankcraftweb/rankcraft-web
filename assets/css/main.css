@@ -192,10 +192,19 @@ img {
 }
 
 /* Buttons */
+/* The font is stated rather than left to inherit, because half the
+   buttons on the site cannot inherit it: .btn sits on both <a> and
+   <button>, and the UA stylesheet gives form controls a font of their
+   own. The contact form had patched around that with its own family
+   and 15px, which left the one <button> on the site rendering a pixel
+   smaller and 2.6px shorter than every other button. */
 .btn {
 	display: inline-block;
 	padding: 12px 24px;
 	border-radius: 8px;
+	font-family: var(--font-main);
+	font-size: 16px;
+	line-height: 1.6;
 	font-weight: 500;
 	text-decoration: none;
 	transition: transform 0.15s ease;
@@ -917,8 +926,6 @@ a.cert-card:focus-visible,
 .contact-form button {
 	border: none;
 	cursor: pointer;
-	font-family: var(--font-main);
-	font-size: 15px;
 }
 
 .rc-hp-field {
@@ -1250,7 +1257,7 @@ a.cert-card:focus-visible,
 .process-points li {
 	color: var(--rc-slate);
 	font-size: 15px;
-	line-height: 1.55;
+	line-height: 1.5;
 }
 
 .process-points strong {
