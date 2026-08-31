@@ -272,12 +272,6 @@ textarea:focus-visible {
 	gap: 16px;
 }
 
-.hero-cta-note {
-	margin-top: 14px;
-	font-size: 13px;
-	color: var(--rc-green-light);
-}
-
 .hero-visual {
 	flex: 1;
 }
@@ -955,11 +949,6 @@ a.cert-card:focus-visible,
 .service-hero {
 	background: var(--rc-navy);
 	padding: 80px 0;
-}
-
-.service-hero-icon {
-	margin-bottom: 16px;
-	border-radius: 12px;
 }
 
 .service-hero h1 {

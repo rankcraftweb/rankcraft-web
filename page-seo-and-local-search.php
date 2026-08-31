@@ -10,7 +10,6 @@ get_header();
 
 <section class="service-hero">
 	<div class="container">
-		<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-seo.png' ); ?>" alt="" width="56" height="56" class="service-hero-icon">
 		<p class="section-label">Services</p>
 		<h1>SEO and local search that brings in the right customers</h1>
 		<p class="service-hero-lead">On-page optimization, technical fixes, and local search strategy so the people searching for what you offer actually find you.</p>

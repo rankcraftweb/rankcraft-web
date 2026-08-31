@@ -10,7 +10,6 @@ get_header();
 
 <section class="service-hero">
 	<div class="container">
-		<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-development.png' ); ?>" alt="" width="56" height="56" class="service-hero-icon">
 		<p class="section-label">Services</p>
 		<h1>WordPress development built to perform</h1>
 		<p class="service-hero-lead">Hand-coded or built with tools like Elementor depending on what the project needs, always optimized for speed and search. I build clean, fast WordPress sites tailored to your business.</p>

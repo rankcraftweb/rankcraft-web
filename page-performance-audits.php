@@ -10,7 +10,6 @@ get_header();
 
 <section class="service-hero">
 	<div class="container">
-		<img src="<?php echo esc_url( RANKCRAFT_URI . '/assets/images/service-icon-performance.png' ); ?>" alt="" width="56" height="56" class="service-hero-icon">
 		<p class="section-label">Services</p>
 		<h1>Find out exactly what's slowing your site down</h1>
 		<p class="service-hero-lead">A full technical audit of your existing website, speed, SEO, and technical health, with a clear, no-jargon report and a plan to fix it.</p>
