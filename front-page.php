@@ -106,9 +106,9 @@ get_header();
 						<rect x="34" y="140" width="190" height="104" rx="14" fill="url(#rc-card)" stroke="#2A5F92" stroke-width="1.5"/>
 						<circle cx="79" cy="192" r="27" fill="none" stroke="#1E4A72" stroke-width="8"/>
 						<circle cx="79" cy="192" r="27" fill="none" stroke="#1D9E75" stroke-width="8" stroke-linecap="round" stroke-dasharray="168 170" transform="rotate(-90 79 192)"/>
-						<text x="79" y="199" text-anchor="middle" font-family="Poppins, sans-serif" font-size="19" font-weight="700" fill="#F4F6F9">99</text>
-						<text x="122" y="186" font-family="Poppins, sans-serif" font-size="13.5" font-weight="600" fill="#63C89F">Performance</text>
-						<text x="122" y="204" font-family="Poppins, sans-serif" font-size="11.5" fill="#7FA0C4">PageSpeed</text>
+						<text x="79" y="199" text-anchor="middle" font-family="Poppins, sans-serif" font-size="20" font-weight="700" fill="#F4F6F9">99</text>
+						<text x="122" y="186" font-family="Poppins, sans-serif" font-size="13" font-weight="500" fill="#63C89F">Performance</text>
+						<text x="122" y="204" font-family="Poppins, sans-serif" font-size="11" fill="#7FA0C4">PageSpeed</text>
 					</g>
 
 					<!-- SEO score -->
@@ -116,14 +116,14 @@ get_header();
 						<rect x="452" y="44" width="142" height="52" rx="12" fill="url(#rc-card)" stroke="#2A5F92" stroke-width="1.5"/>
 						<circle cx="481" cy="70" r="13" fill="#1D9E75" opacity=".18"/>
 						<path d="M475.5 70l4 4 8.5-9" fill="none" stroke="#63C89F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-						<text x="506" y="66" font-family="Poppins, sans-serif" font-size="13" font-weight="600" fill="#F4F6F9">SEO</text>
-						<text x="506" y="83" font-family="Poppins, sans-serif" font-size="11.5" fill="#7FA0C4">100 / 100</text>
+						<text x="506" y="66" font-family="Poppins, sans-serif" font-size="13" font-weight="500" fill="#F4F6F9">SEO</text>
+						<text x="506" y="83" font-family="Poppins, sans-serif" font-size="11" fill="#7FA0C4">100 / 100</text>
 					</g>
 
 					<!-- Organic traffic -->
 					<g>
 						<rect x="390" y="360" width="196" height="132" rx="14" fill="url(#rc-card)" stroke="#2A5F92" stroke-width="1.5"/>
-						<text x="410" y="388" font-family="Poppins, sans-serif" font-size="13.5" font-weight="600" fill="#63C89F">Organic traffic</text>
+						<text x="410" y="388" font-family="Poppins, sans-serif" font-size="13" font-weight="500" fill="#63C89F">Organic traffic</text>
 						<path d="M410 462l31-16 31 6 31-28 31-12 32-22v72H410Z" fill="url(#rc-area)"/>
 						<polyline points="410,462 441,446 472,452 503,424 534,412 566,390" fill="none" stroke="#1D9E75" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 						<circle cx="566" cy="390" r="4.5" fill="#63C89F"/>
