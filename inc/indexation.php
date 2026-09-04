@@ -2,8 +2,10 @@
 /**
  * What this site asks Google to index.
  *
- * Two faults from the 31 August 2026 audit, both invisible from the
- * front end:
+ * Three faults, all invisible from the front end. The first two came
+ * from the 31 August 2026 audit; the third from reading Search Console
+ * on 4 September, which had crawled a feed the earlier fix could not
+ * reach:
  *
  * 1. /category/uncategorized/ was in the sitemap and returning 200.
  *    There is one category, every post is in it, and it is called
@@ -14,6 +16,10 @@
  *    posts, pages, custom post type entries and taxonomies; they do not
  *    cover post type archives. All three case studies were listed and
  *    the page built to introduce them was not.
+ *
+ * 3. Every feed answered 200 with no robots directive, including
+ *    /category/uncategorized/feed/. The archive noindex in (1) is a meta
+ *    tag, and a feed has no <head> to carry one.
  *
  * @package RankCraft_Web
  */
@@ -57,6 +63,35 @@ function rankcraft_noindex_duplicate_archives( $robots ) {
 	return $robots;
 }
 add_filter( 'wp_robots', 'rankcraft_noindex_duplicate_archives' );
+
+/**
+ * Keep feeds out of the index, over HTTP rather than in the markup.
+ *
+ * The wp_robots filter above cannot reach a feed: wp_robots() prints a
+ * meta tag into <head>, and an RSS feed has no head to print into. So
+ * every feed on the site was answering 200 with no directive at all, and
+ * Search Console had crawled /category/uncategorized/feed/ - the feed of
+ * the same placeholder category the archive noindex was added for.
+ *
+ * X-Robots-Tag is the equivalent for a non-HTML response. All feeds get
+ * it, not just the category one, on the same reasoning as the archives:
+ * /feed/ and /blog/feed/ restate /blog/, and /comments/feed/ carries
+ * nothing on a site with no comments. A feed has never been the result a
+ * searcher wanted.
+ *
+ * This does not affect RSS readers. Robots directives address crawlers;
+ * a feed reader fetches the XML and ignores them.
+ *
+ * @param array $headers Response headers.
+ * @return array
+ */
+function rankcraft_noindex_feeds( $headers ) {
+	if ( is_feed() ) {
+		$headers['X-Robots-Tag'] = 'noindex, follow';
+	}
+	return $headers;
+}
+add_filter( 'wp_headers', 'rankcraft_noindex_feeds' );
 
 /**
  * Sitemap entry for the case study archive at /portfolio/.
