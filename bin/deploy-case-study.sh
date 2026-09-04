@@ -46,9 +46,29 @@ echo "==> Uploading content file..."
 ssh -i "$SSH_KEY" -p "$SSH_PORT" "$SSH_HOST" "mkdir -p $REMOTE_SCRATCH"
 scp -i "$SSH_KEY" -P "$SSH_PORT" "$CONTENT_FILE" "$SSH_HOST:$REMOTE_SCRATCH/content.html"
 
-echo "==> Creating post..."
-POST_ID=$(ssh_cmd "wp post create $REMOTE_SCRATCH/content.html --post_type=case_study --post_title='$TITLE' --post_status=publish --porcelain --allow-root")
+# Defaults to publish so existing meta.env files behave exactly as before.
+# Set POST_STATUS="draft" to stage one for review first.
+POST_STATUS="${POST_STATUS:-publish}"
+
+echo "==> Creating post (status: $POST_STATUS)..."
+POST_ID=$(ssh_cmd "wp post create $REMOTE_SCRATCH/content.html --post_type=case_study --post_title='$TITLE' --post_status='$POST_STATUS' --porcelain --allow-root")
 echo "Created post ID: $POST_ID"
+
+# The excerpt is not decoration: the theme uses post_excerpt as the meta
+# description for case studies, so a post without one ships with no
+# description at all. Every case study already on the site has one, which
+# means they were being set by hand after this script ran.
+#
+# It travels as a file rather than a command-line argument. An excerpt is a
+# sentence of prose - apostrophes, commas, em dashes - and quoting that
+# through ssh into wp is how you get a truncated field or a shell error.
+if [ -n "${EXCERPT:-}" ]; then
+	echo "==> Setting excerpt..."
+	printf '%s' "$EXCERPT" > "$DIR/.excerpt.tmp"
+	scp -i "$SSH_KEY" -P "$SSH_PORT" "$DIR/.excerpt.tmp" "$SSH_HOST:$REMOTE_SCRATCH/excerpt.txt"
+	rm -f "$DIR/.excerpt.tmp"
+	ssh_cmd 'wp post update '"$POST_ID"' --post_excerpt="$(cat '"$REMOTE_SCRATCH"'/excerpt.txt)" --allow-root'
+fi
 
 echo "==> Setting meta fields..."
 ssh_cmd "wp post meta update $POST_ID _rc_client_name '$CLIENT_NAME' --allow-root"

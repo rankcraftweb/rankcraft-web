@@ -11,3 +11,9 @@ node_modules/
 
 # Environment
 .env
+
+# Case study screenshots. They get imported to the media library and
+# referenced from content.html by URL, so the repo does not need a second
+# copy - no other case study directory carries one.
+case-studies/**/*.jpg
+case-studies/**/*.png
