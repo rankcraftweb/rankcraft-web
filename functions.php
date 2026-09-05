@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RANKCRAFT_VERSION', '1.24.0' );
+define( 'RANKCRAFT_VERSION', '1.25.0' );
 define( 'RANKCRAFT_DIR', get_template_directory() );
 define( 'RANKCRAFT_URI', get_template_directory_uri() );
 define( 'RANKCRAFT_GA4_ID', 'G-S1816MHVM3' );
@@ -20,6 +20,29 @@ define( 'RANKCRAFT_GA4_ID', 'G-S1816MHVM3' );
 function rankcraft_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
+
+	/*
+	 * A dedicated size for share cards, used only by inc/seo-meta.php.
+	 *
+	 * og:image was being served at WordPress's 'large' size, which is
+	 * 1024px wide - under the 1200x630 that Facebook, LinkedIn and X
+	 * all document. Switching that to 'full' would have fixed the blog
+	 * cards, which are authored at exactly 1200x630, and made the case
+	 * studies worse: their featured images are homepage screenshots
+	 * that WordPress has already scaled to 2560px and around 280 KB,
+	 * at aspect ratios of 2.2:1 and worse, so every platform would crop
+	 * them to its own taste anyway.
+	 *
+	 * Cropping here instead means one predictable card everywhere. The
+	 * crop is anchored to the TOP rather than the centre because these
+	 * are screenshots: the useful part of a homepage is its header and
+	 * hero, and a centre crop cuts exactly that off.
+	 *
+	 * A 1200x630 source (every blog card) is already this ratio, so for
+	 * those this is a straight copy and nothing is lost.
+	 */
+	add_image_size( 'rankcraft-og', 1200, 630, array( 'center', 'top' ) );
+
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style' ) );
 	add_theme_support( 'custom-logo' );
 	add_theme_support( 'align-wide' );

@@ -79,19 +79,54 @@ class RankCraft_SEO_Meta {
 
 	/**
 	 * Pick an image to represent the current page in social shares.
+	 *
+	 * Returns array( url, width, height ).
+	 *
+	 * This used to ask for WordPress's 'large' size, which is 1024px
+	 * wide - under the 1200x630 that Facebook, LinkedIn and X all
+	 * document, so every share card on the site was being built from a
+	 * smaller file than the one that existed. See the 'rankcraft-og'
+	 * size in functions.php for why the fix is a cropped size rather
+	 * than simply 'full'.
+	 *
+	 * The dimensions come back with the URL so they can be declared in
+	 * the markup, and they are read from the same lookup on purpose: a
+	 * declared size that disagrees with the actual file is worse than
+	 * declaring no size at all.
 	 */
-	private static function get_image_url() {
+	private static function get_image() {
 		if ( is_singular() && has_post_thumbnail() ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+			$image = self::share_image( get_post_thumbnail_id() );
 			if ( $image ) {
-				return $image[0];
+				return $image;
 			}
 		}
 
 		// A dedicated fallback card, not the homepage hero mockup, so a
 		// page without its own image doesn't share previews that look
 		// like they're for the homepage specifically.
-		return wp_get_attachment_image_url( 377, 'full' );
+		$fallback = self::share_image( 377 );
+
+		return $fallback ? $fallback : array( '', 0, 0 );
+	}
+
+	/**
+	 * The share-card size for one attachment, or null.
+	 *
+	 * 'rankcraft-og' only exists for images uploaded or regenerated
+	 * since it was registered. wp_get_attachment_image_src() falls back
+	 * to the original on its own when a named size is missing, which is
+	 * why the width and height are read from its return value rather
+	 * than assumed to be 1200x630.
+	 */
+	private static function share_image( $attachment_id ) {
+		$image = wp_get_attachment_image_src( $attachment_id, 'rankcraft-og' );
+
+		if ( ! $image || empty( $image[0] ) ) {
+			return null;
+		}
+
+		return array( $image[0], (int) $image[1], (int) $image[2] );
 	}
 
 	private static function get_og_type() {
@@ -120,8 +155,9 @@ class RankCraft_SEO_Meta {
 	public static function output_meta_tags() {
 		$description = self::truncate_description( self::get_description() );
 		$title       = wp_get_document_title();
-		$image       = self::get_image_url();
 		$url         = self::get_current_url();
+
+		list( $image, $image_w, $image_h ) = self::get_image();
 
 		self::output_canonical();
 
@@ -134,6 +170,13 @@ class RankCraft_SEO_Meta {
 		printf( '<meta property="og:description" content="%s">' . "\n", esc_attr( $description ) );
 		printf( '<meta property="og:url" content="%s">' . "\n", esc_url( $url ) );
 		printf( '<meta property="og:image" content="%s">' . "\n", esc_url( $image ) );
+
+		// Only when they are real numbers. Declaring a size that does
+		// not match the file makes the card worse, not better.
+		if ( $image_w && $image_h ) {
+			printf( '<meta property="og:image:width" content="%d">' . "\n", $image_w );
+			printf( '<meta property="og:image:height" content="%d">' . "\n", $image_h );
+		}
 
 		printf( '<meta name="twitter:card" content="summary_large_image">' . "\n" );
 		printf( '<meta name="twitter:title" content="%s">' . "\n", esc_attr( $title ) );
