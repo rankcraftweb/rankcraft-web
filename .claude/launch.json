@@ -1,0 +1,10 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "rankcraft-web-local",
+      "url": "http://rankcraft-web.local",
+      "port": 10004
+    }
+  ]
+}
