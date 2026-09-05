@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RANKCRAFT_VERSION', '1.22.0' );
+define( 'RANKCRAFT_VERSION', '1.23.0' );
 define( 'RANKCRAFT_DIR', get_template_directory() );
 define( 'RANKCRAFT_URI', get_template_directory_uri() );
 define( 'RANKCRAFT_GA4_ID', 'G-S1816MHVM3' );
@@ -178,6 +178,7 @@ add_filter( 'document_title_parts', 'rankcraft_services_page_title' );
 require_once RANKCRAFT_DIR . '/inc/seo-meta.php';
 require_once RANKCRAFT_DIR . '/inc/schema-markup.php';
 require_once RANKCRAFT_DIR . '/inc/case-study-meta.php';
+require_once RANKCRAFT_DIR . '/inc/turnstile.php';
 require_once RANKCRAFT_DIR . '/inc/contact-form.php';
 require_once RANKCRAFT_DIR . '/inc/smtp.php';
 require_once RANKCRAFT_DIR . '/inc/leads.php';

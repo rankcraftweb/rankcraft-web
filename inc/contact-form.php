@@ -3,8 +3,9 @@
  * Contact Form Handler
  *
  * Lightweight, no-plugin contact form processing. Validates input,
- * checks a honeypot field for basic spam protection, sends via wp_mail,
- * then redirects back to the Contact page with a status flag.
+ * checks a honeypot field and a Cloudflare Turnstile token (see
+ * inc/turnstile.php), sends via wp_mail, then redirects back to the
+ * Contact page with a status flag.
  *
  * @package RankCraft_Web
  */
@@ -33,22 +34,18 @@ function rankcraft_handle_contact_form() {
 	$email   = isset( $_POST['rc_email'] ) ? sanitize_email( $_POST['rc_email'] ) : '';
 	$message = isset( $_POST['rc_message'] ) ? sanitize_textarea_field( $_POST['rc_message'] ) : '';
 
-	if ( empty( $name ) || empty( $message ) || ! is_email( $email ) ) {
-		// A failed submit used to bounce back to a fully blank form.
-		// Stash what was typed under a one-time token so the form can
-		// refill itself instead of making the visitor retype everything.
-		$retry_token = wp_generate_password( 20, false );
-		set_transient( 'rc_contact_retry_' . $retry_token, array(
-			'name'    => $name,
-			'email'   => $email,
-			'message' => $message,
-		), 5 * MINUTE_IN_SECONDS );
+	// Turnstile, when it is configured. Checked before the field
+	// validation below so a bot never reaches wp_mail, and after
+	// sanitising so a human who fails the challenge still gets their
+	// text back rather than an empty form.
+	$token = isset( $_POST['cf-turnstile-response'] ) ? sanitize_text_field( wp_unslash( $_POST['cf-turnstile-response'] ) ) : '';
 
-		wp_safe_redirect( add_query_arg( array(
-			'contact'  => 'error',
-			'rc_retry' => $retry_token,
-		), wp_get_referer() ) );
-		exit;
+	if ( ! rankcraft_turnstile_verify( $token ) ) {
+		rankcraft_contact_retry_redirect( 'challenge', $name, $email, $message );
+	}
+
+	if ( empty( $name ) || empty( $message ) || ! is_email( $email ) ) {
+		rankcraft_contact_retry_redirect( 'error', $name, $email, $message );
 	}
 
 	$to      = get_option( 'admin_email' );
@@ -61,6 +58,29 @@ function rankcraft_handle_contact_form() {
 	rankcraft_record_contact_form_lead( $name, $email, $message );
 
 	wp_safe_redirect( add_query_arg( 'contact', $sent ? 'success' : 'error', wp_get_referer() ) );
+	exit;
+}
+
+/**
+ * Bounce back to the form with a status, without losing what was typed.
+ *
+ * A failed submit used to return a fully blank form. The typed values are
+ * stashed under a one-time token instead, so the form can refill itself.
+ * Never returns.
+ */
+function rankcraft_contact_retry_redirect( $status, $name, $email, $message ) {
+	$retry_token = wp_generate_password( 20, false );
+
+	set_transient( 'rc_contact_retry_' . $retry_token, array(
+		'name'    => $name,
+		'email'   => $email,
+		'message' => $message,
+	), 5 * MINUTE_IN_SECONDS );
+
+	wp_safe_redirect( add_query_arg( array(
+		'contact'  => $status,
+		'rc_retry' => $retry_token,
+	), wp_get_referer() ) );
 	exit;
 }
 
@@ -127,6 +147,8 @@ function rankcraft_contact_form() {
 			<label for="rc_message">Message</label>
 			<textarea name="rc_message" id="rc_message" rows="5" required><?php echo esc_textarea( $sticky['message'] ); ?></textarea>
 		</div>
+
+		<?php rankcraft_turnstile_field(); ?>
 
 		<button type="submit" class="btn btn-primary">Send message</button>
 	</form>
