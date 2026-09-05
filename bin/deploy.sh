@@ -41,7 +41,7 @@ DEPLOY_REF="refs/deploys/production"
 # Files that are tracked in git but have no business sitting in a public
 # theme directory. bin/ is tooling, case-studies/ is source material for
 # content that lives in the database, and the rest is documentation.
-EXCLUDE_RE='^(bin/|case-studies/|\.claude/|CLAUDE\.md$|README\.md$|\.gitignore$)'
+EXCLUDE_RE='^(bin/|case-studies/|\.claude/|CLAUDE\.md$|README\.md$|\.git(ignore|attributes)$)'
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
