@@ -2208,8 +2208,14 @@ a.cert-card:focus-visible,
 		grid-template-columns: 1fr;
 	}
 
+	/* minmax(0, 1fr) rather than 1fr: a bare 1fr is minmax(auto, 1fr),
+	   and an auto minimum means the track cannot shrink below its
+	   widest child's min-content. The Turnstile widget is a fixed 300px,
+	   so it dragged this track to 364px inside a 320px viewport and
+	   every sibling went with it - the reported overflow was on the
+	   intro column's h1, which has nothing to do with the cause. */
 	.contact-page-inner {
-		grid-template-columns: 1fr;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 32px;
 	}
 
@@ -2234,5 +2240,49 @@ a.cert-card:focus-visible,
 
 	h2 {
 		font-size: 26px;
+	}
+}
+
+/* ---------------------------------------------------------------------
+   Turnstile on narrow phones
+
+   Cloudflare renders the widget at a fixed 300px. The form column on a
+   320px screen has 232px to give it, so without this the widget
+   overflowed the page - measured at 68px past the viewport on a live
+   /contact/ after the secret key went in.
+
+   Worth recording why the deploy that added Turnstile passed its own
+   responsive check: the key was not set yet, so the widget was not
+   rendering. The check was accurate about a page that no longer
+   existed once the key was pasted in.
+
+   Padding first, because that is free. Below the width where even zero
+   padding would not fit 300px, the widget is scaled instead - two bands
+   rather than one, since a single factor tuned for 320px would leave
+   the widget needlessly small at 400px. Both were measured against the
+   live page at 320, 361, 375, 401 and 421.
+   --------------------------------------------------------------------- */
+
+@media (max-width: 420px) {
+	.contact-form-wrap {
+		padding: 20px;
+	}
+}
+
+@media (max-width: 400px) {
+	/* Origin at the left so the widget stays flush with the fields
+	   above it, and the margin makes up for the height a transform
+	   does not reclaim in layout. */
+	.contact-form .form-row-turnstile {
+		transform: scale(0.9);
+		transform-origin: left top;
+		margin-bottom: 6px;
+	}
+}
+
+@media (max-width: 360px) {
+	.contact-form .form-row-turnstile {
+		transform: scale(0.77);
+		margin-bottom: 0;
 	}
 }
