@@ -403,18 +403,22 @@ function rankcraft_render_lead_meta_box( $post ) {
 	$message    = get_post_meta( $post->ID, '_rc_message', true );
 	$notes      = get_post_meta( $post->ID, '_rc_notes', true );
 
-	$mobile = array(
-		'Performance'    => get_post_meta( $post->ID, '_rc_mobile_performance', true ),
-		'Accessibility'  => get_post_meta( $post->ID, '_rc_mobile_accessibility', true ),
-		'Best Practices' => get_post_meta( $post->ID, '_rc_mobile_best_practices', true ),
-		'SEO'            => get_post_meta( $post->ID, '_rc_mobile_seo', true ),
-	);
-	$desktop = array(
-		'Performance'    => get_post_meta( $post->ID, '_rc_desktop_performance', true ),
-		'Accessibility'  => get_post_meta( $post->ID, '_rc_desktop_accessibility', true ),
-		'Best Practices' => get_post_meta( $post->ID, '_rc_desktop_best_practices', true ),
-		'SEO'            => get_post_meta( $post->ID, '_rc_desktop_seo', true ),
-	);
+	// Only the strategies this lead actually has. A row of zeros for one
+	// PageSpeed never returned would read as a catastrophically bad site.
+	$measured   = rankcraft_lead_measured_strategies( $post->ID );
+	$strategies = array();
+	foreach ( array( 'mobile' => 'Mobile', 'desktop' => 'Desktop' ) as $key => $label ) {
+		if ( ! in_array( $key, $measured, true ) ) {
+			continue;
+		}
+		$strategies[ $label ] = array(
+			'Performance'    => get_post_meta( $post->ID, '_rc_' . $key . '_performance', true ),
+			'Accessibility'  => get_post_meta( $post->ID, '_rc_' . $key . '_accessibility', true ),
+			'Best Practices' => get_post_meta( $post->ID, '_rc_' . $key . '_best_practices', true ),
+			'SEO'            => get_post_meta( $post->ID, '_rc_' . $key . '_seo', true ),
+		);
+	}
+	$not_measured = array_diff( array( 'Mobile', 'Desktop' ), array_keys( $strategies ) );
 	?>
 	<table class="form-table">
 		<tr>
@@ -435,23 +439,26 @@ function rankcraft_render_lead_meta_box( $post ) {
 		<tr>
 			<th><?php esc_html_e( 'Audit scores', 'rankcraft-web' ); ?></th>
 			<td>
-				<strong><?php esc_html_e( 'Mobile:', 'rankcraft-web' ); ?></strong>
-				<?php
-				$mobile_parts = array();
-				foreach ( $mobile as $label => $value ) {
-					$mobile_parts[] = $label . ' ' . (int) $value;
-				}
-				echo esc_html( implode( ', ', $mobile_parts ) );
-				?>
-				<br>
-				<strong><?php esc_html_e( 'Desktop:', 'rankcraft-web' ); ?></strong>
-				<?php
-				$desktop_parts = array();
-				foreach ( $desktop as $label => $value ) {
-					$desktop_parts[] = $label . ' ' . (int) $value;
-				}
-				echo esc_html( implode( ', ', $desktop_parts ) );
-				?>
+				<?php foreach ( $strategies as $strategy_label => $scores ) : ?>
+					<strong><?php echo esc_html( $strategy_label ); ?>:</strong>
+					<?php
+					$parts = array();
+					foreach ( $scores as $label => $value ) {
+						$parts[] = $label . ' ' . (int) $value;
+					}
+					echo esc_html( implode( ', ', $parts ) );
+					?>
+					<br>
+				<?php endforeach; ?>
+				<?php if ( $not_measured ) : ?>
+					<em><?php
+					printf(
+						/* translators: %s: Mobile, Desktop, or both. */
+						esc_html__( '%s could not be measured - PageSpeed did not answer.', 'rankcraft-web' ),
+						esc_html( implode( ' and ', $not_measured ) )
+					);
+					?></em>
+				<?php endif; ?>
 			</td>
 		</tr>
 		<?php endif; ?>
@@ -615,6 +622,28 @@ function rankcraft_leads_permission_check( WP_REST_Request $request ) {
 }
 
 /**
+ * Which strategies a lead actually has scores for.
+ *
+ * PageSpeed fails one strategy and not the other often enough that the
+ * audit tool now sends whichever it managed to measure, rather than
+ * throwing the whole report away. A lead can therefore be mobile-only
+ * or desktop-only.
+ *
+ * Leads saved before that change have no _rc_measured meta and always
+ * have both, so an empty value means both - not neither. Getting this
+ * backwards would blank the scores on every report ever issued.
+ */
+function rankcraft_lead_measured_strategies( $post_id ) {
+	$stored = get_post_meta( $post_id, '_rc_measured', true );
+
+	if ( ! is_string( $stored ) || '' === $stored ) {
+		return array( 'mobile', 'desktop' );
+	}
+
+	return array_values( array_intersect( array( 'mobile', 'desktop' ), array_map( 'trim', explode( ',', $stored ) ) ) );
+}
+
+/**
  * Pull a 0-100 integer score out of a scores sub-object, defaulting to 0
  * for anything missing or malformed rather than rejecting the request.
  */
@@ -716,23 +745,27 @@ function rankcraft_handle_report_request( WP_REST_Request $request ) {
 	// Deliberately excludes _rc_email and the post title (the lead's
 	// name) - this endpoint is public, so only the audit results
 	// themselves are safe to return.
-	return new WP_REST_Response( array(
+	//
+	// A strategy that was never measured is omitted entirely rather than
+	// sent as four zeros. Zeros are a real score, and a report claiming
+	// a site scored 0 on everything because PageSpeed had a bad minute
+	// is worse than a report that says one half is missing.
+	$response = array(
 		'success'   => true,
 		'url'       => get_post_meta( $post_id, '_rc_audited_url', true ),
-		'mobile'    => array(
-			'performance'   => (int) get_post_meta( $post_id, '_rc_mobile_performance', true ),
-			'accessibility' => (int) get_post_meta( $post_id, '_rc_mobile_accessibility', true ),
-			'bestPractices' => (int) get_post_meta( $post_id, '_rc_mobile_best_practices', true ),
-			'seo'           => (int) get_post_meta( $post_id, '_rc_mobile_seo', true ),
-		),
-		'desktop'   => array(
-			'performance'   => (int) get_post_meta( $post_id, '_rc_desktop_performance', true ),
-			'accessibility' => (int) get_post_meta( $post_id, '_rc_desktop_accessibility', true ),
-			'bestPractices' => (int) get_post_meta( $post_id, '_rc_desktop_best_practices', true ),
-			'seo'           => (int) get_post_meta( $post_id, '_rc_desktop_seo', true ),
-		),
 		'fetchedAt' => gmdate( 'c', $created_at ),
-	), 200 );
+	);
+
+	foreach ( rankcraft_lead_measured_strategies( $post_id ) as $strategy ) {
+		$response[ $strategy ] = array(
+			'performance'   => (int) get_post_meta( $post_id, '_rc_' . $strategy . '_performance', true ),
+			'accessibility' => (int) get_post_meta( $post_id, '_rc_' . $strategy . '_accessibility', true ),
+			'bestPractices' => (int) get_post_meta( $post_id, '_rc_' . $strategy . '_best_practices', true ),
+			'seo'           => (int) get_post_meta( $post_id, '_rc_' . $strategy . '_seo', true ),
+		);
+	}
+
+	return new WP_REST_Response( $response, 200 );
 }
 
 /**
@@ -740,14 +773,40 @@ function rankcraft_handle_report_request( WP_REST_Request $request ) {
  * visitor, and a heads-up to the team inbox so a new lead doesn't sit
  * unseen until someone happens to open wp-admin.
  */
-function rankcraft_send_lead_notifications( $name, $email, $url, $mobile, $desktop, $report_url = '' ) {
+function rankcraft_send_lead_notifications( $name, $email, $url, $results, $report_url = '' ) {
 	$site_name = get_bloginfo( 'name' );
 
-	$scores_block = sprintf(
-		"Mobile:  Performance %d, Accessibility %d, Best Practices %d, SEO %d\nDesktop: Performance %d, Accessibility %d, Best Practices %d, SEO %d",
-		$mobile['performance'], $mobile['accessibility'], $mobile['best_practices'], $mobile['seo'],
-		$desktop['performance'], $desktop['accessibility'], $desktop['best_practices'], $desktop['seo']
+	// Only the strategies that were actually measured. Printing a row of
+	// zeros for one PageSpeed could not reach would send the visitor an
+	// email saying their site failed everything.
+	$labels = array(
+		'mobile'  => 'Mobile: ',
+		'desktop' => 'Desktop:',
 	);
+
+	$lines = array();
+	foreach ( $labels as $strategy => $label ) {
+		if ( ! isset( $results[ $strategy ] ) ) {
+			continue;
+		}
+		$s       = $results[ $strategy ];
+		$lines[] = sprintf(
+			'%s Performance %d, Accessibility %d, Best Practices %d, SEO %d',
+			$label,
+			$s['performance'], $s['accessibility'], $s['best_practices'], $s['seo']
+		);
+	}
+
+	$missing = array_diff( array_keys( $labels ), array_keys( $results ) );
+	if ( $missing ) {
+		$lines[] = '';
+		$lines[] = sprintf(
+			'(%s could not be measured this time - Google\'s PageSpeed service did not answer. Re-running the audit usually returns it.)',
+			ucfirst( implode( ' and ', $missing ) )
+		);
+	}
+
+	$scores_block = implode( "\n", $lines );
 
 	$report_line  = $report_url ? "\n\nView this report anytime: {$report_url}" : '';
 	$lead_subject = 'Your website audit results for ' . $url;
@@ -791,8 +850,23 @@ function rankcraft_handle_leads_submission( WP_REST_Request $request ) {
 		), 400 );
 	}
 
-	$mobile  = rankcraft_extract_scores( isset( $params['mobile'] ) && is_array( $params['mobile'] ) ? $params['mobile'] : array() );
-	$desktop = rankcraft_extract_scores( isset( $params['desktop'] ) && is_array( $params['desktop'] ) ? $params['desktop'] : array() );
+	// Absent means "PageSpeed never answered for this strategy", which is
+	// not the same as a score of zero. Only what was sent gets recorded,
+	// and _rc_measured remembers which that was so nothing downstream has
+	// to guess whether a 0 is real.
+	$results = array();
+	foreach ( array( 'mobile', 'desktop' ) as $strategy ) {
+		if ( isset( $params[ $strategy ] ) && is_array( $params[ $strategy ] ) ) {
+			$results[ $strategy ] = rankcraft_extract_scores( $params[ $strategy ] );
+		}
+	}
+
+	if ( empty( $results ) ) {
+		return new WP_REST_Response( array(
+			'success' => false,
+			'message' => 'At least one of mobile or desktop scores is required.',
+		), 400 );
+	}
 
 	$post_id = wp_insert_post( array(
 		'post_type'   => 'rc_lead',
@@ -812,11 +886,12 @@ function rankcraft_handle_leads_submission( WP_REST_Request $request ) {
 	update_post_meta( $post_id, '_rc_lead_status', 'new' );
 	update_post_meta( $post_id, '_rc_lead_source', 'audit_tool' );
 
-	foreach ( $mobile as $meta_key => $value ) {
-		update_post_meta( $post_id, '_rc_mobile_' . $meta_key, $value );
-	}
-	foreach ( $desktop as $meta_key => $value ) {
-		update_post_meta( $post_id, '_rc_desktop_' . $meta_key, $value );
+	update_post_meta( $post_id, '_rc_measured', implode( ',', array_keys( $results ) ) );
+
+	foreach ( $results as $strategy => $scores ) {
+		foreach ( $scores as $meta_key => $value ) {
+			update_post_meta( $post_id, '_rc_' . $strategy . '_' . $meta_key, $value );
+		}
 	}
 
 	// Cryptographically random, unguessable - this token is the only
@@ -826,7 +901,7 @@ function rankcraft_handle_leads_submission( WP_REST_Request $request ) {
 	update_post_meta( $post_id, '_rc_report_created_at', time() );
 	$report_url = 'https://audit.rankcraftweb.com/report/' . $token;
 
-	rankcraft_send_lead_notifications( $name, $email, $url, $mobile, $desktop, $report_url );
+	rankcraft_send_lead_notifications( $name, $email, $url, $results, $report_url );
 
 	return new WP_REST_Response( array(
 		'success'    => true,
