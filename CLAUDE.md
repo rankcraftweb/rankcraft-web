@@ -56,6 +56,38 @@ SSH connection details:
 - WP-CLI is available on the server at `/usr/local/bin/wp` — always pass
   `--allow-root`, since the SSH user isn't `www-data`.
 
+## The local site
+
+Local by Flywheel serves this theme at `http://rankcraft-web.local`
+(nginx on port 10004). `.claude/launch.json` attaches to it rather than
+launching anything — Local starts its own nginx, so the site has to be
+running in the Local app first.
+
+The theme directory it serves is a **directory junction** to this repo:
+
+```
+C:\Users\JC\Local Sites\rankcraft-web\app\public\wp-content\themes\rankcraft-web
+  ->  C:\Users\JC\Projects\rankcraft-web
+```
+
+So editing a file here changes what the local site serves, immediately, with
+nothing to sync. That is the point of the junction. It replaced a second,
+independent clone of this repo that Local was serving, which had drifted 124
+commits and 33 theme files behind — meaning the local preview showed code
+from months earlier while looking perfectly current. The old copy is parked
+at `Local Sites\rankcraft-web\theme-backup-20260905` and can be deleted once
+you are satisfied nothing was lost.
+
+If the junction is ever broken (restoring the site from a Local backup will
+do it), the symptom is a local site that ignores your edits. Recreate it
+with the theme folder removed first:
+
+```powershell
+New-Item -ItemType Junction `
+  -Path 'C:\Users\JC\Local Sites\rankcraft-web\app\public\wp-content\themes\rankcraft-web' `
+  -Target 'C:\Users\JC\Projects\rankcraft-web'
+```
+
 ## Checking the site before a deploy
 
 Two scripts in `bin/`, both driving a real headless browser. They exist
