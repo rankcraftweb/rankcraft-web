@@ -5,7 +5,41 @@ Guidance for Claude Code (or any future session) working in this repo.
 ## Deploying to production
 
 There is no auto-deploy. This theme lives on Hostinger (rankcraftweb.com)
-and changes are pushed manually over SSH after `git push`:
+and changes go up over SSH after `git push`.
+
+### bin/deploy.sh — the normal path
+
+```bash
+bin/deploy.sh                                    # print the plan, change nothing
+bin/deploy.sh --yes                              # deploy
+bin/deploy.sh --check http://rankcraft-web.local --yes
+bin/deploy.sh --all --yes                        # every tracked theme file
+```
+
+Works out what changed by diffing `HEAD` against `refs/deploys/production`,
+a local ref recording what this machine last put on that server, then
+uploads exactly those files and purges LiteSpeed. On the first run there is
+no baseline, so use `--all` or `--since <ref>` once and it records itself
+from then on.
+
+Nothing happens without `--yes`. A bare run is a dry run, which doubles as
+the answer to "what have I not deployed yet?"
+
+It refuses to run unless you are on `main`, the working tree is clean, and
+`HEAD` matches `origin/main` — so whatever is live can always be rebuilt
+from a commit that exists in the remote. Deleted files are **reported, not
+removed**: that is the one action with no cheap undo, and a file gone from
+git may have been renamed rather than retired.
+
+`--check <url>` runs `check-responsive.js` against a host serving the new
+code (a Local install) and aborts before uploading anything if it fails.
+Without it that gate is skipped, and the only check is the one that runs
+against the live site afterwards — by which point a bad layout is already
+public. There is no rollback.
+
+### By hand
+
+For a one-off file, or when the script's preconditions are in the way:
 
 ```bash
 scp -i ~/.ssh/hostinger_rankcraftweb -P 65002 <local-file> \
