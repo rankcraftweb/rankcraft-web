@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RANKCRAFT_VERSION', '1.25.0' );
+define( 'RANKCRAFT_VERSION', '1.25.1' );
 define( 'RANKCRAFT_DIR', get_template_directory() );
 define( 'RANKCRAFT_URI', get_template_directory_uri() );
 define( 'RANKCRAFT_GA4_ID', 'G-S1816MHVM3' );
@@ -33,15 +33,24 @@ function rankcraft_setup() {
 	 * at aspect ratios of 2.2:1 and worse, so every platform would crop
 	 * them to its own taste anyway.
 	 *
-	 * Cropping here instead means one predictable card everywhere. The
-	 * crop is anchored to the TOP rather than the centre because these
-	 * are screenshots: the useful part of a homepage is its header and
-	 * hero, and a centre crop cuts exactly that off.
+	 * Cropping here instead means one predictable card everywhere.
+	 *
+	 * Anchored TOP-LEFT, both deliberate and both learned by looking at
+	 * the result. Top, because the useful part of a homepage is its
+	 * header and hero and a centre crop removes exactly that. Left,
+	 * because these screenshots are wider than 1.91:1, so it is the
+	 * WIDTH that gets cropped - and a centred crop took 196px off each
+	 * side, which beheaded the eyebrow text and the first letter of the
+	 * hero headline on the Paver Sealing Academy card. In a left-to-right
+	 * layout the logo, the nav and the headline all start at the left
+	 * edge, so that edge is the one worth keeping.
 	 *
 	 * A 1200x630 source (every blog card) is already this ratio, so for
-	 * those this is a straight copy and nothing is lost.
+	 * those nothing is cropped and the anchor is irrelevant. WordPress
+	 * skips generating a copy entirely in that case and serves the
+	 * original, which is why they come out byte-identical.
 	 */
-	add_image_size( 'rankcraft-og', 1200, 630, array( 'center', 'top' ) );
+	add_image_size( 'rankcraft-og', 1200, 630, array( 'left', 'top' ) );
 
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style' ) );
 	add_theme_support( 'custom-logo' );
