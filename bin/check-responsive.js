@@ -139,7 +139,19 @@ async function main() {
 			const page = await context.newPage();
 
 			try {
-				await page.goto( url, { waitUntil: 'load', timeout: 30000 } );
+				const resp = await page.goto( url, { waitUntil: 'load', timeout: 30000 } );
+
+				// A 404 renders a perfectly well-behaved page, so without
+				// this the checker reports [ok] for a URL that is not
+				// there. That is worse than no check: --check against a
+				// Local install whose database is missing the page you
+				// just built passed it clean, which is exactly the case
+				// the flag exists to catch.
+				const status = resp ? resp.status() : 0;
+				if ( status >= 400 || status === 0 ) {
+					throw new Error( 'HTTP ' + ( status || 'no response' ) );
+				}
+
 				// Lazy images and the reveal observer both settle after
 				// load; without this pause the measurements catch the
 				// page mid-flight and report phantom results.
