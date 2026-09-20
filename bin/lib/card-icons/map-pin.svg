@@ -1,0 +1,22 @@
+<!--
+	Motif for the local landing pages' share cards. The same idea as the
+	hero illustration on those pages - roads with a pin dropped on them -
+	redrawn wide, because a card is 1200x630 and a tall square of artwork
+	leaves the headline nowhere to sit.
+
+	The roads are #3A5470: light enough to read against the navy, dark
+	enough that they stay background and the pin stays the subject.
+-->
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+	<g stroke="#3A5470" stroke-width="3" fill="none" stroke-linecap="round">
+		<path d="M10 52h72l26 26h182"/>
+		<path d="M64 14v38"/>
+		<path d="M196 140V96l22-22"/>
+		<path d="M10 112h58l20-20"/>
+	</g>
+	<circle cx="40" cy="30" r="4" fill="#3A5470"/>
+	<circle cx="262" cy="104" r="4" fill="#3A5470"/>
+	<circle cx="84" cy="128" r="4" fill="#3A5470"/>
+	<path d="M150 28c-18 0-32 14-32 32 0 23 32 58 32 58s32-35 32-58c0-18-14-32-32-32z" fill="#17805F"/>
+	<circle cx="150" cy="60" r="11.5" fill="#DCE4ED"/>
+</svg>
