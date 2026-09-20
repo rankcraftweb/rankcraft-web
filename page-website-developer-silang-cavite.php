@@ -132,7 +132,7 @@ get_header();
 	<div class="container service-overview-inner">
 		<h2>Working with someone nearby</h2>
 		<p>Most of my work happens over email and calls, and that suits a lot of clients fine. But being in Silang means I can meet you if that is easier, I answer within business hours you actually keep, and there is no handover between an account manager and whoever ends up writing the code. You brief me, and I am the one who builds it.</p>
-		<p>You can see how I work on the <a href="/about">about page</a>, and the sites themselves in the <a href="/portfolio">portfolio</a>.</p>
+		<p>You can see how I work on the <a href="/about">about page</a>, and the sites themselves in the <a href="/portfolio">portfolio</a>. I have measured <a href="/website-designer-dasmarinas-cavite/">six sites in Dasmariñas</a> as well, if that is nearer to you.</p>
 	</div>
 </section>
 

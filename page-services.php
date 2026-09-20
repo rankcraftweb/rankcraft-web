@@ -193,7 +193,7 @@ get_header();
 <section class="service-local">
 	<div class="container service-overview-inner">
 		<h2>Where I work</h2>
-		<p>Most of this work happens remotely and the location rarely matters. But I am based in Silang, and the businesses I end up measuring are mostly here in Cavite. If you are local, there is a page for that: <a href="/website-developer-silang-cavite">website development in Silang and Cavite</a>, including what came back when I ran nine local business websites through PageSpeed.</p>
+		<p>Most of this work happens remotely and the location rarely matters. But I am based in Silang, and the businesses I end up measuring are mostly here in Cavite. If you are local, there is a page for that: <a href="/website-developer-silang-cavite">website development in Silang and Cavite</a>, including what came back when I ran nine local business websites through PageSpeed. There is a <a href="/website-designer-dasmarinas-cavite">Dasmariñas one</a> too, with its own set of measurements.</p>
 	</div>
 </section>
 

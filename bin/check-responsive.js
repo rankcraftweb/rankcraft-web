@@ -54,6 +54,7 @@ const DEFAULT_PAGES = [
 	'/seo-and-local-search/',
 	'/performance-audits/',
 	'/website-developer-silang-cavite/',
+	'/website-designer-dasmarinas-cavite/',
 	'/portfolio/',
 	'/blog/',
 	'/contact/',
