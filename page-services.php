@@ -162,9 +162,15 @@ get_header();
 		     Deliberately carries no count and no deadline: either would be
 		     a claim about availability that nothing here can keep true, and
 		     a stale one would sit in the pricing section of a site whose
-		     whole argument is that it does not overstate things. -->
+		     whole argument is that it does not overstate things.
+
+		     It does say "once", though. Against the build that was never
+		     in doubt, but the card beside it is priced per month, and
+		     PHP 10,000 off PHP 25,000 a month reads as PHP 15,000 a month
+		     to anyone who wants it to. A price the reader and the invoice
+		     disagree about is the one thing this section cannot afford. -->
 		<div class="pricing-offer">
-			<p><strong>&#8369;10,000 off</strong> in exchange for a review and permission to write the work up as a case study using your real numbers. Say so at the quote stage.</p>
+			<p><strong>&#8369;10,000 off</strong> in exchange for a review and permission to write the work up as a case study using your real numbers. It applies once, not every month &mdash; on the retainer that means the first month. Say so at the quote stage.</p>
 		</div>
 
 		<div class="pricing-notes">
