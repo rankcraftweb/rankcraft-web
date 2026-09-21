@@ -168,9 +168,16 @@ get_header();
 		     in doubt, but the card beside it is priced per month, and
 		     PHP 10,000 off PHP 25,000 a month reads as PHP 15,000 a month
 		     to anyone who wants it to. A price the reader and the invoice
-		     disagree about is the one thing this section cannot afford. -->
+		     disagree about is the one thing this section cannot afford.
+
+		     The audit is excluded for a different reason. PHP 10,000 off
+		     PHP 12,000 leaves PHP 2,000, on something whose price is
+		     already deducted if the work goes ahead - so it was being
+		     discounted twice. And what the offer buys is a case study,
+		     which a standalone audit does not produce: there is no work
+		     to write up and no after to compare the before against. -->
 		<div class="pricing-offer">
-			<p><strong>&#8369;10,000 off</strong> in exchange for a review and permission to write the work up as a case study using your real numbers. It applies once, not every month &mdash; on the retainer that means the first month. Say so at the quote stage.</p>
+			<p><strong>&#8369;10,000 off a build or a retainer</strong> in exchange for a review and permission to write the work up as a case study using your real numbers. It applies once, not every month &mdash; on the retainer that means the first month. Not on the audit, which already comes off the price if you go ahead. Say so at the quote stage.</p>
 		</div>
 
 		<div class="pricing-notes">
