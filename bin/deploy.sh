@@ -227,9 +227,19 @@ echo
 if $VERIFY; then
 	echo "==> Verifying the live site..."
 	if ! node bin/check-responsive.js "$LIVE_URL"; then
+		# Do not name the fault here. This line used to announce a
+		# horizontal overflow whatever had happened, and the first time
+		# the host dropped a single connection it reported an overflow
+		# on a page that did not have one. The check already printed
+		# the real reason directly above; say which kind it was and let
+		# that stand.
 		echo >&2
-		echo "The live site now has a horizontal overflow." >&2
-		echo "There is no rollback here - fix it and deploy again." >&2
+		echo "The check against the live site did not pass - see above." >&2
+		echo "  OVERFLOW  a layout fault. It is public now; fix and deploy again." >&2
+		echo "  ERROR     the page would not load. Sometimes that is the host" >&2
+		echo "            closing a connection, so re-run the check before" >&2
+		echo "            assuming the worst." >&2
+		echo "Either way the files are already up. There is no rollback." >&2
 		exit 1
 	fi
 fi
