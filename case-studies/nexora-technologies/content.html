@@ -1,0 +1,88 @@
+<!-- wp:paragraph -->
+<p>Nexora Technologies is a website, app, and custom software development company. They came with the positioning and the details that only they could know; the site itself &mdash; design, build, technical SEO and schema &mdash; was mine, from nothing.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>The challenge</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A development company's own website is the first thing a prospective client measures it by, and the one site where "we build fast software" has to survive being checked. It also had to carry a dark visual identity without the usual cost of one: heavy hero imagery, webfonts in several weights, and the layout shift that comes with both.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>What I did</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul>
+<li>Designed and built the whole site, so the layout and what it costs to load were decided together rather than handed over</li>
+<li><a href="/wordpress-development">WordPress development</a> on a block theme, with custom sections rather than a stack of plugins</li>
+<li><a href="/seo-and-local-search">Technical SEO and schema markup</a>, including the metadata and structured data</li>
+<li>Performance tuned across mobile and desktop as part of the build, not bolted on afterwards</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2>Where it landed</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Measured with Google PageSpeed Insights on 20 September 2026: <strong>86 performance on mobile and 98 on desktop</strong>, with 98 accessibility, 100 best practices and 100 SEO on both. Good, and short of finished.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>What the audit found afterwards</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A site being good is the point at which measuring gets interesting, because what is left is no longer obvious. I ran the same <a href="/performance-audits">performance audit</a> over it that I would run over anyone's site, and it came back with five things:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul>
+<li>Google Fonts requested twice, from two different sources, both blocking render and asking for overlapping families</li>
+<li><code>dns-prefetch</code> where <code>preconnect</code> was wanted &mdash; the name was being resolved early, but the handshake still waited for the stylesheet</li>
+<li>The anti-bot script loading on every page, including ones with no form on them</li>
+<li>A heading level skipped in the FAQ, which tells a screen reader a section exists that does not</li>
+<li>Four of six images with no dimensions set, so the layout moved as each one arrived</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Each came with the markup that proved it, and I fixed all five.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Results</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Measured again on 22 September 2026, same tool, same page:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul>
+<li><strong>Accessibility 98 to 100</strong>, on mobile and desktop</li>
+<li><strong>Desktop performance 98 to 99</strong></li>
+<li><strong>Mobile performance 86 to somewhere between 89 and 91</strong> &mdash; two runs, two answers, and the honest figure is the range rather than the better of them</li>
+<li><strong>Render-blocking resources: about 2,030ms of potential saving, down to zero</strong></li>
+<li><strong>Cumulative Layout Shift 0.000</strong> on mobile</li>
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>The three points on mobile are the least interesting number here. The site was already at 86, so there was very little room left, and a score that starts high cannot move far however good the work is. What actually changed is underneath it: nothing blocks the first render any more, and the page no longer moves while it loads.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Tools used</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>WordPress, a block theme, Google PageSpeed Insights, Chrome DevTools and Lighthouse.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The same measure-first approach is behind <a href="/portfolio/ironclad-sites-case-study">Ironclad Sites</a> and <a href="/portfolio/paver-sealing-academy">Paver Sealing Academy</a>. You can run the first half of it on your own site right now with the <a href="https://audit.rankcraftweb.com">free audit</a>.</p>
+<!-- /wp:paragraph -->
