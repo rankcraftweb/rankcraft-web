@@ -152,13 +152,13 @@ get_header();
 				</div>
 				<span class="link-arrow">Read the Ironclad Sites case study →</span>
 			</a>
-			<a href="/portfolio/the-rankcraft-ecosystem" class="service-card">
-				<h3>The RankCraft Ecosystem</h3>
+			<a href="/portfolio/nexora-technologies" class="service-card">
+				<h3>Nexora Technologies</h3>
 				<div class="stat-row">
-					<div class="stat"><span class="stat-number">3</span><span class="stat-label">Connected products</span></div>
-					<div class="stat"><span class="stat-number">100%</span><span class="stat-label">Automated, audit to lead</span></div>
+					<div class="stat"><span class="stat-number">88</span><span class="stat-label">Performance (mobile)</span></div>
+					<div class="stat"><span class="stat-number">100</span><span class="stat-label">SEO</span></div>
 				</div>
-				<span class="link-arrow">Read the RankCraft Ecosystem case study →</span>
+				<span class="link-arrow">Read the Nexora Technologies case study →</span>
 			</a>
 		</div>
 	</div>

@@ -107,6 +107,13 @@ function rankcraft_legacy_redirects() {
 		'/web-design-seo-services-laguna'  => home_url( '/seo-and-local-search/' ),
 		'/seo-optimization'                => home_url( '/seo-and-local-search/' ),
 		'/refund-policy'                   => home_url( '/terms-of-service/' ),
+
+		// The RankCraft Ecosystem case study was pulled from the portfolio
+		// on 24 September 2026. It was indexed and linked from the home
+		// page, so unpublishing it alone would have left a 404 where a
+		// case study used to be - the same mistake the batch above exists
+		// to clean up after.
+		'/portfolio/the-rankcraft-ecosystem' => home_url( '/portfolio/' ),
 	);
 
 	if ( isset( $redirects[ $path ] ) ) {
