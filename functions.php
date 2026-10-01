@@ -114,6 +114,18 @@ function rankcraft_legacy_redirects() {
 		// case study used to be - the same mistake the batch above exists
 		// to clean up after.
 		'/portfolio/the-rankcraft-ecosystem' => home_url( '/portfolio/' ),
+
+		// /category/uncategorized/ has carried noindex since September and
+		// is out of the sitemap, and on 1 October it was still indexed.
+		// Those two fixes work against each other: a URL dropped from the
+		// sitemap is crawled less often, so the noindex telling Google to
+		// forget it is read less often too.
+		//
+		// A redirect does not wait to be believed. There is one category,
+		// it holds every post, and /blog/ lists the same posts under a
+		// heading written for people - so nothing is lost by sending it
+		// there. Nothing on the site links to it either.
+		'/category/uncategorized'          => home_url( '/blog/' ),
 	);
 
 	if ( isset( $redirects[ $path ] ) ) {
