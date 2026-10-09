@@ -34,8 +34,15 @@ const { launch } = require( './lib/find-playwright' );
 const ROOT = path.join( __dirname, '..' );
 const FONT_DIR = path.join( ROOT, 'assets', 'fonts' );
 
-const WIDTH = 1200;
-const HEIGHT = 630;
+// 1200x630 is the share-card default, because that is what every social
+// platform documents and what inc/seo-meta.php crops to.
+//
+// --width/--height exist for Google Business Profile, which wants 4:3.
+// Handing it a 1.91:1 card is not a near miss: to reach a taller ratio it
+// crops the WIDTH, taking about 180px off each side of a 1200x630 image,
+// which is where the headline lives.
+let WIDTH = 1200;
+let HEIGHT = 630;
 
 const NAVY = '#0C2A4A';
 const WHITE = '#FFFFFF';
@@ -147,8 +154,18 @@ function fitTitle() {
 	const args = parseArgs( process.argv.slice( 2 ) );
 
 	if ( ! args.title || ! args.out ) {
-		console.error( 'Usage: node bin/make-share-card.js --title "..." [--subtitle "..."] [--icon file.svg] --out file.png' );
+		console.error( 'Usage: node bin/make-share-card.js --title "..." [--subtitle "..."] [--icon file.svg] [--width N --height N] --out file.png' );
 		process.exit( 1 );
+	}
+
+	if ( args.width || args.height ) {
+		const w = parseInt( args.width || WIDTH, 10 );
+		const h = parseInt( args.height || HEIGHT, 10 );
+		if ( ! Number.isFinite( w ) || ! Number.isFinite( h ) || w < 200 || h < 200 ) {
+			throw new Error( '--width and --height must be numbers of at least 200' );
+		}
+		WIDTH = w;
+		HEIGHT = h;
 	}
 
 	let iconSvg = '';
