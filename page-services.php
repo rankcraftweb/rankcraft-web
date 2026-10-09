@@ -134,57 +134,62 @@ get_header();
 <section class="pricing">
 	<div class="container">
 		<p class="section-label">Pricing</p>
-		<h2>What it costs</h2>
-		<p class="section-intro">Starting figures rather than "contact us for a quote". If your budget is well under these, it is better that we both find that out now instead of after two emails.</p>
+		<h2>How pricing works</h2>
+		<p class="section-intro">The figures that used to sit here were drawn from what the 2026 Philippine market charges, not from work I had done at those rates. That is a guess wearing a number's clothes, and this is the wrong site for one. Here is the actual shape instead, and where each price comes from.</p>
 		<div class="services-grid">
 			<div class="service-card">
-				<span class="price-figure"><span class="price-unit">Starts at</span> &#8369;45,000</span>
 				<h3>Website build</h3>
-				<p>Priced per project. A custom theme or a page builder build costs the same, because what moves the figure is the number of pages and how much content already exists, not which tool it is made with.</p>
+				<p>Priced per project, quoted once I know the scope. A custom theme or a page builder build costs the same, because what moves the figure is the number of pages and how much content already exists, not which tool it is made with.</p>
 				<a href="/contact" class="link-arrow">Ask about a build &rarr;</a>
 			</div>
 			<div class="service-card">
-				<span class="price-figure">&#8369;25,000<span class="price-unit">&nbsp;/ month</span></span>
-				<h3>SEO and local search</h3>
-				<p>One monthly fee covering all four parts. They are not sold separately, because technical fixes with no reporting tell you nothing. Three month minimum, since nothing in search moves faster than that.</p>
-				<a href="/contact" class="link-arrow">Ask about a retainer &rarr;</a>
-			</div>
-			<div class="service-card">
-				<span class="price-figure">&#8369;12,000</span>
-				<h3>Manual audit</h3>
-				<p>A one-off, and deducted from the cost if you go ahead afterwards. The fixes it recommends are quoted from what it finds, so nothing is priced before anyone knows what it is.</p>
+				<h3>Performance audit</h3>
+				<p>A one-off with a fixed scope, and deducted from the cost if you go ahead afterwards. The fixes it recommends are quoted from what it finds, so nothing is priced before anyone knows what it is.</p>
 				<a href="/contact" class="link-arrow">Book an audit &rarr;</a>
 			</div>
+			<div class="service-card">
+				<h3>SEO and local search</h3>
+				<p>Quoted after the audit, because what it costs depends on what is actually wrong. Ongoing work runs on a three month minimum, since nothing in search moves faster than that.</p>
+				<a href="/contact" class="link-arrow">Ask about ongoing work &rarr;</a>
+			</div>
 		</div>
-		<!-- TEMPORARY: launch offer. Delete this note and the paragraph
-		     below once there are enough case studies, otherwise it stops
-		     being a discount and quietly becomes the price.
-		     Deliberately carries no count and no deadline: either would be
-		     a claim about availability that nothing here can keep true, and
-		     a stale one would sit in the pricing section of a site whose
-		     whole argument is that it does not overstate things.
+		<!-- The published figures came out on 9 October 2026. They were
+		     anchored to the 2026 Philippine market rather than to work
+		     done at those rates, and the monthly one was the clearest
+		     problem: PHP 25,000 with a three month minimum is a PHP 75,000
+		     commitment, set by somebody who had never run that retainer.
+		     The audit card, two inches away, said "nothing is priced
+		     before anyone knows what it is". The page argued with itself.
 
-		     It does say "once", though. Against the build that was never
-		     in doubt, but the card beside it is priced per month, and
-		     PHP 10,000 off PHP 25,000 a month reads as PHP 15,000 a month
-		     to anyone who wants it to. A price the reader and the invoice
-		     disagree about is the one thing this section cannot afford.
+		     Checked against the local market first, because "we publish,
+		     they hide" had been the reason to keep them. It is not true
+		     here: of four Cavite competitors, two publish figures and two
+		     do not, and the one ranking first for both Silang queries is
+		     a "Get a Free Consultation" site. Publishing was not the
+		     differentiator it was claimed to be.
 
-		     The audit is excluded for a different reason. PHP 10,000 off
-		     PHP 12,000 leaves PHP 2,000, on something whose price is
-		     already deducted if the work goes ahead - so it was being
-		     discounted twice. And what the offer buys is a case study,
-		     which a standalone audit does not produce: there is no work
-		     to write up and no after to compare the before against. -->
+		     What stays is the sequence - audit first, quote from what it
+		     finds - which is the thing that was always doing the real
+		     work. If rates are ever published again, publish ones that
+		     have been charged.
+
+		     TEMPORARY: the launch offer below goes once there are enough
+		     case studies, or it stops being a discount and quietly
+		     becomes the price. No count and no deadline on purpose:
+		     either would be a claim about availability that nothing here
+		     can keep true. It still says "once", because a discount
+		     against ongoing work reads as every month to anyone who
+		     wants it to. -->
 		<div class="pricing-offer">
-			<p><strong>&#8369;10,000 off a build or a retainer</strong> in exchange for a review and permission to write the work up as a case study using your real numbers. It applies once, not every month &mdash; on the retainer that means the first month. Not on the audit, which already comes off the price if you go ahead. Say so at the quote stage.</p>
+			<p><strong>&#8369;10,000 off your first project</strong> in exchange for a review and permission to write the work up as a case study using your real numbers. It applies once, to a build or to ongoing work, not to the audit &mdash; that one already comes off the price if you go ahead. Say so at the quote stage.</p>
 		</div>
 
 		<div class="pricing-notes">
-			<p>After launch, hosting and maintenance is <strong>&#8369;3,500 a month</strong>: hosting, updates, backups, security monitoring, and up to an hour of small changes. Anything bigger is quoted before it starts, never after.</p>
+			<p>Everything is quoted before it starts, never after, and the quote holds unless you change what you asked for.</p>
 			<p>Plugin work, performance fixes and migration checks are quoted once I have seen the site, because what they cost depends entirely on what is there.</p>
+			<p>After launch there is a flat monthly plan covering hosting, updates, backups, security monitoring and small changes, if you want it. It is not a condition of the build.</p>
 			<p>The automated audit stays free, and always will. That one is a tool, not a service.</p>
-			<p>Prices are in Philippine pesos. Working from outside the Philippines? Get in touch and I will quote for your market.</p>
+			<p>Quotes are in Philippine pesos. Working from outside the Philippines? Get in touch and I will quote for your market.</p>
 		</div>
 	</div>
 </section>

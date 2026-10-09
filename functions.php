@@ -209,11 +209,17 @@ function rankcraft_about_page_title( $title_parts ) {
 add_filter( 'document_title_parts', 'rankcraft_about_page_title' );
 
 /**
- * "Services" spends the tag on a nav label. The page carries the
- * pricing, and published prices are uncommon enough in this trade to
- * be worth naming: someone comparing quotes is searching for exactly
- * that. The nav label stays "Services", because only the tag needs to
- * say more.
+ * "Services" spends the tag on a nav label. The page answers what the
+ * work costs and how it is quoted, and someone comparing quotes is
+ * searching for exactly that. The nav label stays "Services", because
+ * only the tag needs to say more.
+ *
+ * The tag stays "Services and Pricing" although the figures came down
+ * on 9 October 2026. It is still the page about what things cost - the
+ * sequence, the minimum, what is quoted from what - and "pricing" is
+ * the word people type. The original reason given here was that
+ * published prices are uncommon in this trade, which was checked
+ * against the local market that day and turned out not to be true.
  */
 function rankcraft_services_page_title( $title_parts ) {
 	if ( is_page( 'services' ) ) {
