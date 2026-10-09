@@ -17,3 +17,6 @@ node_modules/
 # copy - no other case study directory carries one.
 case-studies/**/*.jpg
 case-studies/**/*.png
+
+# Deploy server details (host, user, port). See bin/.deploy.env.example.
+bin/.deploy.env

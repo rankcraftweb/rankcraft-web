@@ -42,17 +42,21 @@ public. There is no rollback.
 For a one-off file, or when the script's preconditions are in the way:
 
 ```bash
-scp -i ~/.ssh/hostinger_rankcraftweb -P 65002 <local-file> \
-  u803773560@37.44.245.62:~/domains/rankcraftweb.com/public_html/wp-content/themes/rankcraft-web/<same-relative-path>
+source bin/.deploy.env
 
-ssh -i ~/.ssh/hostinger_rankcraftweb -p 65002 u803773560@37.44.245.62 \
-  "cd ~/domains/rankcraftweb.com/public_html && wp litespeed-purge all --allow-root"
+scp -i "$SSH_KEY" -P "$SSH_PORT" <local-file> \
+  "$SSH_HOST:$REMOTE_WP_PATH/wp-content/themes/rankcraft-web/<same-relative-path>"
+
+ssh -i "$SSH_KEY" -p "$SSH_PORT" "$SSH_HOST" \
+  "cd $REMOTE_WP_PATH && wp litespeed-purge all --allow-root"
 ```
 
 SSH connection details:
 
-- Host: `37.44.245.62`, Port: `65002`, User: `u803773560`
-- Key: `~/.ssh/hostinger_rankcraftweb` (already authorized in Hostinger hPanel)
+- Host, port, user, key and WP path live in `bin/.deploy.env`, which is
+  git-ignored so they stay out of this public repo. Copy
+  `bin/.deploy.env.example` and fill it in from Hostinger hPanel > SSH Access.
+  Both deploy scripts load it through `bin/lib/deploy-env.sh`.
 - WP-CLI is available on the server at `/usr/local/bin/wp` — always pass
   `--allow-root`, since the SSH user isn't `www-data`.
 
@@ -174,8 +178,8 @@ over SSH, from local files.
 
 ```bash
 # 1. Upload the content file to a scratch dir on the server
-scp -i ~/.ssh/hostinger_rankcraftweb -P 65002 content.html \
-  u803773560@37.44.245.62:~/case-study-uploads/content.html
+scp -i "$SSH_KEY" -P "$SSH_PORT" content.html \
+  "$SSH_HOST:~/case-study-uploads/content.html"
 
 # 2. Create the post from that file (--porcelain returns just the ID)
 wp post create ~/case-study-uploads/content.html \
@@ -193,8 +197,8 @@ wp post meta update <post_id> _rc_stat_1_label "Performance (mobile)" --allow-ro
 wp post meta update <post_id> _thumbnail_id <attachment_id> --allow-root
 
 # 4b. Or upload a new local image and set it as featured in one step
-scp -i ~/.ssh/hostinger_rankcraftweb -P 65002 image.jpg \
-  u803773560@37.44.245.62:~/case-study-uploads/image.jpg
+scp -i "$SSH_KEY" -P "$SSH_PORT" image.jpg \
+  "$SSH_HOST:~/case-study-uploads/image.jpg"
 wp media import ~/case-study-uploads/image.jpg --post_id=<post_id> \
   --featured_image --title="..." --allow-root
 ```

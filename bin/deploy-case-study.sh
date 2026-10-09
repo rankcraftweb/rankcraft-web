@@ -18,10 +18,9 @@
 
 set -euo pipefail
 
-SSH_KEY="$HOME/.ssh/hostinger_rankcraftweb"
-SSH_PORT=65002
-SSH_HOST="u803773560@37.44.245.62"
-REMOTE_WP_PATH="~/domains/rankcraftweb.com/public_html"
+# Host, user, port and paths live in bin/.deploy.env (git-ignored).
+# shellcheck source=lib/deploy-env.sh
+source "$(dirname "$0")/lib/deploy-env.sh"
 REMOTE_SCRATCH="~/case-study-uploads"
 
 ssh_cmd() {
